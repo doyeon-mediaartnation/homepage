@@ -1,0 +1,1416 @@
+
+<!-- <!doctype html> -->
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtm1-transitional.dtd'>
+	<html lang="ko">
+		
+<!-- Mirrored from mediaartnation.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2026 05:21:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+            <!--  -->
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<!--
+<meta name="naver-site-verification" content="515783d1d2dba5afce342e872655c993999ce593" />
+-->
+<link rel="canonical" href="index.html">
+<link rel="shortcut icon" href="images/common/favicon.png">
+<meta name="title" content="MEDIAARTNATION">
+<meta name="description" content="MEDIAARTNATION">
+<meta name="keywords" content="MEDIAARTNATION">
+
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MEDIAARTNATION">
+<meta property="og:title" content="MEDIAARTNATION">
+<meta property="og:description" content="MEDIAARTNATION">
+<meta property="og:image" content="images/common/sns.png"> 
+<meta property="og:url" content="index.html">
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MEDIAARTNATION">
+<link rel="apple-touch-icon-precomposed" href="images/shortcut.html">
+
+
+			<!--<link rel="stylesheet" type="text/css" href="/css/style.css?v=1780550515">-->
+			<link rel="stylesheet" type="text/css" href="module/popupoverlay/popupoverlay.css">
+			<link rel="stylesheet" type="text/css" href="module/js/global7b30.css?v=4">
+			<link rel="stylesheet" type="text/css" href="css/tema.css">
+
+			<!-- font -->
+			<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+			<!-- <link rel="stylesheet" as="style" crossorigin href="https://unpkg.com/pretendard@1.3.9/dist/web/static/pretendard.css" /> -->
+			<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+			<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+			<script src="module/js/common.js"></script>
+			<script src="module/popupoverlay/jquery.popupoverlay.js"></script>
+			<script src="js/open_modal.js"></script>
+
+
+			<!-- Swiper -->
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+			<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+			<!-- AOS -->
+
+
+			<title>MEDIAARTNATION</title>
+
+		</head>
+	<body>    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {font-family: 'Figtree', sans-serif;}
+        .header {position: fixed;top: 0;left: 0;width: 100%;z-index: 1000;display: flex;justify-content: center;align-items: center;height: 150px;transition: all 0.3s ease;background-color: transparent;}
+        .header-container {width: 1400px;max-width: 100%;display: flex;justify-content: space-between;align-items: center;margin: 0 16px;}
+        .header.scrolled {background-color: rgba(38, 38, 3, 0.7);}
+        .logo {display: flex;align-items: center;}
+        .logo img {height: 40px;}
+        .nav-menu {display: flex;gap: 30px;align-items: center;justify-content: flex-end;flex: 1;margin-left: 40px;}
+        .nav-menu .menu-group {display: flex;gap: 30px;align-items: center;}
+        .project-menu {display: flex;align-items: center;gap: 30px;}
+        .project-menu a img {display: none;}
+        .submenu {display: flex;gap: 20px;list-style: none;align-items: center;}
+        .submenu li a {position: relative;}
+        .submenu li a:hover{color: #ffeb00;}
+        .submenu li a::after {content: '';position: absolute;width: 0;height: 1px;bottom: -2px;left: 0;background-color: #ffeb00;transition: width 0.3s ease;}
+        .submenu li a:hover::after {width: 100%;}
+        .nav-menu a {color: #fff;text-decoration: none;font-size: 16px;font-weight: 700;white-space: nowrap;}
+        .nav-menu a:hover{color: #ffeb00;}
+        .nav-menu .divider {width: 1px;height: 12px;background-color: rgba(255, 255, 255, 0.3);}
+        .hamburger {display: none;width: 20px;height: 20px;cursor: pointer;z-index: 1001;position: relative;}
+        .hamburger img {width: 100%;height: 100%;object-fit: contain;}
+        .hamburger .close-img {display: none;}
+        .hamburger.active .menu-img {display: none;}
+        .hamburger.active .close-img {display: block;}
+
+        @media screen and (max-width: 1400px) {
+            .header {height: 150px;}
+            .header-container {width: 100%;}
+        }
+
+        @media screen and (max-width: 1024px) {
+            .header {height: 60px;position: absolute;}
+            .header-container {padding: 0 16px;margin: 0;}
+            .logo img {height: 30px;width: 100px;}
+            .hamburger {display: flex;}
+            .nav-menu {position: fixed;top: 60px;left: -100%;width: 100%;height: 100vh;flex-direction: column;justify-content: flex-start;margin: 0;padding: 30px 0 0 0;transition: left 0.3s ease;gap: 0;background:#fff;}
+            .nav-menu.active {left: 0;}
+            .nav-menu .menu-group {flex-direction: column;align-items: flex-start;gap: 0;width: 100%;background-color: #fff;}
+            .nav-menu a:hover {color: #000;}
+            .project-menu {flex-direction: column;align-items: flex-start;gap: 0;width: 100%;position: relative;padding: 0px 16px 0 16px;}
+            .nav-menu a {color: #000;padding: 10px 20px;width: 100%;display: flex;justify-content: space-between;align-items: center;font-weight: 500;font-size: 16px;}
+            .project-menu > a {padding: 10px 20px;width: 100%;display: flex;justify-content: space-between;align-items: center;font-weight: 500;font-size: 16px;background-color: #F2F2F2;}
+            .project-menu a img {display: block;}
+            .project-menu.active > a::after {transform: rotate(180deg);}
+            .project-menu.active + .divider + .menu-group {margin-top: 20px;}
+            .project-menu.active {margin-bottom: 20px;}
+            .submenu {display: none;flex-direction: column;gap: 0;width: 100%;overflow: hidden;max-height: 0;transition: max-height 0.3s ease;}
+            .project-menu.active .submenu {display: flex;max-height: 500px;}
+            .submenu li {width: 100%;opacity: 0;transform: translateY(-10px);transition: all 0.3s ease;}
+            .project-menu.active .submenu li {opacity: 1;transform: translateY(0);}
+            .submenu li a {padding: 10px 20px;display: block;font-weight: 400;color: #929292;font-size: 13px;}
+            .nav-menu .divider {display: none;}
+            .nav-menu > .menu-group:nth-child(3) {padding: 0 16px 150px 16px;background-color: #fff;width: 100%;}
+            .nav-menu > .menu-group:nth-child(3) a {display: block;width: 100%;padding: 10px 20px;font-weight: 500;font-size: 16px;background-color: #F2F2F2;color: #000;}
+            .nav-menu > .menu-group:nth-child(3) a:last-child {margin-bottom: 0;}
+            .nav-menu.active .footer {margin-top: 30px;padding: 40px 0;background-color: #262603;}
+            .nav-menu.active .footer .footer-content {padding: 0 16px;}
+            .close-btn {display: none;}
+        }
+        @media screen and (max-width: 320px) {
+            .project-menu > a,
+            .menu-group:last-child a {font-weight: 600;font-size: 13px;}
+            .submenu li a {font-size: 13px;}
+            .nav-menu > .menu-group:nth-child(3) a {font-weight: 600;font-size: 13px;}
+        }
+		.m_active{color:rgb(255, 235, 0) !important}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/header/header_logo.png" alt="MEDIA ARTNATION">
+                </a>
+            </div>
+            <div class="hamburger">
+                <img src="images/header/hamburgerbtn.svg" alt="메뉴" class="menu-img">
+                <img src="images/header/cloesbtn.svg" alt="닫기" class="close-img">
+            </div>
+            <nav class="nav-menu">
+                <!-- <div class="menu-group">
+                    <a href="http://world.mediaartnation.com" target="_blank" rel="noopener noreferrer">WORLD</a>
+                </div> -->
+                <div class="menu-group">
+                    <div class="project-menu">
+                        <a href="sub01/sub01.html">PROJECT<img src="images/header/chevron_down.svg" alt="펼치기" style="width: 12px; height: 12px; margin-left: 8px;"></a>
+                        <ul class="submenu">
+                            <li><a class='' href="sub01/sub01.html">Meta Human</a></li>
+                            <li><a class='' href="sub01/sub02.html">3D Animation</a></li>
+                            <li><a class='' href="sub01/sub03.html">Configurator</a></li>
+                            <li><a class='' href="sub01/sub04.html">Simulation</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="divider"></span>
+                <div class="menu-group">
+                    <a class='' href="sub02/sub01.html">ABOUT US</a>
+                    <span class="divider"></span>
+                    <a class='' href="sub03/sub01.html">CONTACT</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const projectMenu = document.querySelector('.project-menu');
+        const projectLink = document.querySelector('.project-menu > a');
+        const header = document.querySelector('.header');
+
+        // 현재 페이지의 메뉴 항목에 hover 효과 유지
+        function setCurrentMenuActive() {
+            if (window.innerWidth > 1024) {
+                const currentPath = window.location.pathname;
+                const submenuLinks = document.querySelectorAll('.submenu li a');
+                
+                submenuLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath) {
+                        link.style.color = '#ffeb00';
+                        const underline = document.createElement('div');
+                        underline.style.position = 'absolute';
+                        underline.style.bottom = '-2px';
+                        underline.style.left = '0';
+                        underline.style.width = '100%';
+                        underline.style.height = '1px';
+                        underline.style.backgroundColor = '#ffeb00';
+                        link.appendChild(underline);
+                    }
+                });
+            }
+        }
+
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', setCurrentMenuActive);
+
+        const isMobileWidth = () => window.innerWidth <= 1024;
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            if (isMobileWidth()) {
+                if (navMenu.classList.contains('active')) {
+                    header.style.backgroundColor = '#262603';
+                    header.style.position = 'fixed';
+                } else {
+                    header.style.backgroundColor = 'transparent';
+                    header.style.position = 'absolute';
+                }
+            }
+
+            if (navMenu.classList.contains('active')) {
+                projectMenu.classList.add('active');
+            } else {
+                projectMenu.classList.remove('active');
+            }
+        });
+
+        projectLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {  // 모바일 화면에서만 preventDefault 실행
+                e.preventDefault();
+                projectMenu.classList.toggle('active');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                projectMenu.classList.remove('active');
+                
+                if (isMobileWidth()) {
+                    header.style.backgroundColor = 'transparent';
+                    header.style.position = 'absolute';
+                }
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (!isMobileWidth()) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (!isMobileWidth()) {
+                header.style.backgroundColor = '';  
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                }
+            }
+        });
+    </script>
+</body><style>
+    @media screen and (max-width:768px){
+        .popBox {left:0 !important;top:60px !important;}
+        .popBox img{width:100% !important;}
+    }
+</style>
+
+<script>
+    // 쿠키를 만듭니다. 아래 closeWin() 함수에서 호출됩니다
+    function setCookie(name, value, expiredays){
+        var todayDate = new Date();
+        todayDate.setDate(todayDate.getDate() + expiredays);
+        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+    }
+
+    // 체크후 닫기버튼을 눌렀을때 쿠키를 만들고 창을 닫습니다
+    function closeWin(day,no,reg){
+        var form = document['pop'+no];
+        var id = reg;
+
+        if(form && form.event1 && form.event1.checked){
+            setCookie("Coo"+id, "done", day); // 오른쪽 숫자는 쿠키를 유지할 기간을 설정합니다
+        }
+
+        var LayerClose = document.getElementById('divpop'+no);
+        if (LayerClose) LayerClose.style.visibility = "hidden";
+    }
+
+    function getCookie(name){
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while (x <= document.cookie.length){
+            var y = (x + nameOfCookie.length);
+            if (document.cookie.substring(x, y) == nameOfCookie) {
+                var endOfCookie = document.cookie.indexOf(";", y);
+                if (endOfCookie == -1) endOfCookie = document.cookie.length;
+                return unescape(document.cookie.substring(y, endOfCookie));
+            }
+            x = document.cookie.indexOf(" ", x) + 1;
+            if (x == 0) break;
+        }
+        return "";
+    }
+</script>
+
+<script>
+    function Layer_Loading(lefts, tops, layer){
+        var LayerNotice = document.getElementById(layer);
+        if (!LayerNotice) return;
+
+        LayerNotice.style.left = lefts + 'px';
+        LayerNotice.style.top  = tops + 'px';
+        LayerNotice.style.visibility = "visible";
+    }
+</script>
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', sans-serif;
+            background-color: #000;
+            color: #fff;
+            position: relative;
+            height: 100%;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #000;
+        }
+
+        .swiper-button-next {
+            padding-right: 110px ;
+        }
+
+        .swiper-button-prev {
+            padding-left: 110px ;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff !important;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .swiper-text {
+            position: absolute;
+            color: #fff;
+            z-index: 1;
+            width: 100%;
+            padding: 0 300px;
+        }
+
+        .swiper-text p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            word-break: keep-all;
+        }
+
+        .swiper-text .siwper_title {
+            font-size: 35px;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .swiper-text .siwper_subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            pointer-events: none;
+        }
+
+        .scroll-down p {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .scroll-down img {
+            width: 24px;
+            height: 24px;
+            animation: scrollBounce 1.5s infinite;
+        }
+
+        @keyframes scrollBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .banner-container {
+            max-width: 100%;
+            position: relative;
+            height: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow: hidden;
+            background: url('images/main/mainfirstbg.png') no-repeat center;
+            background-size: cover;
+        }
+
+        /* 마지막 banner-container에 대한 스타일 */
+        .banner-container.configurator {
+            background: url('images/main/mainthirdbg.png') no-repeat center;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-container.configurator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .banner-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-content {
+            width: 1400px;
+            margin: 0 auto 130px;
+            text-align: center;
+        }
+
+        .banner-title {
+            font-size: 35px;
+            font-weight: 800;
+            text-align: right;
+        }
+
+        .banner-pc_description {
+            font-size: 18px;
+            font-weight: 300;
+            color: #ccc;
+            text-align: right;
+            margin: 20px 0;
+            display: block;
+        }
+
+        .banner-mo_description {
+            font-size: 18px;
+            font-weight: 300;
+            color: #ccc;
+            text-align: right;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .button-wrapper {
+            text-align: right;
+        }
+
+        .more-btn {
+            display: inline-block;
+            padding: 17.5px 101px;
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px; 
+            font-weight: 300;
+            font-family: inherit;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .more-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #fff;
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .more-btn:hover::before {
+            width: 100%;
+        }
+
+        .more-btn:hover {
+            color: #000;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 80px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .banner-container_opposite {
+            max-width: 100%;
+            position: relative;
+            height: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow: hidden;
+            background: url('images/main/mainsecondbg.png') no-repeat center;
+            background-size: cover;
+        }
+
+        .banner-container_opposite.meta-simulation {
+            background: url('images/main/mainfourthbg.png') no-repeat center;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-container_opposite.meta-simulation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+
+        .banner-bg_opposite {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .banner-bg_opposite img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-content_opposite {
+            width: 1400px;
+            margin: 0 auto 130px;
+            text-align: center;
+        }
+
+        .banner-title_opposite {
+            font-size: 35px;
+            font-weight: 800;
+            text-align: left;
+        }
+
+        .banner-description_opposite {
+            font-size: 18px;
+            font-weight: 300;
+            color: #ccc;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .button-wrapper_opposite {
+            text-align: left;
+        }
+
+        .more-btn_opposite {
+            display: inline-block;
+            padding: 17.5px 101px;
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px; 
+            font-weight: 300;
+            font-family: inherit;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .more-btn_opposite::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #fff;
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .more-btn_opposite:hover::before {
+            width: 100%;
+        }
+
+        .more-btn_opposite:hover {
+            color: #000;
+        }
+
+        .image-gallery_opposite {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            margin-top: 80px;
+        }
+
+        .gallery-item_opposite {
+            width: calc((100% - 40px) / 3); /* 3개 아이템에 대한 너비 계산 (gap 20px * 2 = 40px) */
+        }
+
+        .gallery-item_opposite img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-pc_description_opposite {
+            font-size: 18px;
+            font-weight: 300;
+            color: #ccc;
+            text-align: left;
+            margin: 20px 0;
+            display: block;
+        }
+
+        .banner-mo_description_opposite {
+            font-size: 18px;
+            font-weight: 300;
+            color: #ccc;
+            text-align: left;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .pc_only {
+            display: block;
+        }
+        .mo-only {
+            display: none;
+        }
+        @media screen and (max-width: 1440px) {
+            .banner-container,
+            .banner-container_opposite {
+                padding: 0 10px;
+            }
+
+            .pc_only {
+                display: none;
+            }
+            .banner-pc_description {
+               word-break: keep-all;
+            }
+            .swiper-text .siwper_title {
+                font-size: 18px;
+            }
+            .swiper-text .siwper_subtitle {
+                font-size: 13px;
+            }
+        }
+
+        @media screen and (min-width: 1025px) and (max-width: 1440px) {
+            .banner-content,
+            .banner-content_opposite {
+                width: 100%;
+            }
+
+            .banner-title,
+            .banner-title_opposite {
+                font-size: 30px;
+            }
+
+            .banner-pc_description,
+            .banner-pc_description_opposite {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .image-gallery,
+            .image-gallery_opposite {
+                margin-top: 60px;
+                gap: 15px;
+            }
+
+            .more-btn,
+            .more-btn_opposite {
+                padding: 15px 80px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .banner-container,
+            .banner-container_opposite {
+                padding: 100px 0;
+                height: auto;
+            }
+
+            .banner-content,
+            .banner-content_opposite {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            .banner-title,
+            .banner-title_opposite {
+                font-size: 30px;
+            }
+
+            .banner-pc_description,
+            .banner-pc_description_opposite {
+                display: none;
+            }
+
+            .banner-mo_description,
+            .banner-mo_description_opposite {
+                display: block;
+                font-size: 16px;
+            }
+
+            .image-gallery,
+            .image-gallery_opposite {
+                gap: 15px;
+            }
+            .swiper-text .siwper_title > span {
+                display: none;
+            }
+            .swiper-text .siwper_subtitle > span:last-child {
+                display: none;
+            }
+            .swiper-text {
+                padding: 0px 170px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none !important;
+            }
+
+            .banner-container,
+            .banner-container_opposite {
+                height: auto;
+                padding: 50px 0;
+            }
+
+            .banner-container_opposite:nth-of-type(5) {
+                padding: 50px 0 100px 0;
+            }
+
+            .banner-bg,
+            .banner-bg_opposite {
+                display: none;
+            }
+
+            .banner-title,
+            .banner-title_opposite {
+                font-size: 26px;
+            }
+
+            .banner-mo_description,
+            .banner-mo_description_opposite {
+                font-size: 14px;
+            }
+
+            .more-btn,
+            .more-btn_opposite {
+                padding: 15px 60px;
+                font-size: 14px;
+            }
+
+            .image-gallery,
+            .image-gallery_opposite {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 50px;
+            }
+
+            .gallery-item,
+            .gallery-item_opposite {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                height:auto;
+            }
+            .swiper-slide {
+                height: 100vh
+            }
+            .swiper-text {
+                padding: 0 16px;
+            }
+            .swiper-text p {
+                font-size: 14px;
+            }
+
+            .swiper-text .siwper_title {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+
+            .swiper-text .siwper_subtitle {
+                font-size: 15px;
+            }
+
+            .pc_only {
+                display: none;
+            }
+            .mo-only {
+                display: block;
+            }
+            .scroll-down {
+                bottom: 20px;
+            }
+            .scroll-down p {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .banner-container,
+            .banner-container_opposite {
+                padding: 50px 0;
+                background: none;
+                background-color: #000;
+            }
+            .banner-container.configurator,
+            .banner-container_opposite.meta-simulation{
+                background: none;
+                background-color: #000;
+            }
+            .banner-container_opposite.meta-simulation {
+                padding: 50px 0 100px 0;
+            }
+            .banner-title,
+            .banner-title_opposite {
+                font-size: 22px;s
+            }
+
+            .banner-mo_description,
+            .banner-mo_description_opposite {
+                font-size: 13px;
+                margin: 5px 0 50px 0;
+            }
+
+            .more-btn,
+            .more-btn_opposite {
+                padding: 15.5px 40px;
+                font-size: 12px;
+            }
+
+            .swiper-text p {
+                font-size: 13px;
+            }
+
+            .swiper-text .siwper_title {
+                font-size: 25px;
+            }
+
+            .swiper-text .siwper_subtitle {
+                font-size: 15px;
+            }
+
+        }
+        @media screen and (max-width: 320px) {
+            .banner-content,
+            .banner-content_opposite {
+                margin: 0 16px ;
+            }
+            .banner-container,
+            .banner-container_opposite {
+                padding: 50px 0;
+            }
+            .gallery-item,
+            .gallery-item_opposite {
+                width: 100%;
+                max-width: 288px;
+                margin: 0 auto;
+                height: 142px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/main/mainswiperimg01.png" alt="">
+                <div class="swiper-text">
+                    <p class="siwper_title">All materials and<br class="mo-only"> services provided by<br class="mo-only"> Media Artnation,<br class="mo-only"> including<br class="pc_only">
+                        <span>but not limited to digital content, animations, configurations, and simulations,</span><br class="pc_only">
+                        <span>are the exclusive property of Media Artnation.</span>
+                    </p>
+                    <p class="siwper_subtitle">
+                        Unauthorized reproduction, redistribution,<br class="mo-only"> or commercial use is strictly prohibited.<br>
+                        <span>Usage is subject to the company's<br class="mo-only"> licensing terms and conditions.</span><br>
+                        <span>Empowering creativity. Delivering excellence. Redefining possibilities.</span>
+                    </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="images/main/mainswiperimg02.png" alt="">
+                <div class="swiper-text">
+                    <p class="siwper_title">All materials and<br class="mo-only"> services provided by<br class="mo-only"> Media Artnation,<br class="mo-only"> including<br class="pc_only">
+                        <span>but not limited to digital content, animations, configurations, and simulations,</span><br class="pc_only">
+                        <span>are the exclusive property of Media Artnation.</span>
+                    </p>
+                    <p class="siwper_subtitle">
+                        Unauthorized reproduction, redistribution,<br class="mo-only"> or commercial use is strictly prohibited.<br class="pc_only mo-only">
+                        <span>Usage is subject to the company's<br class="mo-only"> licensing terms and conditions.</span><br class="pc_only mo-only">
+                        <span>Empowering creativity. Delivering excellence. Redefining possibilities.</span>
+                    </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="images/main/mainswiperimg03.png" alt="">
+                <div class="swiper-text">
+                    <p class="siwper_title">All materials and<br class="mo-only"> services provided by<br class="mo-only"> Media Artnation,<br class="mo-only"> including<br class="pc_only">
+                        <span>but not limited to digital content, animations, configurations, and simulations,</span><br class="pc_only">
+                        <span>are the exclusive property of Media Artnation.</span>
+                    </p>
+                    <p class="siwper_subtitle">
+                        Unauthorized reproduction, redistribution,<br class="mo-only"> or commercial use is strictly prohibited.<br class="pc_only mo-only">
+                        <span>Usage is subject to the company's<br class="mo-only"> licensing terms and conditions.</span><br class="pc_only mo-only">
+                        <span>Empowering creativity. Delivering excellence. Redefining possibilities.</span>
+                    </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="scroll-down">
+                <p>scroll down</p>
+                <img src="images/main/scrolldownicon.svg" alt="scroll down">
+            </div>
+          </div>
+    </div>
+    <div class="banner-container">
+        <div class="banner-content">
+            <h1 class="banner-title">Virtual Humans (Metahuman)</h1>
+            <p class="banner-pc_description">
+                We deeply admire your ambition to embrace the future of digital interaction, and we are honored to help you create unforgettable experiences for your audience.<br class="pc_only">
+                Transform your vision into reality with highly customizable digital characters.<br class="pc_only">
+                Our Virtual Human services enable you to optimize appearance, personality, and voice, tailored to your audience.<br class="pc_only">
+                Seamlessly integrate your characters into VR, AR, and leading game engines for immersive experiences.<br class="pc_only">
+                Whether for marketing, entertainment, or interactive storytelling, our solutions are designed to meet your strategic goals with ongoing upgrades and tech support.
+            </p>
+            <p class="banner-mo_description">
+                We admire your ambition for digital innovation<br>
+                and are honored to create unforgettable<br>
+                experiences.
+            </p>
+            <div class="button-wrapper">
+                <button class="more-btn" onclick="window.location.href='sub01/sub01.html'">MORE THAN</button>
+            </div>
+            <div class="image-gallery">
+                                        <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224172705.png" alt="Meta Human 1">
+                        </div>
+                                                <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224172649.png" alt="Meta Human 2">
+                        </div>
+                                                <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224165011.png" alt="Meta Human 3">
+                        </div>
+                        
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-container_opposite">
+        <div class="banner-content_opposite">
+            <h1 class="banner-title_opposite">3D Animation</h1>
+            <p class="banner-pc_description_opposite">
+                We value your passion for storytelling and are privileged to bring your ideas to life with compelling visuals that captivate and inspire.<br class="pc_only"    >
+                Experience cinematic-quality visuals without compromising on time or budget.<br class="pc_only">
+                Media Artnation's 3D animation services leverage real-time simulation and intuitive tools to create vibrant storytelling for films,<br class="pc_only">
+                games, advertisements, and education. Empower your creativity with unmatched efficiency and aesthetic impact.
+            </p>
+            <p class="banner-mo_description_opposite">
+                We value your passion for storytelling and are<br>
+                honored to create captivating, inspiring visuals.
+            </p>
+            <div class="button-wrapper_opposite">
+                <button class="more-btn_opposite" onclick="window.location.href='sub01/sub02.html'">MORE THAN</button>
+            </div>
+            <div class="image-gallery_opposite">
+                                        <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224173038.png" alt="3D Animation 1">
+                        </div>
+                                                <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224173026.png" alt="3D Animation 2">
+                        </div>
+                                                <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224173016.png" alt="3D Animation 3">
+                        </div>
+                        
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-container configurator">
+        <div class="banner-content">
+            <h1 class="banner-title">3D Configurator</h1>
+            <p class="banner-pc_description">
+                We are grateful for your trust in our ability to enhance customer engagement and help showcase your products with precision and style.<br class="pc_only">
+                Engage your customers with interactive customization. Our 3D Configurator allows users to visually personalize products in real time,<br class="pc_only">
+                including appearance, color, material, and components. Perfect for industries such as e-commerce, design, education, and presentations,<br class="pc_only">
+                this technology enhances user experience (UX) while promoting a deeper understanding of your products.
+            </p>
+            <p class="banner-mo_description">
+                We appreciate your trust in us to enhance<br>
+                engagement and showcase your<br>
+                products with style.<br>
+            </p>
+            <div class="button-wrapper">
+                <button class="more-btn" onclick="window.location.href='sub01/sub03.html'">MORE THAN</button>
+            </div>
+            <div class="image-gallery">
+                                        <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224173534.png" alt="Configurator 1">
+                        </div>
+                                                <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224173524.png" alt="Configurator 2">
+                        </div>
+                                                <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224173510.png" alt="Configurator 3">
+                        </div>
+                        
+            </div>
+        </div>
+    </div>
+    
+    <div class="banner-container_opposite meta-simulation">
+        <div class="banner-content_opposite">
+            <h1 class="banner-title_opposite">Virtual Training Simulation (Meta_simulation)</h1>
+            <p class="banner-pc_description_opposite">
+                We appreciate your commitment to innovation in education and training, and we are proud to support your efforts<br class="pc_only"  >
+                to create safer and more effective learning environments. Immerse yourself in realistic 3D environments designed for hands-on learning.<br class="pc_only">
+                Our Meta_simulation technology supports industries such as healthcare, military, manufacturing, and aviation, offering safe, cost-effective,<br class="pc_only">
+                and engaging training solutions. Track progress, analyze performance, and deliver valuable feedback through scenario-based training tailored to your needs.
+            </p>
+            <p class="banner-mo_description_opposite">
+                We appreciate your commitment to innovation<br>
+                and are proud to support safer, effective learning.
+            </p>
+            <div class="button-wrapper_opposite">
+                <button class="more-btn_opposite" onclick="window.location.href='sub01/sub04.html'">MORE THAN</button>
+            </div>
+            <div class="image-gallery_opposite">
+                                        <div class="gallery-item_opposite">
+                            <img src="board/upfile/P250224173620.png" alt="Simulation 1">
+                        </div>
+                        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const mainContents = document.querySelectorAll('.swiper, .banner-container, .banner-container_opposite');
+            const lastMenuGroup = document.querySelector('.nav-menu .menu-group:last-child');
+            const footer = document.querySelector('.footer');
+
+            const handleMainContentVisibility = () => {
+                if (window.innerWidth <= 1024) {
+                    const isMenuActive = navMenu.classList.contains('active');
+                    mainContents.forEach(content => {
+                        content.style.display = isMenuActive ? 'none' : '';
+                    });
+
+                   
+                }
+            };
+
+            // 햄버거 메뉴 클릭 이벤트 감지
+            hamburger.addEventListener('click', handleMainContentVisibility);
+
+            // 메뉴 외부 클릭 시 콘텐츠 표시
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    mainContents.forEach(content => {
+                        content.style.display = '';
+                    });
+
+                }
+            });
+
+            // 초기 상태 설정
+            if (window.innerWidth > 1024 && footer) {
+                document.body.appendChild(footer);
+            }
+        });
+      </script>
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #262603;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .company-info {
+            font-size: 12px;
+            font-weight: 400;
+            color: #929292;    
+            text-align: right;
+        }
+
+        .company-info .company-info-separator {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .company-info div:nth-child(2) {
+            margin-top: 5px;
+        }
+        .company-info div:nth-child(3) {
+            margin-top: 30px;
+        }
+        .pc-only {
+            display: inline-block;
+        }
+        .mo-only {
+            display: none;
+        }
+        @media screen and (max-width: 768px) {
+            .footer {
+                padding: 20px 0;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .company-info {
+                text-align: left;
+                font-size: 11px;
+                line-height: 1.6;
+            }
+
+            .company-info div:nth-child(2) {
+                margin-top: 0;
+            }
+
+            .company-info div:nth-child(3) {
+                margin-top: 20px;
+            }
+
+            .footer-logo img {
+                width : 80px;
+                opacity: 0.2;
+            }
+            .company-info .company-info-separator {
+                display: none;
+            }
+            
+            .company-info div:nth-child(3) {
+                margin-top: 15px;
+            }
+            .pc-only {
+                display: none;
+            }
+            .mo-only {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/footer/footer_logo.png" alt="MEDIA ARTNATION">
+            </div>
+            <div class="company-info">
+                <div>
+                    <p>
+                        <span class="pc-only">MEDIA ARTNATION Co., Ltd</span>
+                        <span class="company-info-separator">|</span>
+                        Business registration number : 284411-0141124
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span class="mo-only">Office : </span> 54 Haeryong-ro, Pocheon-si, Gyeonggi-do
+                        <span class="company-info-separator">|</span>
+                        <span class="pc-only">Headquarters : +82) 010 9062 1104 </span><br class="mo-only">
+                        <span class="company-info-separator">|</span>
+                        Email : sjhk851001@gmail.com
+                    </p>
+                </div>
+                <div>
+                    <p>Copyright ⓒ 2024 MEDIA ARTNATION Co., Ltd. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 알림 메세지 -->
+<a id="GblNotice_open" class="GblNotice_open"></a>
+
+<div id="GblNotice" class="popup_background" style="min-width:250px;display:none;">
+	<div class="cls_buttonali" id="alertCloseBtn"><div class="cls_buttonali2" style="margin-top:0px;"><button class="GblNotice_close close_button_pop"></button></div></div>
+	<div class="popup_notice">
+		<div class="clearfix"><div class="img_clear"><img src="module/popupoverlay/ico_notice.gif"></div><div class="pop_ttl0">Alert</div></div>
+		<div class="pop_div_dotted"></div>
+		<div class="write_it"><span id="alertTxt" class="txt_bold"></span></div>
+		<div class="btn_ali_pop2" id="alertBtn"><input type="button" class="btn_notice_reg GblNotice_close" value="OK" /></div>
+	</div>
+</div>
+
+<!-- confirm창 -->
+<a id="conFirm_open" class="conFirm_open"></a>
+<div id="conFirm" class="popup_background" style="min-width:250px;display:none;">
+	<div class="cls_buttonali"><button class="conFirm_close close_button_pop"></button></div>
+	<div class="popup_notice">
+		<div class="clearfix"><div class="img_clear"><img src="module/popupoverlay/ico_notice.gif"></div><div class="pop_ttl0">Confirm</div></div>
+		<div class="pop_div_dotted"></div>
+		<div class="write_it"><span id="confirmTxt" class="txt_bold"></span></div>
+		<a class="conFirm_close" href="#">
+			<div class="btn2_wrap">
+				<div class="btn_ali_pop3" id="confirmCancelBtn"><input type="button" class="btn_notice_reg_cancel" value="Cancel" /></div>
+				<div class="btn_ali_pop3" id="confirmBtn"><input type="button" class="btn_notice_reg_add" value="OK"></div>
+			</div>
+		</a>
+	</div>
+</div>
+
+
+<a id="titleBox_open" class="titleBox_open"></a>
+<div id="titleBox" class="popup_background" style="min-width:250px;display:none;">
+	<div class="popup_notice">
+		<div class="clearfix">
+			<div class="img_clear"><img src="module/popupoverlay/ico_notice.gif"></div>
+			<div class="pop_ttl0" id='title_ttl'>팝업제목</div>
+			<div class="cls_buttonali"><button class="titleBox_close close_button_pop"></button></div>
+		</div>
+		<div class="pop_div_dotted"></div>
+		<div class="write_it">
+			<div id='titleFrame' style="background:#fff;overflow:hidden;position:relative;"></div>
+		</div>
+	</div>
+</div>
+
+<!-- 멀티팝업 -->
+
+<a id="multiBox_open" class="multiBox_open"></a>
+<div id="multiBox" class="popup_background" style="min-width:250px;display:none;">
+	<div class="popup_notice">
+		<div class="clearfix"><div class="img_clear"><img src="module/popupoverlay/ico_notice.gif"></div><div class="pop_ttl0" id='multi_ttl'>팝업제목</div><div class="cls_buttonali2"><button class="multiBox_close close_button_pop"></button></div></div>
+		<div class="pop_div_dotted"></div>
+		<div class="write_it">
+			<div id='multiFrame' style="background:#fff;overflow:hidden;position:relative;"></div>
+		</div>
+	</div>
+</div>
+<!--
+<a id="multiBox_open" class="multiBox_open"></a>
+<div id="multiBox" class="popup_background" style="min-width:250px;display:none;">
+	<div class="cls_buttonali"><button class="multiBox_close close_button_pop"></button></div>
+	<div class="popup_notice">
+		<div class="write_it">
+			<div id='multiFrame' style="margin:30px 0 0 0;background:#fff;overflow:hidden;position:relative;"></div>
+		</div>
+	</div>
+</div>
+-->
+
+<!-- 팝업 스크립트 -->
+<script>
+$(document).ready(function () {
+	$('#GblNotice,#conFirm').popup({
+		transition: 'all 0.3s',
+		blur: false,
+		escape:false,
+		scrolllock: false
+	});
+
+	$('#multiBox,#titleBox').popup({
+		transition: 'all 0.3s',
+		blur: false,
+		escape:false,
+		scrolllock: true
+	});
+
+	//숫자만 입력받기
+	$('.numberOnly').keydown(function(e){
+		fn_Number($(this),e);
+	}).keyup(function(e){
+		fn_Number($(this),e);
+	}).css('imeMode','disabled');
+
+
+	//input필드 자동완성기능
+	jQuery('input').attr("autocomplete","off");
+});
+</script>
+<!-- 팝업 스크립트 -->
+
+
+
+
+<iframe name='ifra_gbl' src='about:blank' width='0' height='0' frameborder='0' scrolling='no' style='display:none;'></iframe>

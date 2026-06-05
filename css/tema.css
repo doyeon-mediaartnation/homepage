@@ -1,0 +1,128 @@
+:root {
+	--font-normal: "Pretendard", sans-serif;
+	--font-point: "Quattrocento Sans", sans-serif;
+	--font-all: "Quattrocento Sans", "Pretendard", sans-serif;
+	--color-theme: ;
+	--color-black: #000;
+	--color-lightblack: #252629;
+	--color-gray: #4C4D54;
+	--color-gray2: #60616A;
+	--color-gray3: #757681;
+	--color-gray4: #B4B5BB;
+	--color-gray5: #CCCCD1;
+	--color-lightgray: #E5E5E7;
+	--color-lightgray2: #F3F3F4;
+	--color-lighttheme: #F7F7F1;
+	--color-white: #FFF;
+	--color-red: #FC2C03;
+	--color-orange: #ff8e50;
+	--color-green: #4caf50;
+	--color-blue: #2467d7;
+}
+
+
+/* 관리자용 버튼 */
+.btn {
+	display: flex;
+	gap: 4px;
+}
+
+.btn .visible {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	padding: 4px 20px !important;
+	background: var(--color-blue) !important;
+	border-radius: 4px !important;
+	font-family: var(--font-all) !important;
+	font-size: 14px !important;
+	color: var(--color-white) !important;
+}
+
+.btn .hidden {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	padding: 4px 20px !important;
+	background: var(--color-lightgray) !important;
+	border-radius: 4px !important;
+	font-family: var(--font-all) !important;
+	font-size: 14px !important;
+	color: var(--color-black) !important;
+}
+
+.btn .edit {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	padding: 4px 20px !important;
+	background: var(--color-green) !important;
+	border-radius: 4px !important;
+	font-family: var(--font-all) !important;
+	font-size: 14px !important;
+	color: var(--color-white) !important;
+}
+
+.btn .copy {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	padding: 4px 20px !important;
+	background: var(--color-orange) !important;
+	border-radius: 4px !important;
+	font-family: var(--font-all) !important;
+	font-size: 14px !important;
+	color: var(--color-white) !important;
+}
+
+.btn .del {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	padding: 4px 20px !important;
+	background: var(--color-red) !important;
+	border-radius: 4px !important;
+	font-family: var(--font-all) !important;
+	font-size: 14px !important;
+	color: var(--color-white) !important;
+}
+
+.btn .list {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	padding: 4px 20px !important;
+	background: var(--color-lightblack) !important;
+	border-radius: 4px !important;
+	font-family: var(--font-all) !important;
+	font-size: 14px !important;
+	color: var(--color-white) !important;
+}
+
+
+.btn-fill {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	background: var(--color-black);
+	border-radius: 8px;
+	font-family: var(--font-normal);
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--color-white);
+}
+
+.btn-nofill {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	background: var(--color-white);
+	border: 1px solid var(--color-gray5);
+	border-radius: 8px;
+	font-family: var(--font-normal);
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--color-lightblack);
+}

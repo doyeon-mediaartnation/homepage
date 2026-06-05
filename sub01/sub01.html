@@ -1,0 +1,1277 @@
+
+<!-- <!doctype html> -->
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtm1-transitional.dtd'>
+	<html lang="ko">
+		
+<!-- Mirrored from mediaartnation.com/sub01/sub01.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2026 05:30:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+            <!--  -->
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<!--
+<meta name="naver-site-verification" content="515783d1d2dba5afce342e872655c993999ce593" />
+-->
+<link rel="canonical" href="../index.html">
+<link rel="shortcut icon" href="../images/common/favicon.png">
+<meta name="title" content="MEDIAARTNATION">
+<meta name="description" content="MEDIAARTNATION">
+<meta name="keywords" content="MEDIAARTNATION">
+
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MEDIAARTNATION">
+<meta property="og:title" content="MEDIAARTNATION">
+<meta property="og:description" content="MEDIAARTNATION">
+<meta property="og:image" content="../images/common/sns.png"> 
+<meta property="og:url" content="../index.html">
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MEDIAARTNATION">
+<link rel="apple-touch-icon-precomposed" href="../images/shortcut.html">
+
+
+			<!--<link rel="stylesheet" type="text/css" href="/css/style.css?v=1780550529">-->
+			<link rel="stylesheet" type="text/css" href="../module/popupoverlay/popupoverlay.css">
+			<link rel="stylesheet" type="text/css" href="../module/js/global7b30.css?v=4">
+			<link rel="stylesheet" type="text/css" href="../css/tema.css">
+
+			<!-- font -->
+			<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+			<!-- <link rel="stylesheet" as="style" crossorigin href="https://unpkg.com/pretendard@1.3.9/dist/web/static/pretendard.css" /> -->
+			<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+			<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+			<script src="../module/js/common.js"></script>
+			<script src="../module/popupoverlay/jquery.popupoverlay.js"></script>
+			<script src="../js/open_modal.js"></script>
+
+
+			<!-- Swiper -->
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+			<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+			<!-- AOS -->
+
+
+			<title>MEDIAARTNATION</title>
+
+		</head>
+	<body>    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {font-family: 'Figtree', sans-serif;}
+        .header {position: fixed;top: 0;left: 0;width: 100%;z-index: 1000;display: flex;justify-content: center;align-items: center;height: 150px;transition: all 0.3s ease;background-color: transparent;}
+        .header-container {width: 1400px;max-width: 100%;display: flex;justify-content: space-between;align-items: center;margin: 0 16px;}
+        .header.scrolled {background-color: rgba(38, 38, 3, 0.7);}
+        .logo {display: flex;align-items: center;}
+        .logo img {height: 40px;}
+        .nav-menu {display: flex;gap: 30px;align-items: center;justify-content: flex-end;flex: 1;margin-left: 40px;}
+        .nav-menu .menu-group {display: flex;gap: 30px;align-items: center;}
+        .project-menu {display: flex;align-items: center;gap: 30px;}
+        .project-menu a img {display: none;}
+        .submenu {display: flex;gap: 20px;list-style: none;align-items: center;}
+        .submenu li a {position: relative;}
+        .submenu li a:hover{color: #ffeb00;}
+        .submenu li a::after {content: '';position: absolute;width: 0;height: 1px;bottom: -2px;left: 0;background-color: #ffeb00;transition: width 0.3s ease;}
+        .submenu li a:hover::after {width: 100%;}
+        .nav-menu a {color: #fff;text-decoration: none;font-size: 16px;font-weight: 700;white-space: nowrap;}
+        .nav-menu a:hover{color: #ffeb00;}
+        .nav-menu .divider {width: 1px;height: 12px;background-color: rgba(255, 255, 255, 0.3);}
+        .hamburger {display: none;width: 20px;height: 20px;cursor: pointer;z-index: 1001;position: relative;}
+        .hamburger img {width: 100%;height: 100%;object-fit: contain;}
+        .hamburger .close-img {display: none;}
+        .hamburger.active .menu-img {display: none;}
+        .hamburger.active .close-img {display: block;}
+
+        @media screen and (max-width: 1400px) {
+            .header {height: 150px;}
+            .header-container {width: 100%;}
+        }
+
+        @media screen and (max-width: 1024px) {
+            .header {height: 60px;position: absolute;}
+            .header-container {padding: 0 16px;margin: 0;}
+            .logo img {height: 30px;width: 100px;}
+            .hamburger {display: flex;}
+            .nav-menu {position: fixed;top: 60px;left: -100%;width: 100%;height: 100vh;flex-direction: column;justify-content: flex-start;margin: 0;padding: 30px 0 0 0;transition: left 0.3s ease;gap: 0;background:#fff;}
+            .nav-menu.active {left: 0;}
+            .nav-menu .menu-group {flex-direction: column;align-items: flex-start;gap: 0;width: 100%;background-color: #fff;}
+            .nav-menu a:hover {color: #000;}
+            .project-menu {flex-direction: column;align-items: flex-start;gap: 0;width: 100%;position: relative;padding: 0px 16px 0 16px;}
+            .nav-menu a {color: #000;padding: 10px 20px;width: 100%;display: flex;justify-content: space-between;align-items: center;font-weight: 500;font-size: 16px;}
+            .project-menu > a {padding: 10px 20px;width: 100%;display: flex;justify-content: space-between;align-items: center;font-weight: 500;font-size: 16px;background-color: #F2F2F2;}
+            .project-menu a img {display: block;}
+            .project-menu.active > a::after {transform: rotate(180deg);}
+            .project-menu.active + .divider + .menu-group {margin-top: 20px;}
+            .project-menu.active {margin-bottom: 20px;}
+            .submenu {display: none;flex-direction: column;gap: 0;width: 100%;overflow: hidden;max-height: 0;transition: max-height 0.3s ease;}
+            .project-menu.active .submenu {display: flex;max-height: 500px;}
+            .submenu li {width: 100%;opacity: 0;transform: translateY(-10px);transition: all 0.3s ease;}
+            .project-menu.active .submenu li {opacity: 1;transform: translateY(0);}
+            .submenu li a {padding: 10px 20px;display: block;font-weight: 400;color: #929292;font-size: 13px;}
+            .nav-menu .divider {display: none;}
+            .nav-menu > .menu-group:nth-child(3) {padding: 0 16px 150px 16px;background-color: #fff;width: 100%;}
+            .nav-menu > .menu-group:nth-child(3) a {display: block;width: 100%;padding: 10px 20px;font-weight: 500;font-size: 16px;background-color: #F2F2F2;color: #000;}
+            .nav-menu > .menu-group:nth-child(3) a:last-child {margin-bottom: 0;}
+            .nav-menu.active .footer {margin-top: 30px;padding: 40px 0;background-color: #262603;}
+            .nav-menu.active .footer .footer-content {padding: 0 16px;}
+            .close-btn {display: none;}
+        }
+        @media screen and (max-width: 320px) {
+            .project-menu > a,
+            .menu-group:last-child a {font-weight: 600;font-size: 13px;}
+            .submenu li a {font-size: 13px;}
+            .nav-menu > .menu-group:nth-child(3) a {font-weight: 600;font-size: 13px;}
+        }
+		.m_active{color:rgb(255, 235, 0) !important}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/header/header_logo.png" alt="MEDIA ARTNATION">
+                </a>
+            </div>
+            <div class="hamburger">
+                <img src="../images/header/hamburgerbtn.svg" alt="메뉴" class="menu-img">
+                <img src="../images/header/cloesbtn.svg" alt="닫기" class="close-img">
+            </div>
+            <nav class="nav-menu">
+                <!-- <div class="menu-group">
+                    <a href="http://world.mediaartnation.com" target="_blank" rel="noopener noreferrer">WORLD</a>
+                </div> -->
+                <div class="menu-group">
+                    <div class="project-menu">
+                        <a href="sub01.html">PROJECT<img src="../images/header/chevron_down.svg" alt="펼치기" style="width: 12px; height: 12px; margin-left: 8px;"></a>
+                        <ul class="submenu">
+                            <li><a class='m_active' href="sub01.html">Meta Human</a></li>
+                            <li><a class='' href="sub02.html">3D Animation</a></li>
+                            <li><a class='' href="sub03.html">Configurator</a></li>
+                            <li><a class='' href="sub04.html">Simulation</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="divider"></span>
+                <div class="menu-group">
+                    <a class='' href="../sub02/sub01.html">ABOUT US</a>
+                    <span class="divider"></span>
+                    <a class='' href="../sub03/sub01.html">CONTACT</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const projectMenu = document.querySelector('.project-menu');
+        const projectLink = document.querySelector('.project-menu > a');
+        const header = document.querySelector('.header');
+
+        // 현재 페이지의 메뉴 항목에 hover 효과 유지
+        function setCurrentMenuActive() {
+            if (window.innerWidth > 1024) {
+                const currentPath = window.location.pathname;
+                const submenuLinks = document.querySelectorAll('.submenu li a');
+                
+                submenuLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath) {
+                        link.style.color = '#ffeb00';
+                        const underline = document.createElement('div');
+                        underline.style.position = 'absolute';
+                        underline.style.bottom = '-2px';
+                        underline.style.left = '0';
+                        underline.style.width = '100%';
+                        underline.style.height = '1px';
+                        underline.style.backgroundColor = '#ffeb00';
+                        link.appendChild(underline);
+                    }
+                });
+            }
+        }
+
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', setCurrentMenuActive);
+
+        const isMobileWidth = () => window.innerWidth <= 1024;
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            if (isMobileWidth()) {
+                if (navMenu.classList.contains('active')) {
+                    header.style.backgroundColor = '#262603';
+                    header.style.position = 'fixed';
+                } else {
+                    header.style.backgroundColor = 'transparent';
+                    header.style.position = 'absolute';
+                }
+            }
+
+            if (navMenu.classList.contains('active')) {
+                projectMenu.classList.add('active');
+            } else {
+                projectMenu.classList.remove('active');
+            }
+        });
+
+        projectLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {  // 모바일 화면에서만 preventDefault 실행
+                e.preventDefault();
+                projectMenu.classList.toggle('active');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                projectMenu.classList.remove('active');
+                
+                if (isMobileWidth()) {
+                    header.style.backgroundColor = 'transparent';
+                    header.style.position = 'absolute';
+                }
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (!isMobileWidth()) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (!isMobileWidth()) {
+                header.style.backgroundColor = '';  
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                }
+            }
+        });
+    </script>
+</body>
+<script language='javascript'>
+    function passwordCHK(uid,type){
+        var Mtable = document.getElementById("pop_form");
+
+        if(Mtable){
+            if(Mtable.style.display == ''){
+                Mtable.style.display = 'none';
+            }
+            Mtable.style.display = '';
+
+            $('.pwdDimmed').show();
+            $('html, body').css('overflow','hidden');
+        }
+        form = document.frm01;
+        form.uid.value = uid;
+        form.type.value = type;
+        form.chk_pwd.value = '';
+    }
+
+    function file_down(fName,n){
+        form01 = document[fName];
+
+        file_name = form01['dbfile'+n].value;
+        file_rename = form01['realfile'+n].value;
+
+        form02 = document.frm_down;
+        form02.fno.value = n;
+        form02.file_rename.value = file_rename;
+        form02.file_name.value = file_name;
+        form02.submit();
+    }
+
+    function file_down_m(f1,f2,n){
+        location.href = '../board/download_mobile2161.html?UserOS=mobile&amp;file_name='+f1+'&file_rename='+f2+'&fno='+n;
+    }
+</script>
+
+<form name='frm_down' method='post' action='http://mediaartnation.com/board/download.php'>
+    <input type='hidden' name='fno' value="">
+    <input type='hidden' name='file_name' value="">
+    <input type='hidden' name='file_rename' value="">
+</form>
+
+
+
+
+<style>
+.sub-visual {
+	width: 100%;
+	height: 400px;
+	padding: 0;
+	position: relative;
+	color: #fff;
+	background-color: #262603;
+}
+.sub-visual .inner {
+	width: 1400px;
+	height: 100%;
+	/* background: url("/images/sub/visual00.jpg") no-repeat 50% 50%; */
+    background-color: #262603;
+	background-size: cover;
+	margin: 0 auto;
+    padding: 150px 0;
+}
+.sub-visual .inner .sub-visual-path{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+.sub-visual .inner .sub-visual-path p {
+	font-size: 12px;
+	font-weight: 400;
+	color: var(--color-white);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+}
+.sub-visual .inner .sub-visual-path p a {
+	display: flex;
+    align-items: center;
+	font-weight: 400;
+	text-decoration: none;
+	color: #fff;
+}
+.sub-visual .inner .sub-visual-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	color: #fff;
+	padding: 60px 0;
+}
+.sub-visual .inner .sub-visual-content .sub-visual-title {
+	font-size: 35px;
+	font-weight: 700;
+}
+.sub-visual .inner .sub-visual-content .sub-visual-pc-description {
+	text-align: center;
+	font-size: 16px;
+	font-weight: 400;
+}
+.sub-visual .inner .sub-visual-content .sub-visual-mo-description {
+	display: none;
+}
+@media screen and (max-width: 1400px) {
+    .sub-visual .inner {
+        width: 100%;
+        padding: 150px 0;
+    }
+    .sub-visual .inner .sub-visual-path {
+        padding: 0 16px;
+    }
+    .sub-visual .inner .sub-visual-content {
+        padding: 60px 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sub-visual {
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .sub-visual .inner {
+        padding: 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .sub-visual .inner .sub-visual-path {
+        display: flex;
+        align-items: center;
+        padding: 0 50px;
+        margin-bottom: 20px;
+    }
+    .sub-visual .inner .sub-visual-content {
+        padding: 0 50px;
+        text-align: center;
+    }
+    .sub-visual .inner .sub-visual-content .sub-visual-title {
+        font-size: 30px;
+    }
+    .sub-visual .inner .sub-visual-content .sub-visual-pc-description {
+        font-size: 15px;
+    }
+    .sub-visual .inner .sub-visual-content .sub-visual-pc-description br {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sub-visual {
+        height: 300px;
+    }
+    .sub-visual .inner {
+        padding: 0;
+    }
+    .sub-visual .inner .sub-visual-path {
+        padding: 0 20px;
+        margin-bottom: 15px;
+    }
+    .sub-visual .inner .sub-visual-content {
+        padding: 0 20px;
+        gap: 8px;
+    }
+    .sub-visual .inner .sub-visual-content .sub-visual-title {
+        font-size: 26px;
+    }
+    .sub-visual .inner .sub-visual-content .sub-visual-pc-description {
+        font-size: 14px;
+        word-break: keep-all;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sub-visual {
+		height: 240px;
+    }
+    .sub-visual .inner {
+        padding: 10px 0 0 0;
+		gap: 30px;
+    }
+    .sub-visual .inner .sub-visual-path {
+        padding: 0 16px;
+        margin-bottom: 0;
+    }
+    .sub-visual .inner .sub-visual-content {
+        padding: 0 16px;
+		gap: 10px;
+    }
+    .sub-visual .inner .sub-visual-content .sub-visual-title {
+        font-size: 20px;
+    }
+    .sub-visual .inner .sub-visual-content .sub-visual-pc-description {
+		display: none;
+    }
+	.sub-visual .inner .sub-visual-content .sub-visual-mo-description {
+		display: flex;
+		font-size: 13px;
+		font-weight: 400;
+	}
+    .sub-visual .inner .sub-visual-path p {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .sub-visual .inner .sub-visual-content .sub-visual-title {
+        font-size: 20px;
+    }
+    .sub-visual .inner .sub-visual-content .sub-visual-pc-description {
+        font-size: 12px;
+    }
+}
+</style>
+
+<div class="sub-visual">
+	<div class="inner">
+		<div class="sub-visual-path">
+			<p>
+				<a href="../index.html">
+					<img src="../images/sub/homeicon.svg" alt="">
+					HOME
+				</a>&nbsp;>&nbsp;
+				
+			PROJECT&nbsp;>&nbsp;meta human			</p>
+		</div>
+		<div class="sub-visual-content">
+			<p class="sub-visual-title">
+				Innovating the Digital Landscape
+			</p>
+			<p class="sub-visual-pc-description">
+				Welcome to Media Artnation, where creativity meets cutting-edge technology.<br>
+				We take pride in collaborating with visionary clients who inspire us to push the boundaries of innovation. Explore how our expertise can bring your projects to life
+			</p>
+			<p class="sub-visual-mo-description">
+				Welcome to Media Artnation, where<br>
+				creativity meets cutting-edge technology.
+			</p>
+		</div>
+	</div>
+
+</div>
+<style>
+	.work-title-section {padding: 100px 0 0 0;background: url('../images/sub/sub01_bg.png') no-repeat center;background-size: cover;position: relative;height: 100%;}
+    .work-title-container {max-width: 1400px;margin: 0 auto;position: relative;z-index: 1;}
+    .title-count-wrapper {display: flex;align-items: flex-end;gap: 20px;justify-content: space-between;}
+	.work-title {font-size: 40px;font-weight: 700;color: #fff;}
+	.count {font-size: 20px;color: #fff;font-weight: 500;}
+	.count span {font-weight: 700;}
+	.board-container {padding : 100px 0 300px 0;max-width: 1400px;width: 100%;margin: 0 auto;}
+    .board-wrap .gallery-box .content-box {aspect-ratio: 335 /216;height: auto;}
+    .board-wrap .gallery-box .content-box img {width: 100%;height: 100%;object-fit: cover;}
+
+	@media screen and (max-width: 1440px) {
+		.board-container {padding: 100px 0 300px 0;}
+		.work-title-section {padding: 50px 16px ;}
+	}
+	@media screen and (max-width: 1024px) {
+		.work-title-section {padding: 60px 16px 30px;}
+	}
+	@media screen and (max-width: 768px) {
+		.work-title-section {padding: 60px 16px 30px;}
+		.work-title {font-size: 30px;}
+		.count {font-size: 14px;}
+	}
+	
+	@media screen and (max-width: 480px) {
+		.title-count-wrapper {align-items: flex-start;gap: 4px;justify-content: space-between;flex-direction: column;}
+		.board-container {padding: 50px 0 0 0;}
+		.work-title-section {padding: 50px 16px 150px;}
+		.work-title {font-size: 22px;}
+		.count {font-size: 13px;font-weight: 400;}
+        .board-wrap .gallery-box {gap: 10px;}
+        /*
+		.board-wrap .gallery-box .content-box {width: 138px;height: 87px;background-color: #262603;}
+		.board-wrap .gallery-box .content-box img {width: 100%;height: 100%;object-fit: contain;}
+		 */
+	}
+</style>
+
+<div class="work-title-section">
+	<div class="work-title-container">
+		<div class="title-count-wrapper">
+			<h2 class="work-title">OUR WORK</h2>
+			<div class="count">Count <span>8</span></div>
+		</div>
+	</div>
+	<div class="board-container">
+		<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+</head>
+<style type='text/css'>
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {font-family: 'Figtree', sans-serif;}
+
+.board-wrap { width: 100%; }
+.board-wrap .adm {display: flex;gap: 8px;margin-bottom: 16px;justify-content: flex-end;}
+.board-wrap .adm a {width: auto;padding: 8px 16px;text-decoration: none;background: #262603;color: #fff;border-radius: 4px;font-size: 14px;transition: all 0.3s ease;}
+.board-wrap .adm a:hover {background: #000;}
+.board-wrap .gallery-box {display: flex;flex-wrap: wrap;gap: 20px;width: 100%;}
+.board-wrap .gallery-box .content-box {width: calc((100% - 60px) / 4);overflow: hidden;display: flex;align-items: flex-end;cursor: pointer;position: relative;}
+.board-wrap .gallery-box .content-box > .img-box {width: 100%;height: 100%;position: relative;}
+.board-wrap .gallery-box .content-box > .img-box .inner-box {width: 100%;height: 100%;background: #f5f5f5;position: absolute;top: 0;left: 0;right: 0;bottom: 0;}
+.board-wrap .gallery-box .content-box a { width:100%;}
+.grow {width: 100%;height: 100%;object-fit: cover;}
+.board-wrap .gallery-box .content-modal {display: none; /* width: 1066px;   height: 729px; */width:100%;max-width:1000px;padding: 55px 0 0; /* background: #000; */border-radius: 8px;box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.25);position: fixed;left: 50%;top: 48%;transform: translate(-50%, -50%);z-index: 99998;overflow: hidden;opacity: 0;transition: all 0.3s ease;}
+.board-wrap .gallery-box .content-modal.fade-in {opacity: 1;top: 50%;}
+.board-wrap .gallery-box .content-modal .close {width: 45px;height: 45px;background: url("../images/sub/modal_close_btn.svg") no-repeat 50% 50%;position: absolute;right: 0;top: 0;cursor: pointer;}
+.board-wrap .gallery-box .content-modal .img-box .swiper .swiper-wrapper .swiper-slide img {cursor: default;width: 100%;height: 100%;object-fit: cover;}
+.board-wrap .gallery-box .content-modal .img { max-height: 564px; }
+.board-wrap .list-empty { display: flex; justify-content: center; align-items: center; width: 100%; padding: 16px; font-family: 'Figtree', sans-serif; font-weight: 300; color: #333333; }
+.board-wrap .write-btn {display: none;}
+.modal-overlay {display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.5);z-index: 99997;opacity: 0;transition: opacity 0.3s ease;}
+.modal-overlay.fade-in {opacity: 1;}
+.board-wrap .gallery-box .content-box .edit-box {position: absolute;top: 10px;right: 10px;display: flex;gap: 8px;z-index: 1;}
+.board-wrap .gallery-box .content-box .edit-box a {display: inline-block;padding: 6px 12px;background: rgba(0, 0, 0, 0.6);color: #fff;border-radius: 4px;font-size: 13px;transition: all 0.3s ease;text-decoration: none;}
+.board-wrap .gallery-box .content-box .edit-box a:hover {background: rgba(0, 0, 0, 0.8);}
+@media screen and (max-width: 1024px) {
+    .board-wrap .gallery-box .content-box {width: calc((100% - 40px) / 3); /* 3개 이미지, 간격 20px */}
+	.board-wrap .gallery-box .content-modal {width:95%;}
+}
+@media screen and (max-width: 768px) {
+    .board-wrap .gallery-box .content-box {width: calc((100% - 20px) / 2); /* 2개 이미지, 간격 20px */}
+}
+@media screen and (max-width: 480px) {
+    .board-wrap .gallery-box {gap: 10px;}
+    .board-wrap .gallery-box .content-box {width: calc((100% - 10px) / 2); /* 2개 이미지, 간격 10px */}
+}
+/* 미디어쿼리 :: 1440px 미만 */
+.content-box iframe{width:100%;}
+</style>
+<script language='javascript'>
+    function click_del(txt, uid) {
+        if (confirm(txt + ' 글을 삭제하시겠습니까?')) {
+            form = document.frm01;
+            form.uid.value = uid;
+            form.type.value = 'del'
+            form.action = '../board/proc.html';
+            form.submit();
+        } else {
+            return;
+        }
+    }
+
+    function All_del() {
+        var chk = document.getElementsByName('chk[]');
+        var isChk = false;
+
+        for (var i = 0; i < chk.length; i++) {
+            if (chk[i].checked) isChk = true;
+        }
+
+        if (!isChk) {
+            alert('삭제하실 글을 선택하여 주십시오.');
+            return;
+        }
+
+        if (confirm('선택하신 글을 삭제하시겠습니까?')) {
+            form = document.frm01;
+            form.type.value = 'all_del'
+            form.target = 'ifra_gbl';
+            form.action = '../board/proc.html';
+            form.submit();
+        }
+    }
+
+    function reg_register() {
+        form = document.frm01;
+        form.type.value = 'write';
+        form.action = '';
+        form.submit();
+    }
+
+    function reg_modify(uid) {
+        form = document.frm01;
+        form.type.value = 'edit';
+        form.uid.value = uid;
+        form.action = '';
+        form.submit();
+    }
+
+    function reg_view(uid) {
+        form = document.frm01;
+        form.type.value = 'view';
+        form.uid.value = uid;
+        form.action = '';
+        form.submit();
+    }
+
+    function error_msg(mod) {
+        if (mod == 'r') {
+            alert('글읽기 권한이 없습니다');
+            return;
+
+        } else if (mod == 'w') {
+            alert('글쓰기 권한이 없습니다');
+            return;
+        }
+    }
+
+    function reg_search() {
+        form = document.frm01;
+        form.type.value = '';
+        form.record_start.value = 0;
+        form.action = '';
+        form.submit();
+    }
+
+    function batch_modify() {
+        var chk = document.getElementsByName('chk[]');
+        var isChk = false;
+        var selectedUid = null;
+        var count = 0;
+
+        for (var i = 0; i < chk.length; i++) {
+            if (chk[i].checked) {
+                isChk = true;
+                selectedUid = chk[i].value;
+                count++;
+            }
+        }
+
+        if (!isChk) {
+            alert('수정하실 글을 선택하여 주십시오.');
+            return;
+        }
+
+        if (count > 1) {
+            alert('수정은 하나의 글만 선택해주세요.');
+            return;
+        }
+
+        reg_modify(selectedUid);
+    }
+</script>
+
+<div class="board-wrap">
+    <form name='frm01' method='post' action='#'>
+        <input type="text" style="display: none;">  <!-- 텍스트박스 1개이상 처리.. 자동전송방지 -->
+        <input type='hidden' name='type' value=''>
+        <input type='hidden' name='uid' value=''>
+        <input type='hidden' name='record_start' value='0'>
+        <input type='hidden' name='table_id' value='table_1740365653'>
+        <input type='hidden' name='next_url' value=''>
+        <input type='hidden' name='strRoot' value='../'>
+        <input type='hidden' name='boardRoot' value='../board/'>
+		<input type='hidden' name='f_title' value="">
+		<input type='hidden' name='pageNum' value='0'>
+
+
+        
+                <div class="write-btn"></div>
+        
+        <div class="gallery-box">
+            
+
+                    <!-- <div class="content-box" style='background:url(../board/upfile/P250224172705.png) center center;background-size:cover;height:250px;'> -->
+           <div class="content-box" style=''>
+				<div class='swiper-slide'><img src='../board/upfile/P250224172705.png' class='grow'></div>								
+				<div class="content-modal">
+					<div class="close">
+                    </div>
+
+					<div class="img-box">
+						<div class="swiper modal-swiper">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><img src='../board/upfile/P250224172705.png' class='grow'></div>							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        
+
+                    <!-- <div class="content-box" style='background:url(../board/upfile/P250224172649.png) center center;background-size:cover;height:250px;'> -->
+           <div class="content-box" style=''>
+				<div class='swiper-slide'><img src='../board/upfile/P250224172649.png' class='grow'></div>								
+				<div class="content-modal">
+					<div class="close">
+                    </div>
+
+					<div class="img-box">
+						<div class="swiper modal-swiper">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><img src='../board/upfile/P250224172649.png' class='grow'></div>							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        
+
+                    <!-- <div class="content-box" style='background:url(../board/upfile/P250224165011.png) center center;background-size:cover;height:250px;'> -->
+           <div class="content-box" style=''>
+				<div class='swiper-slide'><img src='../board/upfile/P250224165011.png' class='grow'></div>								
+				<div class="content-modal">
+					<div class="close">
+                    </div>
+
+					<div class="img-box">
+						<div class="swiper modal-swiper">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><img src='../board/upfile/P250224165011.png' class='grow'></div>							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        
+
+                    <!-- <div class="content-box" style='background:url(../board/upfile/P250224164957.png) center center;background-size:cover;height:250px;'> -->
+           <div class="content-box" style=''>
+				<div class='swiper-slide'><img src='../board/upfile/P250224164957.png' class='grow'></div>								
+				<div class="content-modal">
+					<div class="close">
+                    </div>
+
+					<div class="img-box">
+						<div class="swiper modal-swiper">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><img src='../board/upfile/P250224164957.png' class='grow'></div>							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        
+
+                    <!-- <div class="content-box" style='background:url(../board/upfile/P250224164940.png) center center;background-size:cover;height:250px;'> -->
+           <div class="content-box" style=''>
+				<div class='swiper-slide'><img src='../board/upfile/P250224164940.png' class='grow'></div>								
+				<div class="content-modal">
+					<div class="close">
+                    </div>
+
+					<div class="img-box">
+						<div class="swiper modal-swiper">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><img src='../board/upfile/P250224164940.png' class='grow'></div>							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        
+
+                    <!-- <div class="content-box" style='background:url(../board/upfile/P250224164922.png) center center;background-size:cover;height:250px;'> -->
+           <div class="content-box" style=''>
+				<div class='swiper-slide'><img src='../board/upfile/P250224164922.png' class='grow'></div>								
+				<div class="content-modal">
+					<div class="close">
+                    </div>
+
+					<div class="img-box">
+						<div class="swiper modal-swiper">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><img src='../board/upfile/P250224164922.png' class='grow'></div>							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        
+
+                    <!-- <div class="content-box" style='background:url(../board/upfile/P250224164900.png) center center;background-size:cover;height:250px;'> -->
+           <div class="content-box" style=''>
+				<div class='swiper-slide'><img src='../board/upfile/P250224164900.png' class='grow'></div>								
+				<div class="content-modal">
+					<div class="close">
+                    </div>
+
+					<div class="img-box">
+						<div class="swiper modal-swiper">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><img src='../board/upfile/P250224164900.png' class='grow'></div>							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        
+
+                    <!-- <div class="content-box" style='background:url(../board/upfile/P250224164025.png) center center;background-size:cover;height:250px;'> -->
+           <div class="content-box" style=''>
+				<div class='swiper-slide'><img src='../board/upfile/P250224164025.png' class='grow'></div>								
+				<div class="content-modal">
+					<div class="close">
+                    </div>
+
+					<div class="img-box">
+						<div class="swiper modal-swiper">
+							<div class="swiper-wrapper">
+								<div class='swiper-slide'><img src='../board/upfile/P250224164025.png' class='grow'></div>							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+                </div>
+
+            </form>
+</div>
+<script>
+/*
+    document.addEventListener('DOMContentLoaded', function() {
+        const contentBoxes = document.querySelectorAll('.content-box');
+        contentBoxes.forEach(box => {
+            if(window.innerWidth <= 480) {
+                box.style.height = '87px';
+            } else if(window.innerWidth <= 320) {
+                box.style.height = '87px';
+            } else {
+                box.style.height = '216px';
+            }
+        });
+    });
+
+    window.addEventListener('resize', function() {
+        const contentBoxes = document.querySelectorAll('.content-box');
+        contentBoxes.forEach(box => {
+            if(window.innerWidth <= 480) {
+                box.style.height = '87px';
+            } else if(window.innerWidth <= 320) {
+                box.style.height = '87px';
+            } else {
+                box.style.height = '216px';
+            }
+        });
+    });
+*/
+
+	$('iframe').each(function(){
+		imgW = $(this).width();
+		$(this).css({'height': (imgW*9/16)+ 'px'});
+	})
+
+	$(window).resize(function(){
+		$('iframe').each(function(){
+			imgW = $(this).width();
+			$(this).css({'height': (imgW*9/16)+ 'px'});
+		})
+	})
+
+</script>
+<script>
+$(function () {
+    var currentModal = null; // 현재 열려있는 모달을 추적
+
+    $(".content-box").click(function(){
+        if (currentModal) return; // 이미 모달이 열려있는 경우 다른 모달을 열지 않음
+
+        var uid = $(this).find('input[name="chk[]"]').val();
+        var GBL_MTYPE = ''; // PHP 변수 가져오기
+        var modal = $(this).children(".content-modal");
+        var overlay = $("<div class='modal-overlay'></div>").appendTo('body');
+
+        if (GBL_MTYPE === 'A') { // 관리자일 경우에만 실행
+            $.ajax({
+                url: 'get_images01.php',
+                type: 'POST',
+                data: { uid: uid },
+                success: function(response) {
+                    var data = JSON.parse(response);
+                    modal.find('.swiper-wrapper').empty();
+
+                    // 각 이미지 파일을 슬라이드에 추가
+                    data.forEach(function(img) {
+                        modal.find('.swiper-wrapper').append('<div class="swiper-slide"><img src="' + img + '"></div>');
+                    });
+
+                    modal.show();
+                    overlay.show();
+
+                    // Trigger reflow before adding fade-in class
+                    void modal[0].offsetWidth;
+                    void overlay[0].offsetWidth;
+
+                    modal.addClass('fade-in');
+                    overlay.addClass('fade-in');
+
+                    currentModal = modal;
+
+                    // Swiper 초기화
+                    new Swiper(modal.find('.modal-swiper')[0], {
+                        slidesPerView: 'auto',
+                        spaceBetween: 0,
+                        observer: true,
+                        observeParents: true,
+                        simulateTouch: true,
+                        touchRatio: 1,
+                        grabCursor: true,
+                        mousewheel: {
+                            sensitivity: 1,
+                        },
+                    });
+                }
+            });
+        } else {
+            modal.show();
+            overlay.show();
+
+            // Trigger reflow before adding fade-in class
+            void modal[0].offsetWidth;
+            void overlay[0].offsetWidth;
+
+            modal.addClass('fade-in');
+            overlay.addClass('fade-in');
+
+            currentModal = modal;
+            // Swiper 초기화
+            new Swiper(modal.find('.modal-swiper')[0], {
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+                observer: true,
+                observeParents: true,
+                simulateTouch: true,
+                touchRatio: 1,
+                grabCursor: true,
+                mousewheel: {
+                    sensitivity: 1,
+                },
+            });
+
+			$('iframe').each(function(){
+				imgW = $(this).width();
+				$(this).css({'height': (imgW*9/16)+ 'px'});
+			})
+        }
+
+        $("body").css("overflow", "hidden");
+    });
+
+    // 오버레이 클릭 시 이벤트 막기
+    $(document).on('click', '.modal-overlay', function(event) {
+        event.stopPropagation();
+    });
+
+    // 모달 내부 클릭 시 이벤트 막기
+    $(document).on('click', '.content-modal', function(event) {
+        event.stopPropagation();
+    });
+
+    // 닫기 버튼 클릭 시 모달 닫기
+    $(document).on('click', '.content-modal .close', function(event) {
+        event.stopPropagation(); // 이벤트 전파 중지
+        var modal = $(this).closest('.content-modal');
+        var overlay = $('.modal-overlay');
+
+        modal.removeClass('fade-in');
+        overlay.removeClass('fade-in');
+
+        // Wait for animation to complete before hiding
+        setTimeout(function() {
+            $("body").css("overflow", "auto");
+            overlay.remove();
+            modal.hide();
+            currentModal = null; // 현재 열려있는 모달 초기화
+        }, 300);
+    });
+
+    // 슬라이드 이미지 클릭 이벤트 전파 중지
+    $(document).on('click', '.content-modal .swiper-slide', function(event) {
+        event.stopPropagation();
+    });
+
+});
+</script>
+	</div>
+</div>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #262603;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .company-info {
+            font-size: 12px;
+            font-weight: 400;
+            color: #929292;    
+            text-align: right;
+        }
+
+        .company-info .company-info-separator {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .company-info div:nth-child(2) {
+            margin-top: 5px;
+        }
+        .company-info div:nth-child(3) {
+            margin-top: 30px;
+        }
+        .pc-only {
+            display: inline-block;
+        }
+        .mo-only {
+            display: none;
+        }
+        @media screen and (max-width: 768px) {
+            .footer {
+                padding: 20px 0;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .company-info {
+                text-align: left;
+                font-size: 11px;
+                line-height: 1.6;
+            }
+
+            .company-info div:nth-child(2) {
+                margin-top: 0;
+            }
+
+            .company-info div:nth-child(3) {
+                margin-top: 20px;
+            }
+
+            .footer-logo img {
+                width : 80px;
+                opacity: 0.2;
+            }
+            .company-info .company-info-separator {
+                display: none;
+            }
+            
+            .company-info div:nth-child(3) {
+                margin-top: 15px;
+            }
+            .pc-only {
+                display: none;
+            }
+            .mo-only {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../images/footer/footer_logo.png" alt="MEDIA ARTNATION">
+            </div>
+            <div class="company-info">
+                <div>
+                    <p>
+                        <span class="pc-only">MEDIA ARTNATION Co., Ltd</span>
+                        <span class="company-info-separator">|</span>
+                        Business registration number : 284411-0141124
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span class="mo-only">Office : </span> 54 Haeryong-ro, Pocheon-si, Gyeonggi-do
+                        <span class="company-info-separator">|</span>
+                        <span class="pc-only">Headquarters : +82) 010 9062 1104 </span><br class="mo-only">
+                        <span class="company-info-separator">|</span>
+                        Email : sjhk851001@gmail.com
+                    </p>
+                </div>
+                <div>
+                    <p>Copyright ⓒ 2024 MEDIA ARTNATION Co., Ltd. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 알림 메세지 -->
+<a id="GblNotice_open" class="GblNotice_open"></a>
+
+<div id="GblNotice" class="popup_background" style="min-width:250px;display:none;">
+	<div class="cls_buttonali" id="alertCloseBtn"><div class="cls_buttonali2" style="margin-top:0px;"><button class="GblNotice_close close_button_pop"></button></div></div>
+	<div class="popup_notice">
+		<div class="clearfix"><div class="img_clear"><img src="../module/popupoverlay/ico_notice.gif"></div><div class="pop_ttl0">Alert</div></div>
+		<div class="pop_div_dotted"></div>
+		<div class="write_it"><span id="alertTxt" class="txt_bold"></span></div>
+		<div class="btn_ali_pop2" id="alertBtn"><input type="button" class="btn_notice_reg GblNotice_close" value="OK" /></div>
+	</div>
+</div>
+
+<!-- confirm창 -->
+<a id="conFirm_open" class="conFirm_open"></a>
+<div id="conFirm" class="popup_background" style="min-width:250px;display:none;">
+	<div class="cls_buttonali"><button class="conFirm_close close_button_pop"></button></div>
+	<div class="popup_notice">
+		<div class="clearfix"><div class="img_clear"><img src="../module/popupoverlay/ico_notice.gif"></div><div class="pop_ttl0">Confirm</div></div>
+		<div class="pop_div_dotted"></div>
+		<div class="write_it"><span id="confirmTxt" class="txt_bold"></span></div>
+		<a class="conFirm_close" href="#">
+			<div class="btn2_wrap">
+				<div class="btn_ali_pop3" id="confirmCancelBtn"><input type="button" class="btn_notice_reg_cancel" value="Cancel" /></div>
+				<div class="btn_ali_pop3" id="confirmBtn"><input type="button" class="btn_notice_reg_add" value="OK"></div>
+			</div>
+		</a>
+	</div>
+</div>
+
+
+<a id="titleBox_open" class="titleBox_open"></a>
+<div id="titleBox" class="popup_background" style="min-width:250px;display:none;">
+	<div class="popup_notice">
+		<div class="clearfix">
+			<div class="img_clear"><img src="../module/popupoverlay/ico_notice.gif"></div>
+			<div class="pop_ttl0" id='title_ttl'>팝업제목</div>
+			<div class="cls_buttonali"><button class="titleBox_close close_button_pop"></button></div>
+		</div>
+		<div class="pop_div_dotted"></div>
+		<div class="write_it">
+			<div id='titleFrame' style="background:#fff;overflow:hidden;position:relative;"></div>
+		</div>
+	</div>
+</div>
+
+<!-- 멀티팝업 -->
+
+<a id="multiBox_open" class="multiBox_open"></a>
+<div id="multiBox" class="popup_background" style="min-width:250px;display:none;">
+	<div class="popup_notice">
+		<div class="clearfix"><div class="img_clear"><img src="../module/popupoverlay/ico_notice.gif"></div><div class="pop_ttl0" id='multi_ttl'>팝업제목</div><div class="cls_buttonali2"><button class="multiBox_close close_button_pop"></button></div></div>
+		<div class="pop_div_dotted"></div>
+		<div class="write_it">
+			<div id='multiFrame' style="background:#fff;overflow:hidden;position:relative;"></div>
+		</div>
+	</div>
+</div>
+<!--
+<a id="multiBox_open" class="multiBox_open"></a>
+<div id="multiBox" class="popup_background" style="min-width:250px;display:none;">
+	<div class="cls_buttonali"><button class="multiBox_close close_button_pop"></button></div>
+	<div class="popup_notice">
+		<div class="write_it">
+			<div id='multiFrame' style="margin:30px 0 0 0;background:#fff;overflow:hidden;position:relative;"></div>
+		</div>
+	</div>
+</div>
+-->
+
+<!-- 팝업 스크립트 -->
+<script>
+$(document).ready(function () {
+	$('#GblNotice,#conFirm').popup({
+		transition: 'all 0.3s',
+		blur: false,
+		escape:false,
+		scrolllock: false
+	});
+
+	$('#multiBox,#titleBox').popup({
+		transition: 'all 0.3s',
+		blur: false,
+		escape:false,
+		scrolllock: true
+	});
+
+	//숫자만 입력받기
+	$('.numberOnly').keydown(function(e){
+		fn_Number($(this),e);
+	}).keyup(function(e){
+		fn_Number($(this),e);
+	}).css('imeMode','disabled');
+
+
+	//input필드 자동완성기능
+	jQuery('input').attr("autocomplete","off");
+});
+</script>
+<!-- 팝업 스크립트 -->
+
+
+
+
+<iframe name='ifra_gbl' src='about:blank' width='0' height='0' frameborder='0' scrolling='no' style='display:none;'></iframe>
