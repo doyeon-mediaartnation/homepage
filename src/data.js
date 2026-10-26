@@ -32,9 +32,15 @@ module.exports = {
   clients,
   work,
   capImages: {
-    metahuman: `${IMG}/legacy/service-metahuman.webp`,
-    animation: `${IMG}/legacy/service-animation.webp`,
-    configurator: `${IMG}/legacy/service-configurator.webp`,
+    metahuman: `${IMG}/legacy/service-metahuman-c2.webp`,
+    animation: `${IMG}/legacy/service-configurator.webp`, // legacy file names were swapped: this is the ad render
+    configurator: `${IMG}/legacy/service-animation.webp`, // and this is the configurator UI
+    simulation: `${IMG}/legacy/service-vr.webp`,
+  },
+  capImagesWide: {
+    metahuman: `${IMG}/legacy/service-metahuman-w2.webp`,
+    animation: `${IMG}/legacy/service-configurator.webp`,
+    configurator: `${IMG}/legacy/service-animation.webp`,
     simulation: `${IMG}/legacy/service-vr.webp`,
   },
   heroBg: `${IMG}/legacy/swiper-01.webp`,

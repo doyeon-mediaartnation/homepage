@@ -319,7 +319,7 @@ section, .footer { position: relative; }
 
 /* ---------- track record ---------- */
 .track { padding-bottom: 0 !important; overflow: hidden; }
-.track__viewport { width: 100%; overflow-x: auto; overflow-y: hidden; padding: 0 var(--gutter) 80px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.track__viewport { width: 100%; overflow-x: auto; overflow-y: hidden; padding: 0 var(--gutter) 32px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .track__viewport::-webkit-scrollbar { display: none; }
 .track__inner { display: flex; gap: 16px; width: max-content; }
 .tcard { position: relative; flex: none; width: min(78vw, 560px); aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; background: #1b1c22; scroll-snap-align: start; }

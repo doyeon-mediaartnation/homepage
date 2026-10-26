@@ -65,7 +65,7 @@ module.exports = {
     heroEyebrow: "Media Art Nation · Real-time interactive AI studio",
     heroTitle: ["From watching", "to taking part"],
     heroLead:
-      "Media Art Nation is a creative tech studio that turns watching into taking part with real-time interactive AI. Move your cursor.",
+      "Media Art Nation is a creative tech studio that turns watching into taking part with real-time interactive AI. Move your cursor or finger.",
     heroCta1: "See OMNIQ",
     heroCta2: "See OMNIPlay",
     heroScroll: "Scroll",

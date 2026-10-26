@@ -65,7 +65,7 @@ module.exports = {
     heroEyebrow: "Media Art Nation · 실시간 인터랙티브 AI 스튜디오",
     heroTitle: ["보는 화면을,", "참여하는 경험으로"],
     heroLead:
-      "미디어아트네이션은 실시간 인터랙티브 AI로 보는 화면을 참여하는 경험으로 바꾸는 크리에이티브 테크 스튜디오입니다. 마우스를 움직여 보세요.",
+      "미디어아트네이션은 실시간 인터랙티브 AI로 보는 화면을 참여하는 경험으로 바꾸는 크리에이티브 테크 스튜디오입니다. 마우스나 손가락을 움직여 보세요.",
     heroCta1: "OMNIQ 보기",
     heroCta2: "OMNIPlay 보기",
     heroScroll: "스크롤",

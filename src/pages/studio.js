@@ -35,7 +35,7 @@ exports.render = ({ t, base, lang }) => {
         .map(
           ([title, desc], i) => `
       <article class="svc${i % 2 ? " svc--flip" : ""}" id="${capKeys[i]}" data-reveal>
-        <div class="svc__media" data-parallax="0.08">${img(D.capImages[capKeys[i]], title, { w: 675, h: 350 })}</div>
+        <div class="svc__media" data-parallax="0.08">${img(D.capImagesWide[capKeys[i]], title, { w: 1200, h: 675 })}</div>
         <div class="svc__body">
           <span class="svc__idx">0${i + 1}</span>
           <h3 class="svc__title">${esc(title)}</h3>
