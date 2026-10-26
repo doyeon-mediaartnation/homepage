@@ -1,0 +1,263 @@
+/**
+ * Document shell shared by every page: head/meta, header, footer, scripts.
+ * ctx: { lang, t, slug, base, url, site, alt, title, description, jsonld?, ogImage?, theme? }
+ */
+const esc = (s) =>
+  String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+const ORG_ID = "https://www.mediaartnation.com/#organization";
+const SITE_ID = "https://www.mediaartnation.com/#website";
+
+function orgJsonLd(lang, t, site) {
+  return {
+    "@type": "Organization",
+    "@id": ORG_ID,
+    name: lang === "ko" ? "주식회사 미디어아트네이션" : "Media Art Nation LLC",
+    alternateName: [
+      "미디어아트네이션",
+      "미디어 아트 네이션",
+      "Media Art Nation",
+      "MEDIAARTNATION",
+      "Media Art Nation LLC",
+      "주식회사 미디어아트네이션",
+    ],
+    url: `${site}/`,
+    logo: { "@type": "ImageObject", url: `${site}/assets/img/logo-dark.png` },
+    image: `${site}/assets/img/og-image.jpg`,
+    email: "admin@mediaartnation.studio",
+    telephone: "+82-10-9062-1104",
+    foundingDate: "2023",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: lang === "ko" ? "해룡로 54" : "54 Haeryong-ro",
+      addressLocality: lang === "ko" ? "포천시" : "Pocheon-si",
+      addressRegion: lang === "ko" ? "경기도" : "Gyeonggi-do",
+      postalCode: "11160",
+      addressCountry: "KR",
+    },
+    description: t.meta.home.description,
+    knowsAbout: [
+      "OMNIQ",
+      "OMNIPlay",
+      "실시간 AI 영상 변환",
+      "모션 인식 게임 콘솔",
+      "메타휴먼",
+      "3D 애니메이션",
+      "3D 컨피규레이터",
+      "VR/AR 트레이닝 시뮬레이션",
+      "언리얼 엔진",
+      "VFX",
+    ],
+    brand: [{ "@id": `${site}/#omniq` }, { "@id": `${site}/#omniplay` }],
+  };
+}
+
+function productJsonLd(site, t) {
+  return [
+    {
+      "@type": ["MobileApplication", "Brand"],
+      "@id": `${site}/#omniq`,
+      name: "OMNIQ",
+      alternateName: ["옴닉", "옴닠", "OmniQ", "옴닉 앱", "OMNIQ 앱"],
+      description: t.meta.omniq.description,
+      operatingSystem: "iOS, Android",
+      applicationCategory: "MultimediaApplication",
+      url: `${site}/ko/omniq/`,
+      author: { "@id": ORG_ID },
+      publisher: { "@id": ORG_ID },
+    },
+    {
+      "@type": ["Product", "Brand"],
+      "@id": `${site}/#omniplay`,
+      name: "OMNIPlay",
+      alternateName: ["옴니플레이", "옴니플레이 플랫폼", "OMNIPlay Platform", "Omni Play", "omniplay"],
+      description: t.meta.omniplay.description,
+      category: "Motion-sensing home game console",
+      url: `${site}/ko/omniplay/`,
+      brand: { "@id": ORG_ID },
+      manufacturer: { "@id": ORG_ID },
+    },
+  ];
+}
+
+module.exports = function layout(ctx) {
+  const { lang, t, slug, base, url, site, alt, title, description, body } = ctx;
+  const ogImage = ctx.ogImage || `${site}/assets/img/og-image.jpg`;
+  const other = lang === "ko" ? "en" : "ko";
+  const nav = [
+    ["omniq", t.nav.omniq],
+    ["omniplay", t.nav.omniplay],
+    ["studio", t.nav.studio],
+    ["work", t.nav.work],
+    ["contact", t.nav.contact],
+  ];
+  const graph = [
+    orgJsonLd(lang, t, site),
+    {
+      "@type": "WebSite",
+      "@id": SITE_ID,
+      url: `${site}/`,
+      name: lang === "ko" ? "미디어아트네이션 | Media Art Nation" : "Media Art Nation | 미디어아트네이션",
+      inLanguage: lang === "ko" ? "ko-KR" : "en",
+      publisher: { "@id": ORG_ID },
+    },
+    ...productJsonLd(site, t),
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: title,
+      description,
+      inLanguage: lang === "ko" ? "ko-KR" : "en",
+      isPartOf: { "@id": SITE_ID },
+      about: { "@id": ORG_ID },
+    },
+    ...(slug !== "home"
+      ? [
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: t.brand.short, item: `${site}${base}` },
+              { "@type": "ListItem", position: 2, name: t.nav[slug] || title, item: url },
+            ],
+          },
+        ]
+      : []),
+    ...(ctx.jsonld || []),
+  ];
+
+  return `<!doctype html>
+<html lang="${lang === "ko" ? "ko" : "en"}" data-page="${slug}">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js");if(matchMedia("(pointer:fine)").matches)document.documentElement.classList.add("fine");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(description)}">
+<meta name="keywords" content="${esc(t.meta.keywords)}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="${lang === "ko" ? "주식회사 미디어아트네이션" : "Media Art Nation LLC"}">
+<meta name="theme-color" content="#f4f3ef">
+<link rel="canonical" href="${url}">
+<link rel="alternate" hreflang="ko" href="${alt.ko}">
+<link rel="alternate" hreflang="en" href="${alt.en}">
+<link rel="alternate" hreflang="x-default" href="${alt.en}">
+<meta name="naver-site-verification" content="515783d1d2dba5afce342e872655c993999ce593">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="${lang === "ko" ? "ko_KR" : "en_US"}">
+<meta property="og:locale:alternate" content="${lang === "ko" ? "en_US" : "ko_KR"}">
+<meta property="og:site_name" content="${esc(t.brand.site)}">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${ogImage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(description)}">
+<meta name="twitter:image" content="${ogImage}">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/common/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/common/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/common/favicon-192.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/common/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<script type="application/ld+json">
+${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 0)}
+</script>
+</head>
+<body class="is-loading">
+<div class="preloader" aria-hidden="true"><div class="preloader__mark"><img src="/assets/img/logo-yellow.png" alt=""></div></div>
+<div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__label"></span></div></div>
+
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="header__logo" href="${base}" aria-label="${esc(t.brand.full)}">
+      <img class="header__logo-dark" src="/assets/img/logo-dark.png" alt="${esc(t.brand.full)}" width="134" height="86">
+      <img class="header__logo-light" src="/assets/img/logo-yellow.png" alt="" width="134" height="86" aria-hidden="true">
+    </a>
+    <nav class="header__nav" aria-label="${esc(t.nav.aria)}">
+      ${nav
+        .map(
+          ([s, label]) =>
+            `<a class="header__link${s === slug ? " is-active" : ""}" href="${base}${s}/"${s === slug ? ' aria-current="page"' : ""}>${esc(label)}</a>`
+        )
+        .join("\n      ")}
+    </nav>
+    <div class="header__tools">
+      <a class="header__lang" href="${alt[other].replace(site, "")}" data-lang-switch="${other}" hreflang="${other}" lang="${other}">${other === "ko" ? "KO" : "EN"}</a>
+      <a class="btn btn--sm header__cta" href="${base}contact/" data-magnetic>${esc(t.nav.cta)}</a>
+      <button class="header__burger" type="button" aria-label="${esc(t.nav.menu)}" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" data-menu aria-hidden="true">
+  <div class="menu__inner">
+    <nav class="menu__nav">
+      <a class="menu__link" href="${base}"><span>${esc(t.nav.home)}</span></a>
+      ${nav.map(([s, label], i) => `<a class="menu__link" href="${base}${s}/"><span>${esc(label)}</span><small>0${i + 1}</small></a>`).join("\n      ")}
+    </nav>
+    <div class="menu__foot">
+      <a href="${alt[other].replace(site, "")}" data-lang-switch="${other}">${other === "ko" ? "한국어" : "English"}</a>
+      <a href="mailto:admin@mediaartnation.studio">admin@mediaartnation.studio</a>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="page page--${slug}">
+${body}
+</main>
+
+<footer class="footer" data-theme="dark" data-bg="#0e0f13">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="/assets/img/logo-yellow.png" alt="${esc(t.brand.full)}" width="160" height="103">
+      <p class="footer__tagline">${t.brand.tagline}</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>${esc(t.footer.products)}</h4>
+        <a href="${base}omniq/">OMNIQ</a>
+        <a href="${base}omniplay/">OMNIPlay</a>
+        <a href="/livecommerce/livecommerce.html">Live Commerce</a>
+      </div>
+      <div>
+        <h4>${esc(t.footer.company)}</h4>
+        <a href="${base}studio/">${esc(t.nav.studio)}</a>
+        <a href="${base}work/">${esc(t.nav.work)}</a>
+        <a href="${base}contact/">${esc(t.nav.contact)}</a>
+      </div>
+      <div>
+        <h4>${esc(t.footer.legal)}</h4>
+        <a href="/policy/privacy/">${esc(t.footer.privacy)}</a>
+        <a href="/policy/terms/">${esc(t.footer.terms)}</a>
+      </div>
+    </div>
+    <div class="footer__info">
+      <p>${t.footer.corp}</p>
+      <p>${t.footer.address} · <a href="tel:+821090621104">+82 10-9062-1104</a> · <a href="mailto:admin@mediaartnation.studio">admin@mediaartnation.studio</a></p>
+      <p class="footer__copy">© 2024–2026 ${esc(t.brand.corp)}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="/assets/js/site.js?v=2" defer></script>
+</body>
+</html>
+`;
+};

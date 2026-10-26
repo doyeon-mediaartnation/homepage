@@ -1,37 +1,36 @@
 {
+  "trailingSlash": true,
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "mediaartnation.com"
-        }
-      ],
-      "destination": "https://www.mediaartnation.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "mediaartnation.studio"
-        }
-      ],
-      "destination": "https://www.mediaartnation.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.mediaartnation.studio"
-        }
-      ],
-      "destination": "https://www.mediaartnation.com/:path*",
-      "permanent": true
-    }
+    { "source": "/:path*", "has": [{ "type": "host", "value": "mediaartnation.com" }], "destination": "https://www.mediaartnation.com/:path*", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "mediaartnation.studio" }], "destination": "https://www.mediaartnation.com/:path*", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.mediaartnation.studio" }], "destination": "https://www.mediaartnation.com/:path*", "permanent": true },
+
+    { "source": "/", "has": [{ "type": "cookie", "key": "lang", "value": "en" }], "destination": "/en/", "permanent": false },
+    { "source": "/", "has": [{ "type": "cookie", "key": "lang", "value": "ko" }], "destination": "/ko/", "permanent": false },
+    { "source": "/", "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "KR" }], "destination": "/ko/", "permanent": false },
+    { "source": "/", "destination": "/en/", "permanent": false },
+
+    { "source": "/omniq{/}?", "has": [{ "type": "cookie", "key": "lang", "value": "en" }], "destination": "/en/omniq/", "permanent": false },
+    { "source": "/omniq{/}?", "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "KR" }], "destination": "/ko/omniq/", "permanent": false },
+    { "source": "/omniq{/}?", "destination": "/en/omniq/", "permanent": false },
+    { "source": "/omniplay{/}?", "has": [{ "type": "cookie", "key": "lang", "value": "en" }], "destination": "/en/omniplay/", "permanent": false },
+    { "source": "/omniplay{/}?", "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "KR" }], "destination": "/ko/omniplay/", "permanent": false },
+    { "source": "/omniplay{/}?", "destination": "/en/omniplay/", "permanent": false },
+
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/omniq/index.html", "destination": "/ko/omniq/", "permanent": true },
+    { "source": "/sub01/sub01.html", "destination": "/ko/work/#metahuman", "permanent": true },
+    { "source": "/sub01/sub02.html", "destination": "/ko/work/#animation", "permanent": true },
+    { "source": "/sub01/sub03.html", "destination": "/ko/work/#configurator", "permanent": true },
+    { "source": "/sub01/sub04.html", "destination": "/ko/work/#simulation", "permanent": true },
+    { "source": "/sub02/sub01.html", "destination": "/ko/studio/", "permanent": true },
+    { "source": "/sub03/sub01.html", "destination": "/ko/contact/", "permanent": true },
+    { "source": "/sub03/proc.html", "destination": "/ko/contact/", "permanent": true },
+    { "source": "/board/proc.html", "destination": "/ko/", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/images/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
+    { "source": "/(.*)", "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }] }
   ]
 }

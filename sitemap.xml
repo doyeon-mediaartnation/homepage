@@ -1,69 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.mediaartnation.com/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.mediaartnation.com/ko/</loc>
+    <lastmod>2026-10-26</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/"/>
   </url>
   <url>
-    <loc>https://www.mediaartnation.com/sub01/sub01.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.mediaartnation.com/ko/omniq/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/omniq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/omniq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/omniq/"/>
+  </url>
+  <url>
+    <loc>https://www.mediaartnation.com/ko/omniplay/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/omniplay/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/omniplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/omniplay/"/>
+  </url>
+  <url>
+    <loc>https://www.mediaartnation.com/ko/studio/</loc>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/studio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/studio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/studio/"/>
   </url>
   <url>
-    <loc>https://www.mediaartnation.com/sub01/sub02.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.mediaartnation.com/ko/work/</loc>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/work/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/work/"/>
   </url>
   <url>
-    <loc>https://www.mediaartnation.com/sub01/sub03.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.mediaartnation.com/ko/contact/</loc>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/contact/"/>
   </url>
   <url>
-    <loc>https://www.mediaartnation.com/sub01/sub04.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.mediaartnation.com/en/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/"/>
+  </url>
+  <url>
+    <loc>https://www.mediaartnation.com/en/omniq/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/omniq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/omniq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/omniq/"/>
+  </url>
+  <url>
+    <loc>https://www.mediaartnation.com/en/omniplay/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/omniplay/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/omniplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/omniplay/"/>
+  </url>
+  <url>
+    <loc>https://www.mediaartnation.com/en/studio/</loc>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/studio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/studio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/studio/"/>
   </url>
   <url>
-    <loc>https://www.mediaartnation.com/sub02/sub01.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mediaartnation.com/sub03/sub01.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.mediaartnation.com/en/work/</loc>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/work/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/work/"/>
   </url>
   <url>
-    <loc>https://www.mediaartnation.com/livecommerce/livecommerce.html</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.mediaartnation.com/omniq/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.mediaartnation.com/en/contact/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mediaartnation.com/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mediaartnation.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mediaartnation.com/en/contact/"/>
   </url>
   <url>
     <loc>https://www.mediaartnation.com/policy/privacy/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.mediaartnation.com/policy/terms/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.mediaartnation.com/livecommerce/livecommerce.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.4</priority>
   </url>
 </urlset>

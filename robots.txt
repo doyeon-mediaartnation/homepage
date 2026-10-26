@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /board/proc.html
-Disallow: /sub03/proc.html
-Disallow: /module/
-Disallow: /intro/
+Disallow: /api/
 
 Sitemap: https://www.mediaartnation.com/sitemap.xml
