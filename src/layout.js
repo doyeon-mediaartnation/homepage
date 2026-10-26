@@ -5,6 +5,7 @@
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+const D = require("./data");
 const ORG_ID = "https://www.mediaartnation.com/#organization";
 const SITE_ID = "https://www.mediaartnation.com/#website";
 
@@ -63,6 +64,8 @@ function productJsonLd(site, t) {
       operatingSystem: "iOS, Android",
       applicationCategory: "MultimediaApplication",
       url: `${site}/ko/omniq/`,
+      installUrl: [D.stores.appstore, D.stores.play],
+      sameAs: [D.stores.appstore, D.stores.play],
       author: { "@id": ORG_ID },
       publisher: { "@id": ORG_ID },
     },

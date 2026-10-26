@@ -65,10 +65,10 @@ module.exports = {
   },
   studioBg: `${IMG}/legacy/bg-studio.webp`,
   contactBg: `${IMG}/legacy/bg-contact.webp`,
-  // store links are not public yet; the page shows buttons that fall back to the store search
+  // OMNIQ listings (Korean storefronts; the app is not released in the US yet)
   stores: {
-    appstore: "https://apps.apple.com/search?term=OMNIQ",
-    play: "https://play.google.com/store/search?q=OMNIQ&c=apps",
+    appstore: "https://apps.apple.com/kr/app/omniq/id6802925353",
+    play: "https://play.google.com/store/apps/details?id=com.mediaartnation.omniq&hl=ko&gl=KR",
   },
   mapUrl: "https://www.google.com/maps/search/?api=1&query=54+Haeryong-ro+Pocheon-si+Gyeonggi-do",
 };
