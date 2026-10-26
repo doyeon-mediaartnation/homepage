@@ -29,7 +29,6 @@ exports.render = ({ t, base, lang }) => {
         <dl class="info__rows">
           <div><dt>${esc(c.emailLabel)}</dt><dd><a href="mailto:admin@mediaartnation.studio">admin@mediaartnation.studio</a></dd></div>
           <div><dt>${esc(c.phoneLabel)}</dt><dd><a href="tel:+821090621104">+82 10-9062-1104</a></dd></div>
-          <div><dt>Hours</dt><dd>${esc(c.hours)}</dd></div>
         </dl>
       </div>
     </div>

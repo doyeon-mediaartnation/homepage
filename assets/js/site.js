@@ -46,18 +46,37 @@
      do not account for its spacer, so this one has to come first. */
   const track = $("[data-pin-track]");
   if (track && hasGsap && !reduced) {
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 900px)", () => {
-      const inner = $(".track__inner", track);
-      const getDist = () => inner.scrollWidth - window.innerWidth + 24;
-      gsap.to(inner, {
-        x: () => -getDist(), ease: "none",
-        scrollTrigger: {
-          trigger: track, start: "top top", end: () => "+=" + (getDist() + 200),
-          pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1,
-        },
-      });
-    });
+    const inner = $(".track__inner", track);
+    const mq = matchMedia("(min-width: 900px)");
+    let pinTween = null;
+    const getDist = () => inner.scrollWidth - window.innerWidth + 24;
+    // Build or tear down the pin by hand: a media-query listener alone proved
+    // unreliable, and a stale pin-spacer leaves a tall gap below the section.
+    const applyPin = () => {
+      if (mq.matches && !pinTween) {
+        pinTween = gsap.to(inner, {
+          x: () => -getDist(), ease: "none",
+          scrollTrigger: {
+            trigger: track, start: "top top", end: () => "+=" + (getDist() + 200),
+            pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1,
+            refreshPriority: 1, // measure the pin before everything below it
+          },
+        });
+        ScrollTrigger.refresh();
+      } else if (!mq.matches && pinTween) {
+        pinTween.scrollTrigger && pinTween.scrollTrigger.kill(true);
+        pinTween.kill();
+        pinTween = null;
+        gsap.set(inner, { clearProps: "transform" });
+        ScrollTrigger.refresh();
+      }
+    };
+    applyPin();
+    mq.addEventListener ? mq.addEventListener("change", applyPin) : mq.addListener(applyPin);
+    let pinTo;
+    window.addEventListener("resize", () => { clearTimeout(pinTo); pinTo = setTimeout(applyPin, 150); });
+    // Belt and braces: if a resize event was missed, reconcile on the next scroll.
+    window.addEventListener("scroll", () => { if (mq.matches !== !!pinTween) applyPin(); }, { passive: true });
   }
 
   /* ---------- preloader ---------- */
@@ -87,7 +106,11 @@
   const onScroll = () => {
     const y = window.scrollY || document.documentElement.scrollTop;
     header.classList.toggle("header--scrolled", y > 24);
-    header.classList.toggle("header--hidden", y > 400 && y > lastY + 4 && !document.body.classList.contains("menu-open"));
+    // Lenis eases the last few pixels in tiny steps, so read its direction instead of a raw delta.
+    const down = lenis ? lenis.direction === 1 : y > lastY + 4;
+    const up = lenis ? lenis.direction === -1 : y < lastY - 4;
+    if (down && y > 400 && !document.body.classList.contains("menu-open")) header.classList.add("header--hidden");
+    else if (up || y <= 400) header.classList.remove("header--hidden");
     lastY = y;
   };
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -284,13 +307,20 @@
     build(); start();
     const hero = canvas.closest(".hero");
     const move = (x, y) => { const r = canvas.getBoundingClientRect(); pointer.tx = x - r.left; pointer.ty = y - r.top; };
-    hero.addEventListener("pointermove", (e) => move(e.clientX, e.clientY), { passive: true });
-    hero.addEventListener("pointerleave", () => { pointer.tx = -9999; pointer.ty = -9999; });
-    hero.addEventListener("touchmove", (e) => { const tch = e.touches[0]; tch && move(tch.clientX, tch.clientY); }, { passive: true });
-    // idle drift for touch devices: a slow orbit so the hero still feels alive
+    let lastInput = 0;
+    hero.addEventListener("pointermove", (e) => { lastInput = performance.now(); move(e.clientX, e.clientY); }, { passive: true });
+    hero.addEventListener("pointerleave", () => { if (fine) { pointer.tx = -9999; pointer.ty = -9999; } });
+    hero.addEventListener("touchmove", (e) => { const tch = e.touches[0]; if (tch) { lastInput = performance.now(); move(tch.clientX, tch.clientY); } }, { passive: true });
+    // Touch devices: when nobody has touched the hero for a while, drift the
+    // focus point along a slow orbit so the field still feels alive.
     if (!fine) {
       let a = 0;
-      setInterval(() => { if (pointer.tx === -9999) { a += 0.02; pointer.x = W * 0.5 + Math.cos(a) * W * 0.3; pointer.y = H * 0.45 + Math.sin(a * 1.3) * H * 0.25; pointer.tx = pointer.x; pointer.ty = pointer.y; setTimeout(() => { pointer.tx = -9999; pointer.ty = -9999; }, 10); } }, 16);
+      gsap && gsap.ticker.add(() => {
+        if (performance.now() - lastInput < 2500) return;
+        a += 0.006;
+        pointer.tx = W * 0.5 + Math.cos(a) * W * 0.32;
+        pointer.ty = H * 0.45 + Math.sin(a * 1.3) * H * 0.22;
+      });
     }
     new IntersectionObserver((en) => { visible = en[0].isIntersecting; if (visible) start(); }).observe(canvas);
     let rto; window.addEventListener("resize", () => { clearTimeout(rto); rto = setTimeout(build, 150); });
@@ -361,6 +391,7 @@
 
   /* ---------- custom cursor ---------- */
   if (cursor && fine && !reduced) {
+    document.documentElement.classList.add("cursor-on");
     const label = $(".cursor__label", cursor);
     let cx = -100, cy = -100, tx = -100, ty = -100;
     window.addEventListener("pointermove", (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
@@ -401,7 +432,14 @@
   const lbRoot = $("[data-lightbox-root]");
   if (lbRoot) {
     const img = $(".lightbox__img", lbRoot);
-    const open = (src, alt) => { img.src = src; img.alt = alt || ""; lbRoot.classList.add("is-open"); lbRoot.setAttribute("aria-hidden", "false"); lenis && lenis.stop(); };
+    const open = (src, alt) => {
+      img.src = src; img.alt = alt || "";
+      // don't blow small gallery thumbnails up past 2x their real size
+      img.style.maxWidth = "";
+      const cap = () => { if (img.naturalWidth) img.style.maxWidth = Math.min(1200, img.naturalWidth * 2) + "px"; };
+      img.complete ? cap() : img.addEventListener("load", cap, { once: true });
+      lbRoot.classList.add("is-open"); lbRoot.setAttribute("aria-hidden", "false"); lenis && lenis.stop();
+    };
     const close = () => { lbRoot.classList.remove("is-open"); lbRoot.setAttribute("aria-hidden", "true"); lenis && lenis.start(); };
     $$("[data-lightbox]").forEach((f) => f.addEventListener("click", () => open(f.dataset.lightbox, $("img", f)?.alt)));
     lbRoot.addEventListener("click", (e) => { if (e.target === lbRoot || e.target.closest(".lightbox__close")) close(); });

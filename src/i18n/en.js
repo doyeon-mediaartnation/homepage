@@ -168,7 +168,7 @@ module.exports = {
       ["What is OMNIQ?", "An iOS and Android app developed and operated by Media Art Nation. Record a short clip with your camera and the theme you chose is applied in real time; keep the result on your device or share it to other services."],
       ["Is it available in my country?", "OMNIQ is on the App Store and Google Play in 10 languages, including Southeast Asian and Latin American markets. Pricing follows each store's local catalogue."],
       ["Are my videos stored on your servers?", "No. Results are stored only on your device. Data sent during a transformation is used only for that transformation and deleted when the session ends."],
-      ["Can you build a theme for our brand or IP?", "Yes. Themes are built from reference images and prompts and can ship instantly without an app update — seasonal, brand or whole-universe themes, including on-site activations at events and pop-ups. Get in touch."],
+      ["Can you build a theme for our brand or IP?", "Yes. Themes are built from reference images and prompts and can ship instantly without an app update — seasonal, brand or whole-universe themes, and we are preparing on-site activations for events and pop-ups. Get in touch."],
     ],
     ctaTitle: "Propose an OMNIQ<br>theme or IP partnership",
     ctaBtn: "Partner with us",
@@ -296,7 +296,7 @@ module.exports = {
   contact: {
     eyebrow: "Contact us",
     title: ["Get in touch", "directly"],
-    lead: "Project briefs, OMNIQ theme and IP partnerships, OMNIPlay launch updates and distribution. We reply within two business days.",
+    lead: "Project briefs, OMNIQ theme and IP partnerships, OMNIPlay launch updates and distribution. We get back to every message promptly.",
     form: {
       name: "Name",
       company: "Company / organisation",
@@ -315,7 +315,7 @@ module.exports = {
       consentLink: "Privacy policy",
       submit: "Send",
       sending: "Sending…",
-      success: "Thank you — your message has been received. We'll reply within two business days.",
+      success: "Thank you — your message has been received. We will get back to you shortly.",
       error: "Sending failed. Please email us directly at the address below.",
       required: "Please fill in the required fields.",
     },
@@ -325,6 +325,5 @@ module.exports = {
     map: "Open in maps",
     emailLabel: "Email",
     phoneLabel: "Phone",
-    hours: "Mon–Fri 10:00–18:00 (KST)",
   },
 };
