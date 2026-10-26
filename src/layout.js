@@ -231,7 +231,6 @@ ${body}
         <h4>${esc(t.footer.products)}</h4>
         <a href="${base}omniq/">OMNIQ</a>
         <a href="${base}omniplay/">OMNIPlay</a>
-        <a href="/livecommerce/livecommerce.html">Live Commerce</a>
       </div>
       <div>
         <h4>${esc(t.footer.company)}</h4>

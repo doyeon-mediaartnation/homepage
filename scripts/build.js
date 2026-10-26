@@ -84,7 +84,6 @@ write(
 const extra = [
   { loc: `${SITE}/policy/privacy/`, prio: "0.3" },
   { loc: `${SITE}/policy/terms/`, prio: "0.3" },
-  { loc: `${SITE}/livecommerce/livecommerce.html`, prio: "0.4" },
 ];
 const prio = (slug) => (slug === "" ? "1.0" : ["omniq", "omniplay"].includes(slug) ? "0.9" : "0.7");
 const xml = [
