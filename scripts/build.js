@@ -71,11 +71,11 @@ write(
 <link rel="alternate" hreflang="x-default" href="${SITE}/en/">
 <link rel="icon" href="/favicon.ico">
 <script>
-(function(){try{var m=document.cookie.match(/(?:^|; )lang=(ko|en)/);var l=m?m[1]:((navigator.language||"").toLowerCase().indexOf("ko")===0?"ko":"en");location.replace("/"+l+"/");}catch(e){location.replace("/en/");}})();
+(function(){try{var m=document.cookie.match(/(?:^|; )lang=(ko|en)/);var l=m?m[1]:((navigator.language||"").toLowerCase().indexOf("ko")===0?"ko":"en");location.replace(l+"/");}catch(e){location.replace("en/");}})();
 </script>
-<style>body{margin:0;background:#f4f3ef;color:#15161b;font-family:system-ui,sans-serif;display:grid;place-items:center;height:100vh}a{color:#3d5afe}</style>
+<style>body{margin:0;background:#f4f3ef;color:#15161b;font-family:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}.box{text-align:center}img{width:150px;margin:0 auto 28px}p{margin:0 0 18px;color:#55534e;font-size:14px}a{display:inline-block;margin:0 6px;padding:12px 22px;border-radius:999px;background:#15161b;color:#fff;text-decoration:none;font-weight:700;font-size:15px}a.alt{background:transparent;color:#15161b;border:1.5px solid #15161b}</style>
 </head>
-<body><p><a href="/ko/">한국어</a> · <a href="/en/">English</a></p></body>
+<body><div class="box"><img src="assets/img/logo-dark.png" alt="Media Art Nation"><p>언어를 선택하세요 · Choose your language</p><a href="ko/">한국어</a><a class="alt" href="en/">English</a></div></body>
 </html>
 `
 );
