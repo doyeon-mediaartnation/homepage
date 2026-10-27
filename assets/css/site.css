@@ -297,7 +297,7 @@ section, .footer { position: relative; }
 .caps__stage { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; background: var(--dark); }
 .caps__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 0.7s var(--ease), transform 1.2s var(--ease); }
 .caps__img.is-active { opacity: 1; transform: none; }
-.caps__venn { position: absolute; left: 16px; bottom: 12px; width: 44%; max-width: 260px; }
+.caps__venn { position: absolute; right: 16px; top: 12px; width: 44%; max-width: 260px; }
 .venn { fill: none; stroke-width: 1.5; mix-blend-mode: screen; }
 .venn--1 { stroke: var(--coral); fill: rgba(255, 92, 57, 0.28); }
 .venn--2 { stroke: var(--blue); fill: rgba(61, 90, 254, 0.28); }
