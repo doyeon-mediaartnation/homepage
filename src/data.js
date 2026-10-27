@@ -63,7 +63,6 @@ module.exports = {
       `${IMG}/ir/omniplay-office-03.webp`,
     ],
   },
-  studioBg: `${IMG}/legacy/bg-studio.webp`, // dark abstract texture (decorative)
   contactBg: `${IMG}/legacy/bg-contact.webp`,
   // OMNIQ listings (Korean storefronts; the app is not released in the US yet)
   stores: {

@@ -396,9 +396,6 @@ section, .footer { position: relative; }
 .numbers li { padding: 24px 0; display: flex; flex-direction: column; gap: 4px; }
 .numbers__n { font-size: clamp(40px, 8vw, 88px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--coral); }
 .numbers__l { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); }
-.phero__strip { display: none; margin-top: 56px; height: clamp(220px, 36vw, 480px); overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; }
-@media (min-width: 900px) { .phero__strip { display: block; } }
-.phero__strip img { width: 100%; height: 120%; object-fit: cover; }
 .facts { margin-top: 36px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; padding-top: 24px; border-top: 1px solid var(--line); }
 .facts__k { display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .facts__v { display: block; margin-top: 4px; font-size: 20px; font-weight: 800; letter-spacing: -0.01em; }

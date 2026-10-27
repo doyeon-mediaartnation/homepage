@@ -24,7 +24,6 @@ exports.render = ({ t, base, lang }) => {
       ${s.facts.map(([k, v]) => `<li><span class="facts__k">${esc(k)}</span><span class="facts__v">${esc(v)}</span></li>`).join("")}
     </ul>
   </div>
-  <div class="phero__strip" data-parallax="0.15">${img(D.studioBg, "", { w: 1920, h: 1634, lazy: false })}</div>
 </section>
 
 <section class="services" data-theme="light" data-bg="#ffffff">
