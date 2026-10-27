@@ -24,7 +24,7 @@ module.exports = {
     privacy: "Privacy policy",
     terms: "Terms of service",
     corp: "Media Art Nation LLC (주식회사 미디어아트네이션) · Business reg. 755-88-02616 · D-U-N-S 963259057",
-    address: "2F, 72 Macheon-ro, Songpa-gu, Seoul, Korea",
+    address: "2F, 72 Macheon-ro, Songpa-gu, Seoul 05659, Korea",
   },
   meta: {
     keywords:
