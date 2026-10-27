@@ -8,7 +8,7 @@
  * Environment variables (Vercel project → Settings → Environment Variables):
  *   ACS_CONNECTION_STRING  — "endpoint=https://<name>.<region>.communication.azure.com/;accesskey=<key>"
  *   ACS_SENDER             — verified sender, e.g. "DoNotReply@<guid>.azurecomm.net" or "noreply@mediaartnation.com"
- *   CONTACT_TO             — recipient(s), comma-separated, up to 10 (default admin@mediaartnation.studio)
+ *   CONTACT_TO             — recipient(s), comma-separated, up to 10 (default contact@mediaartnation.studio)
  *
  * Optional fallback if ACS is not configured:
  *   RESEND_API_KEY, CONTACT_FROM — send through Resend instead.
@@ -129,7 +129,7 @@ module.exports = async (req, res) => {
   }
 
   // One or more recipients, comma/semicolon separated, de-duplicated, capped at 10.
-  const to = [...new Set(String(process.env.CONTACT_TO || "admin@mediaartnation.studio").split(/[,;\s]+/).map((a) => a.trim()).filter((a) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(a)))].slice(0, 10);
+  const to = [...new Set(String(process.env.CONTACT_TO || "contact@mediaartnation.studio").split(/[,;\s]+/).map((a) => a.trim()).filter((a) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(a)))].slice(0, 10);
   if (!to.length) {
     res.statusCode = 503;
     return res.end(JSON.stringify({ error: "not_configured" }));

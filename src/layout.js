@@ -25,7 +25,7 @@ function orgJsonLd(lang, t, site) {
     url: `${site}/`,
     logo: { "@type": "ImageObject", url: `${site}/assets/img/logo-dark.png` },
     image: `${site}/assets/img/og-image.jpg`,
-    email: "admin@mediaartnation.studio",
+    email: "contact@mediaartnation.studio",
     telephone: "+82-10-9062-1104",
     foundingDate: "2023",
     address: {
@@ -214,7 +214,7 @@ ${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 0)
     </nav>
     <div class="menu__foot">
       <a href="${alt[other].replace(site, "")}" data-lang-switch="${other}">${other === "ko" ? "한국어" : "English"}</a>
-      <a href="mailto:admin@mediaartnation.studio">admin@mediaartnation.studio</a>
+      <a href="mailto:contact@mediaartnation.studio">contact@mediaartnation.studio</a>
     </div>
   </div>
 </div>
@@ -249,7 +249,7 @@ ${body}
     </div>
     <div class="footer__info">
       <p>${t.footer.corp}</p>
-      <p>${t.footer.address} · <a href="tel:+821090621104">+82 10-9062-1104</a> · <a href="mailto:admin@mediaartnation.studio">admin@mediaartnation.studio</a></p>
+      <p>${t.footer.address} · <a href="tel:+821090621104">+82 10-9062-1104</a> · <a href="mailto:contact@mediaartnation.studio">contact@mediaartnation.studio</a></p>
       <p class="footer__copy">© 2024–2026 ${esc(t.brand.corp)}. All rights reserved.</p>
     </div>
   </div>
@@ -258,7 +258,7 @@ ${body}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="/assets/js/site.js?v=4" defer></script>
+<script src="/assets/js/site.js?v=5" defer></script>
 </body>
 </html>
 `;

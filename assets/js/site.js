@@ -476,7 +476,7 @@
       } catch (err) {
         const subject = encodeURIComponent(`[${data.topic}] ${data.name} / ${data.company || ""}`);
         const body = encodeURIComponent(`${data.message}\n\n${data.name} · ${data.email} · ${data.phone || ""}`);
-        msg.innerHTML = `${msg.dataset.error} <a href="mailto:admin@mediaartnation.studio?subject=${subject}&body=${body}">admin@mediaartnation.studio</a>`;
+        msg.innerHTML = `${msg.dataset.error} <a href="mailto:contact@mediaartnation.studio?subject=${subject}&body=${body}">contact@mediaartnation.studio</a>`;
         msg.classList.add("is-error");
       } finally {
         btnLabel.textContent = btnLabel.dataset.label;

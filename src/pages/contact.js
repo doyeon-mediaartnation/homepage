@@ -27,7 +27,7 @@ exports.render = ({ t, base, lang }) => {
         <p class="info__addr">${esc(c.address)}<br><small>${esc(c.addressEn)}</small></p>
         <a class="info__map" href="${D.mapUrl}" target="_blank" rel="noopener">${esc(c.map)}<i class="btn__arrow"></i></a>
         <dl class="info__rows">
-          <div><dt>${esc(c.emailLabel)}</dt><dd><a href="mailto:admin@mediaartnation.studio">admin@mediaartnation.studio</a></dd></div>
+          <div><dt>${esc(c.emailLabel)}</dt><dd><a href="mailto:contact@mediaartnation.studio">contact@mediaartnation.studio</a></dd></div>
           <div><dt>${esc(c.phoneLabel)}</dt><dd><a href="tel:+821090621104">+82 10-9062-1104</a></dd></div>
         </dl>
       </div>
