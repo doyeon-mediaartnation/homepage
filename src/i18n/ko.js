@@ -16,6 +16,7 @@ module.exports = {
     contact: "문의하기",
     cta: "문의하기",
     menu: "메뉴",
+    skip: "본문으로 바로가기",
   },
   footer: {
     products: "제품",
@@ -25,6 +26,15 @@ module.exports = {
     terms: "이용약관",
     corp: "주식회사 미디어아트네이션 (Media Art Nation LLC) · 사업자등록번호 755-88-02616 · D-U-N-S 963259057",
     address: "서울특별시 송파구 마천로 72, 2층 (05659)",
+    legalLine: "대표자 서희원 · 통신판매업 신고번호 2026-경기포천-0771 · 호스팅 서비스 제공: Vercel Inc.",
+  },
+  notFound: {
+    title: "페이지를 찾을 수 없습니다 | 미디어아트네이션",
+    eyebrow: "404",
+    heading: ["페이지를", "찾을 수 없습니다"],
+    lead: "주소가 바뀌었거나 삭제된 페이지입니다. 홈으로 돌아가거나 문의를 남겨 주세요.",
+    home: "홈으로",
+    contact: "문의하기",
   },
   meta: {
     keywords:

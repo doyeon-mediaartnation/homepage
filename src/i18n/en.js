@@ -16,6 +16,7 @@ module.exports = {
     contact: "Contact",
     cta: "Contact us",
     menu: "Menu",
+    skip: "Skip to content",
   },
   footer: {
     products: "Products",
@@ -25,6 +26,15 @@ module.exports = {
     terms: "Terms of service",
     corp: "Media Art Nation LLC (주식회사 미디어아트네이션) · Business reg. 755-88-02616 · D-U-N-S 963259057",
     address: "2F, 72 Macheon-ro, Songpa-gu, Seoul 05659, Korea",
+    legalLine: "CEO Heewon Seo · Online sales registration 2026-경기포천-0771 · Hosted by Vercel Inc.",
+  },
+  notFound: {
+    title: "Page not found | Media Art Nation",
+    eyebrow: "404",
+    heading: ["This page", "doesn't exist"],
+    lead: "The address may have changed or the page was removed. Head back home or send us a message.",
+    home: "Back to home",
+    contact: "Contact us",
   },
   meta: {
     keywords:
@@ -32,32 +42,32 @@ module.exports = {
     home: {
       title: "Media Art Nation | From watching to taking part — OMNIQ · OMNIPlay",
       description:
-        "Media Art Nation is a creative tech studio that turns watching into taking part with real-time interactive AI. We build OMNIQ, a real-time AI video transformation app, and OMNIPlay, a camera-only motion game console for the living room.",
+        "Media Art Nation turns watching into taking part with real-time interactive AI: OMNIQ, a live AI video app, and OMNIPlay, a camera-only motion game console.",
     },
     omniq: {
       title: "OMNIQ — Shoot it, and step into another world | Media Art Nation",
       description:
-        "OMNIQ is a real-time AI video transformation app by Media Art Nation. Change your look while you record, keep the result on your device and share it instantly. On the App Store and Google Play in 10 languages.",
+        "OMNIQ is Media Art Nation's real-time AI video app: change your look while you record, keep the clip on your device and share it. On App Store and Google Play.",
     },
     omniplay: {
       title: "OMNIPlay — One camera. That's all. | Media Art Nation",
       description:
-        "OMNIPlay is a home motion game console you play with your body, no controller needed. A single camera tracks up to four players and a dedicated AI chip processes everything on the device. Launching 2027.",
+        "OMNIPlay is a home motion game console you play with your body. One camera tracks up to four players, processed on-device by a dedicated AI chip. Launches 2027.",
     },
     studio: {
       title: "Studio — Design × Engine × Vision AI | Media Art Nation",
       description:
-        "Founded in 2023 and led by Art Center and Epic Games alumni, Media Art Nation is a creative tech studio. Real-time interactive technology proven with Hyundai, Porsche, Bugatti and Kakao now powers our own products, OMNIQ and OMNIPlay.",
+        "Founded in 2023 and led by Art Center and Epic Games alumni, Media Art Nation brings real-time interactive tech proven with global brands to OMNIQ and OMNIPlay.",
     },
     work: {
       title: "Work — MetaHuman · 3D animation · 3D configurator · VR simulation | Media Art Nation",
       description:
-        "Media Art Nation's project portfolio: Unreal Engine MetaHumans, 3D animation for advertising, interactive 3D configurators, VR/AR training simulations and collaborations with global brands.",
+        "Media Art Nation's portfolio: Unreal Engine MetaHumans, 3D animation for ads, interactive 3D configurators, VR/AR training and global brand collaborations.",
     },
     contact: {
       title: "Contact — Projects · OMNIQ · OMNIPlay partnerships | Media Art Nation",
       description:
-        "Get in touch with Media Art Nation for project briefs, OMNIQ theme and IP partnerships, OMNIPlay launch updates and distribution. 2F, 72 Macheon-ro, Songpa-gu, Seoul, Korea.",
+        "Get in touch with Media Art Nation for project briefs, OMNIQ theme and IP partnerships, and OMNIPlay launch or distribution enquiries. Seoul, Korea.",
     },
   },
 

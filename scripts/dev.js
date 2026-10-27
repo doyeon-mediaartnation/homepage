@@ -42,7 +42,13 @@ http
     if (!file.startsWith(ROOT)) { res.statusCode = 403; return res.end("forbidden"); }
     if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
     else if (!fs.existsSync(file) && fs.existsSync(file + "/index.html")) file = file + "/index.html";
-    if (!fs.existsSync(file)) { res.statusCode = 404; return res.end("not found"); }
+    if (!fs.existsSync(file)) {
+      // mirror Vercel: serve the custom 404 page for unknown paths
+      res.statusCode = 404;
+      const nf = path.join(ROOT, "404.html");
+      if (fs.existsSync(nf)) { res.setHeader("Content-Type", MIME[".html"]); return fs.createReadStream(nf).pipe(res); }
+      return res.end("not found");
+    }
     res.setHeader("Content-Type", MIME[path.extname(file)] || "application/octet-stream");
     fs.createReadStream(file).pipe(res);
   })

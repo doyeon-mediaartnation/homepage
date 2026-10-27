@@ -174,11 +174,11 @@ module.exports = async (req, res) => {
     </div>
     <table style="width:100%;border-collapse:collapse" role="presentation">
       ${rows.map(([k, v]) => {
-        const val = k === "이메일" ? `<a href="mailto:${esc(v)}" style="color:#3d5afe">${esc(v)}</a>`
-          : k === "접수 페이지" ? `<a href="${esc(v)}" style="color:#3d5afe">${esc(v)}</a>`
-          : esc(v);
-        return `<tr><th style="${cell};width:120px;text-align:left;color:#55534e;font-weight:600;background:#faf9f6">${esc(k)}</th><td style="${cell}">${val}</td></tr>`;
-      }).join("")}
+    const val = k === "이메일" ? `<a href="mailto:${esc(v)}" style="color:#3d5afe">${esc(v)}</a>`
+      : k === "접수 페이지" ? `<a href="${esc(v)}" style="color:#3d5afe">${esc(v)}</a>`
+        : esc(v);
+    return `<tr><th style="${cell};width:120px;text-align:left;color:#55534e;font-weight:600;background:#faf9f6">${esc(k)}</th><td style="${cell}">${val}</td></tr>`;
+  }).join("")}
     </table>
     <div style="padding:20px 24px">
       <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8c8a84;margin-bottom:8px">문의 내용</div>

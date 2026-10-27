@@ -55,6 +55,21 @@ for (const lang of LANGS) {
   }
 }
 
+// 404: Vercel serves /404.html for any missing path on a static deployment.
+{
+  const notfound = require("../src/pages/notfound");
+  const render404 = (lang, otherLang, file) => {
+    const t = i18n[lang];
+    const ctx = { lang, t, slug: "404", base: `/${lang}/`, url: `${SITE}/404.html`, site: SITE,
+      alt: { ko: `${SITE}/404.html`, en: `${SITE}/404.html` },
+      other: { base: `/${otherLang}/`, label: otherLang === "en" ? "English" : "한국어" } };
+    const meta = notfound.meta(ctx);
+    write(file, layout({ ...ctx, ...meta, body: notfound.render(ctx) }));
+  };
+  render404("ko", "en", "404.html");
+  render404("en", "ko", "en/404/index.html");
+}
+
 // Root fallback: Vercel redirects "/" by country/cookie before this is served.
 // Keep a tiny page for local previews and non-Vercel hosts.
 write(
