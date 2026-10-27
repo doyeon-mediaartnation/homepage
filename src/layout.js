@@ -173,20 +173,20 @@ module.exports = function layout(ctx) {
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/css/site.css?v=5">
+<link rel="stylesheet" href="/assets/css/site.css?v=6">
 <script type="application/ld+json">
 ${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 0)}
 </script>
 </head>
 <body class="is-loading">
-<div class="preloader" aria-hidden="true"><div class="preloader__mark"><img src="/assets/img/logo-yellow.png" alt=""></div></div>
+<div class="preloader" aria-hidden="true"><div class="preloader__mark"><img src="/assets/img/logo-white.png" alt=""></div></div>
 <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__label"></span></div></div>
 
 <header class="header" data-header>
   <div class="header__inner">
     <a class="header__logo" href="${base}" aria-label="${esc(t.brand.full)}">
       <img class="header__logo-dark" src="/assets/img/logo-dark.png" alt="${esc(t.brand.full)}" width="134" height="86">
-      <img class="header__logo-light" src="/assets/img/logo-yellow.png" alt="" width="134" height="86" aria-hidden="true">
+      <img class="header__logo-light" src="/assets/img/logo-white.png" alt="" width="134" height="86" aria-hidden="true">
     </a>
     <nav class="header__nav" aria-label="${esc(t.nav.aria)}">
       ${nav
@@ -226,7 +226,7 @@ ${body}
 <footer class="footer" data-theme="dark" data-bg="#0e0f13">
   <div class="container footer__inner">
     <div class="footer__brand">
-      <img src="/assets/img/logo-yellow.png" alt="${esc(t.brand.full)}" width="160" height="103">
+      <img src="/assets/img/logo-white.png" alt="${esc(t.brand.full)}" width="160" height="103">
       <p class="footer__tagline">${t.brand.tagline}</p>
     </div>
     <div class="footer__cols">
@@ -258,7 +258,7 @@ ${body}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="/assets/js/site.js?v=5" defer></script>
+<script src="/assets/js/site.js?v=6" defer></script>
 </body>
 </html>
 `;

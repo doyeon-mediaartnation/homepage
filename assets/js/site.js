@@ -264,7 +264,7 @@
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     let W = 0, H = 0, dots = [], raf = 0, visible = true, t0 = performance.now();
     const pointer = { x: -9999, y: -9999, tx: -9999, ty: -9999, active: false };
-    const palette = ["#3d5afe", "#ff5c39", "#ffeb00"];
+    const palette = ["#3d5afe", "#ff5c39", "#7c8cff"];
     const build = () => {
       const r = canvas.getBoundingClientRect();
       W = r.width; H = r.height;
