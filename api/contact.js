@@ -134,18 +134,59 @@ module.exports = async (req, res) => {
     res.statusCode = 503;
     return res.end(JSON.stringify({ error: "not_configured" }));
   }
-  const subject = `[mediaartnation.com] ${TOPICS[topic][lang]} — ${name}${company ? ` (${company})` : ""}`;
+  // ---------- subject and body (Korean, for the team's inbox) ----------
+  const now = new Date();
+  const receivedAt = new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", hour12: false,
+  }).format(now) + " (KST)";
+  const pageUrl = `https://www.mediaartnation.com/${lang}/contact/`;
+  const topicLabel = `${TOPICS[topic].ko} / ${TOPICS[topic].en}`;
+  const subject = `[홈페이지 문의] ${TOPICS[topic].ko} — ${name}${company ? ` (${company})` : ""}`;
+
+  const rows = [
+    ["접수 일시", receivedAt],
+    ["문의 유형", topicLabel],
+    ["이름", name],
+    ["회사 · 소속", company || "-"],
+    ["이메일", email],
+    ["연락처", phone || "-"],
+    ["작성 언어", lang === "ko" ? "한국어" : "English"],
+    ["접수 페이지", pageUrl],
+  ];
   const text = [
-    `Topic: ${TOPICS[topic].ko} / ${TOPICS[topic].en}`,
-    `Name: ${name}`,
-    `Company: ${company || "-"}`,
-    `Email: ${email}`,
-    `Phone: ${phone || "-"}`,
-    `Language: ${lang}`,
-    ``,
+    "홈페이지 문의가 접수되었습니다.",
+    "",
+    ...rows.map(([k, v]) => `${k.padEnd(6, "　")}: ${v}`),
+    "",
+    "─────────── 문의 내용 ───────────",
     message,
+    "──────────────────────────────",
+    "",
+    "이 메일에 답장하면 문의자에게 바로 전달됩니다.",
   ].join("\n");
-  const html = `<p><b>Topic:</b> ${esc(TOPICS[topic].ko)} / ${esc(TOPICS[topic].en)}<br><b>Name:</b> ${esc(name)}<br><b>Company:</b> ${esc(company || "-")}<br><b>Email:</b> ${esc(email)}<br><b>Phone:</b> ${esc(phone || "-")}<br><b>Language:</b> ${lang}</p><pre style="font:inherit;white-space:pre-wrap">${esc(message)}</pre>`;
+  const cell = "padding:10px 14px;border-bottom:1px solid #e3e0d8;font-size:14px;line-height:1.5;vertical-align:top";
+  const html = `<!doctype html><html lang="ko"><body style="margin:0;padding:24px;background:#f4f3ef;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',Pretendard,sans-serif;color:#15161b">
+  <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e3e0d8">
+    <div style="padding:20px 24px;background:#15161b;color:#fff">
+      <div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7">Media Art Nation · Website</div>
+      <div style="font-size:20px;font-weight:700;margin-top:6px">홈페이지 문의가 접수되었습니다</div>
+    </div>
+    <table style="width:100%;border-collapse:collapse" role="presentation">
+      ${rows.map(([k, v]) => {
+        const val = k === "이메일" ? `<a href="mailto:${esc(v)}" style="color:#3d5afe">${esc(v)}</a>`
+          : k === "접수 페이지" ? `<a href="${esc(v)}" style="color:#3d5afe">${esc(v)}</a>`
+          : esc(v);
+        return `<tr><th style="${cell};width:120px;text-align:left;color:#55534e;font-weight:600;background:#faf9f6">${esc(k)}</th><td style="${cell}">${val}</td></tr>`;
+      }).join("")}
+    </table>
+    <div style="padding:20px 24px">
+      <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8c8a84;margin-bottom:8px">문의 내용</div>
+      <div style="white-space:pre-wrap;font-size:15px;line-height:1.7;padding:16px;border-radius:12px;background:#f4f3ef">${esc(message)}</div>
+    </div>
+    <div style="padding:14px 24px 20px;font-size:12px;color:#8c8a84;border-top:1px solid #e3e0d8">이 메일에 답장하면 문의자(${esc(email)})에게 바로 전달됩니다.</div>
+  </div>
+</body></html>`;
 
   let provider;
   if (process.env.ACS_CONNECTION_STRING && process.env.ACS_SENDER) provider = sendViaAcs;
