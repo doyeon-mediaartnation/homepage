@@ -8,7 +8,7 @@
  * Environment variables (Vercel project → Settings → Environment Variables):
  *   ACS_CONNECTION_STRING  — "endpoint=https://<name>.<region>.communication.azure.com/;accesskey=<key>"
  *   ACS_SENDER             — verified sender, e.g. "DoNotReply@<guid>.azurecomm.net" or "noreply@mediaartnation.com"
- *   CONTACT_TO             — recipient (default admin@mediaartnation.studio)
+ *   CONTACT_TO             — recipient(s), comma-separated, up to 10 (default admin@mediaartnation.studio)
  *
  * Optional fallback if ACS is not configured:
  *   RESEND_API_KEY, CONTACT_FROM — send through Resend instead.
@@ -67,7 +67,7 @@ async function sendViaAcs({ to, from, replyTo, subject, text, html }) {
   const pathWithQuery = "/emails:send?api-version=2023-03-31";
   const body = JSON.stringify({
     senderAddress: from,
-    recipients: { to: [{ address: to }] },
+    recipients: { to: to.map((address) => ({ address })) },
     replyTo: [{ address: replyTo }],
     content: { subject, plainText: text, html },
     userEngagementTrackingDisabled: true,
@@ -89,7 +89,7 @@ async function sendViaResend({ to, from, replyTo, subject, text, html }) {
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from, to: [to], reply_to: replyTo, subject, text, html }),
+    body: JSON.stringify({ from, to, reply_to: replyTo, subject, text, html }),
   });
   if (!r.ok) throw new Error(`resend ${r.status} ${(await r.text()).slice(0, 500)}`);
   return "resend";
@@ -128,7 +128,12 @@ module.exports = async (req, res) => {
     return res.end(JSON.stringify({ error: "validation" }));
   }
 
-  const to = process.env.CONTACT_TO || "admin@mediaartnation.studio";
+  // One or more recipients, comma/semicolon separated, de-duplicated, capped at 10.
+  const to = [...new Set(String(process.env.CONTACT_TO || "admin@mediaartnation.studio").split(/[,;\s]+/).map((a) => a.trim()).filter((a) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(a)))].slice(0, 10);
+  if (!to.length) {
+    res.statusCode = 503;
+    return res.end(JSON.stringify({ error: "not_configured" }));
+  }
   const subject = `[mediaartnation.com] ${TOPICS[topic][lang]} — ${name}${company ? ` (${company})` : ""}`;
   const text = [
     `Topic: ${TOPICS[topic].ko} / ${TOPICS[topic].en}`,
