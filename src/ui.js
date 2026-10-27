@@ -29,7 +29,7 @@ const img = (src, alt, { w, h, cls = "", lazy = true, attrs = "" } = {}) =>
     lazy ? ' loading="lazy" decoding="async"' : ' fetchpriority="high" decoding="async"'
   } class="${cls}" ${attrs}>`;
 
-/** Full-width coloured call-to-action band. */
+/** Full-width call-to-action band: dark on corporate pages, product colour on product pages. */
 const ctaBand = ({ title, lead, href, label, theme = "coral" }) => `
 <section class="cta-band" data-theme="${theme}" data-bg="${theme === "coral" ? "#ff5c39" : theme === "blue" ? "#3d5afe" : "#15161b"}">
   <div class="container cta-band__inner">

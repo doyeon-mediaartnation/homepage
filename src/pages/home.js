@@ -148,7 +148,7 @@ exports.render = ({ t, base, lang }) => {
       ${h.timeline
         .map(
           ([year, title, desc], i) => `
-      <li class="tl__item${i >= 2 ? " tl__item--accent" : ""}" data-reveal>
+      <li class="tl__item${i === 2 ? " tl__item--coral" : i >= 3 ? " tl__item--blue" : ""}" data-reveal>
         <span class="tl__dot"></span>
         <span class="tl__year">${esc(year)}</span>
         <strong class="tl__title">${esc(title)}</strong>
@@ -160,6 +160,6 @@ exports.render = ({ t, base, lang }) => {
   </div>
 </section>
 
-${ctaBand({ title: h.ctaTitle, lead: h.ctaLead, href: `${base}contact/`, label: h.ctaBtn, theme: "coral" })}
+${ctaBand({ title: h.ctaTitle, lead: h.ctaLead, href: `${base}contact/`, label: h.ctaBtn, theme: "dark" })}
 `;
 };

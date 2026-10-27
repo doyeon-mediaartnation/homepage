@@ -100,6 +100,6 @@ exports.render = ({ t, base, lang }) => {
   </div>
 </section>
 
-${ctaBand({ title: s.ctaTitle, href: `${base}contact/`, label: s.ctaBtn, theme: "coral" })}
+${ctaBand({ title: s.ctaTitle, href: `${base}contact/`, label: s.ctaBtn, theme: "dark" })}
 `;
 };
