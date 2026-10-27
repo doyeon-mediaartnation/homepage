@@ -12,6 +12,8 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const PORT = Number(process.env.PORT) || 8765;
+// 0.0.0.0 so phones on the same Wi-Fi can open the preview (user-approved); HOST=127.0.0.1 keeps it local.
+const HOST = process.env.HOST || "0.0.0.0";
 const MIME = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
   ".json": "application/json", ".xml": "application/xml", ".txt": "text/plain; charset=utf-8",
@@ -44,7 +46,11 @@ http
     res.setHeader("Content-Type", MIME[path.extname(file)] || "application/octet-stream");
     fs.createReadStream(file).pipe(res);
   })
-  .listen(PORT, "127.0.0.1", () => {
+  .listen(PORT, HOST, () => {
     const configured = process.env.ACS_CONNECTION_STRING && process.env.ACS_SENDER;
     console.log(`dev server http://localhost:${PORT}/ko/  (contact API: ${configured ? "Azure configured" : "NOT configured — set .env"})`);
+    if (HOST === "0.0.0.0") {
+      const nets = Object.values(require("os").networkInterfaces()).flat().filter((n) => n && n.family === "IPv4" && !n.internal);
+      nets.forEach((n) => console.log(`  on this network: http://${n.address}:${PORT}/ko/`));
+    }
   });
