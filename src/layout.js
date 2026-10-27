@@ -174,7 +174,7 @@ module.exports = function layout(ctx) {
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/css/site.css?v=9">
+<link rel="stylesheet" href="/assets/css/site.css?v=10">
 <script type="application/ld+json">
 ${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 0)}
 </script>
@@ -261,7 +261,7 @@ ${body}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="/assets/js/site.js?v=6" defer></script>
+<script src="/assets/js/site.js?v=7" defer></script>
 </body>
 </html>
 `;

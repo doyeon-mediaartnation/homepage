@@ -333,6 +333,10 @@
       .note { background: var(--note-bg); border: 1px solid var(--note-border); color: var(--note-text); border-radius: 8px; padding: 14px 16px; margin: 16px 0; font-size: 14px; line-height: 1.6; }
       .note strong { color: inherit; }
       .muted { color: var(--muted); font-size: 13px; }
+      /* content protection: no text selection, long-press menu, or drag */
+      body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+      img, a { -webkit-user-drag: none; user-drag: none; }
+      input, textarea, select { -webkit-user-select: text; user-select: text; }
     </style>
     <script type="application/ld+json">
     {

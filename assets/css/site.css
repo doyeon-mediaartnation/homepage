@@ -92,6 +92,11 @@ html.cursor-on body { cursor: none; }
 html.cursor-on a, html.cursor-on button, html.cursor-on summary, html.cursor-on label, html.cursor-on select { cursor: none; }
 html.cursor-on input, html.cursor-on textarea { cursor: auto; }
 img { display: block; max-width: 100%; height: auto; }
+
+/* ---------- content protection: no text selection, long-press menu, or drag ---------- */
+body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+img, svg, video, a, picture { -webkit-user-drag: none; user-drag: none; }
+input, textarea, select, [contenteditable="true"] { -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; }
 ul, ol { list-style: none; margin: 0; padding: 0; }

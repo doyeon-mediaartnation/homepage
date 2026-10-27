@@ -9,6 +9,12 @@
   const hasGsap = typeof gsap !== "undefined";
   if (hasGsap && typeof ScrollTrigger !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
+  /* ---------- content protection: block drag, long-press / right-click menus (form fields excepted) ---------- */
+  const editable = (el) => !!(el && el.closest && el.closest("input, textarea, select, [contenteditable='true']"));
+  document.addEventListener("dragstart", (e) => { if (!editable(e.target)) e.preventDefault(); });
+  document.addEventListener("contextmenu", (e) => { if (!editable(e.target)) e.preventDefault(); });
+  $$("img, a").forEach((el) => el.setAttribute("draggable", "false"));
+
   /* ---------- language cookie ---------- */
   $$("[data-lang-switch]").forEach((a) =>
     a.addEventListener("click", () => {
