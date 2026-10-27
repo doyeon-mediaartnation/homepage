@@ -364,11 +364,12 @@ section, .footer { position: relative; }
 .venn--2 { stroke: var(--blue); fill: rgba(61, 90, 254, 0.28); }
 .venn--3 { stroke: #fff; fill: rgba(255, 255, 255, 0.22); }
 .caps__venn text { font: 700 13px var(--font); fill: #fff; letter-spacing: 0.04em; }
+.caps__list { list-style: none; margin: 0; padding: 0; }
 .cap { display: grid; grid-template-columns: 36px 1fr 40px; gap: 14px; align-items: start; padding: 22px 0; border-top: 1px solid var(--line); transition: padding-left 0.4s var(--ease); }
-.cap:last-child { border-bottom: 1px solid var(--line); }
+.caps__list li:last-child .cap { border-bottom: 1px solid var(--line); }
 .cap__idx { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: var(--muted); padding-top: 6px; }
-.cap__title { font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; letter-spacing: -0.02em; transition: color 0.3s; }
-.cap__desc { margin-top: 6px; color: var(--text-2); font-size: 15px; }
+.cap__title { display: block; font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; transition: color 0.3s; }
+.cap__desc { display: block; margin-top: 6px; color: var(--text-2); font-size: 15px; }
 .cap__link { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--line); transition: background 0.3s, border-color 0.3s, color 0.3s; }
 .cap:hover .cap__title, .cap.is-active .cap__title { color: var(--accent); }
 .cap:hover .cap__link, .cap.is-active .cap__link { background: var(--ink); border-color: var(--ink); color: #fff; }

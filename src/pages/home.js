@@ -105,11 +105,11 @@ exports.render = ({ t, base, lang }) => {
         ${h.caps
           .map(
             ([title, desc, key], i) => `
-        <li class="cap" data-cap="${key}" data-reveal>
+        <li data-reveal><a class="cap" href="${base}work/#${key}" data-cap="${key}">
           <span class="cap__idx">0${i + 1}</span>
-          <div><h3 class="cap__title">${esc(title)}</h3><p class="cap__desc">${esc(desc)}</p></div>
-          <a class="cap__link" href="${base}work/#${key}" aria-label="${esc(title)}"><i class="btn__arrow"></i></a>
-        </li>`
+          <span class="cap__body"><span class="cap__title" role="heading" aria-level="3">${esc(title)}</span><span class="cap__desc">${esc(desc)}</span></span>
+          <span class="cap__link" aria-hidden="true"><i class="btn__arrow"></i></span>
+        </a></li>`
           )
           .join("")}
       </ol>
