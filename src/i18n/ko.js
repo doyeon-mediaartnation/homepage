@@ -24,7 +24,7 @@ module.exports = {
     privacy: "개인정보처리방침",
     terms: "이용약관",
     corp: "주식회사 미디어아트네이션 (Media Art Nation LLC) · 사업자등록번호 755-88-02616 · D-U-N-S 963259057",
-    address: "서울특별시 송파구 마천로 72, 2층",
+    address: "서울특별시 송파구 마천로 72, 2층 (05659)",
   },
   meta: {
     keywords:
@@ -320,7 +320,7 @@ module.exports = {
       required: "필수 항목을 입력해 주세요.",
     },
     infoTitle: "오시는 길",
-    address: "서울특별시 송파구 마천로 72, 2층",
+    address: "서울특별시 송파구 마천로 72, 2층 (05659)",
     addressEn: "2F, 72 Macheon-ro, Songpa-gu, Seoul, Korea",
     map: "지도에서 보기",
     emailLabel: "이메일",

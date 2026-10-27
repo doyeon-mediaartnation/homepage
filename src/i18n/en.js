@@ -320,7 +320,7 @@ module.exports = {
       required: "Please fill in the required fields.",
     },
     infoTitle: "Find us",
-    address: "2F, 72 Macheon-ro, Songpa-gu, Seoul, Korea",
+    address: "2F, 72 Macheon-ro, Songpa-gu, Seoul 05659, Korea",
     addressEn: "서울특별시 송파구 마천로 72, 2층",
     map: "Open in maps",
     emailLabel: "Email",

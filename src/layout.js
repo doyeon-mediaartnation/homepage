@@ -33,6 +33,7 @@ function orgJsonLd(lang, t, site) {
       streetAddress: lang === "ko" ? "마천로 72, 2층" : "2F, 72 Macheon-ro",
       addressLocality: lang === "ko" ? "송파구" : "Songpa-gu",
       addressRegion: lang === "ko" ? "서울특별시" : "Seoul",
+      postalCode: "05659",
       addressCountry: "KR",
     },
     description: t.meta.home.description,
