@@ -24,7 +24,7 @@ module.exports = {
     privacy: "Privacy policy",
     terms: "Terms of service",
     corp: "Media Art Nation LLC (주식회사 미디어아트네이션) · Business reg. 755-88-02616 · D-U-N-S 963259057",
-    address: "54 Haeryong-ro, Pocheon-si, Gyeonggi-do 11160, Korea",
+    address: "2F, 72 Macheon-ro, Songpa-gu, Seoul, Korea",
   },
   meta: {
     keywords:
@@ -57,7 +57,7 @@ module.exports = {
     contact: {
       title: "Contact — Projects · OMNIQ · OMNIPlay partnerships | Media Art Nation",
       description:
-        "Get in touch with Media Art Nation for project briefs, OMNIQ theme and IP partnerships, OMNIPlay launch updates and distribution. 54 Haeryong-ro, Pocheon-si, Gyeonggi-do, Korea.",
+        "Get in touch with Media Art Nation for project briefs, OMNIQ theme and IP partnerships, OMNIPlay launch updates and distribution. 2F, 72 Macheon-ro, Songpa-gu, Seoul, Korea.",
     },
   },
 
@@ -320,8 +320,8 @@ module.exports = {
       required: "Please fill in the required fields.",
     },
     infoTitle: "Find us",
-    address: "54 Haeryong-ro, Pocheon-si, Gyeonggi-do 11160, Korea",
-    addressEn: "경기도 포천시 해룡로 54",
+    address: "2F, 72 Macheon-ro, Songpa-gu, Seoul, Korea",
+    addressEn: "서울특별시 송파구 마천로 72, 2층",
     map: "Open in maps",
     emailLabel: "Email",
     phoneLabel: "Phone",

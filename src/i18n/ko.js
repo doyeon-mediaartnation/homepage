@@ -24,11 +24,11 @@ module.exports = {
     privacy: "개인정보처리방침",
     terms: "이용약관",
     corp: "주식회사 미디어아트네이션 (Media Art Nation LLC) · 사업자등록번호 755-88-02616 · D-U-N-S 963259057",
-    address: "경기도 포천시 해룡로 54 (11160)",
+    address: "서울특별시 송파구 마천로 72, 2층",
   },
   meta: {
     keywords:
-      "미디어아트네이션, 미디어 아트 네이션, Media Art Nation, MEDIAARTNATION, OMNIQ, 옴닉, 옴닠, OMNIPlay, 옴니플레이, 옴니플레이 플랫폼, 실시간 AI 영상 변환, 모션 인식 게임, 메타휴먼, 3D 애니메이션, 3D 컨피규레이터, VR 트레이닝 시뮬레이션, 언리얼 엔진, VFX, 포천",
+      "미디어아트네이션, 미디어 아트 네이션, Media Art Nation, MEDIAARTNATION, OMNIQ, 옴닉, 옴닠, OMNIPlay, 옴니플레이, 옴니플레이 플랫폼, 실시간 AI 영상 변환, 모션 인식 게임, 메타휴먼, 3D 애니메이션, 3D 컨피규레이터, VR 트레이닝 시뮬레이션, 언리얼 엔진, VFX, 서울 송파구",
     home: {
       title: "미디어아트네이션 | 보는 화면을, 참여하는 경험으로 — OMNIQ · OMNIPlay",
       description:
@@ -57,7 +57,7 @@ module.exports = {
     contact: {
       title: "문의하기 — 프로젝트 · OMNIQ · OMNIPlay 제휴 | 미디어아트네이션",
       description:
-        "미디어아트네이션에 직접 연락하세요. 프로젝트 의뢰, OMNIQ 테마·IP 제휴, OMNIPlay 출시 알림 및 유통 문의를 받습니다. 경기도 포천시 해룡로 54.",
+        "미디어아트네이션에 직접 연락하세요. 프로젝트 의뢰, OMNIQ 테마·IP 제휴, OMNIPlay 출시 알림 및 유통 문의를 받습니다. 서울특별시 송파구 마천로 72, 2층.",
     },
   },
 
@@ -320,8 +320,8 @@ module.exports = {
       required: "필수 항목을 입력해 주세요.",
     },
     infoTitle: "오시는 길",
-    address: "경기도 포천시 해룡로 54",
-    addressEn: "54 Haeryong-ro, Pocheon-si, Gyeonggi-do 11160, Korea",
+    address: "서울특별시 송파구 마천로 72, 2층",
+    addressEn: "2F, 72 Macheon-ro, Songpa-gu, Seoul, Korea",
     map: "지도에서 보기",
     emailLabel: "이메일",
     phoneLabel: "전화",

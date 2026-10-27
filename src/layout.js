@@ -30,10 +30,9 @@ function orgJsonLd(lang, t, site) {
     foundingDate: "2023",
     address: {
       "@type": "PostalAddress",
-      streetAddress: lang === "ko" ? "해룡로 54" : "54 Haeryong-ro",
-      addressLocality: lang === "ko" ? "포천시" : "Pocheon-si",
-      addressRegion: lang === "ko" ? "경기도" : "Gyeonggi-do",
-      postalCode: "11160",
+      streetAddress: lang === "ko" ? "마천로 72, 2층" : "2F, 72 Macheon-ro",
+      addressLocality: lang === "ko" ? "송파구" : "Songpa-gu",
+      addressRegion: lang === "ko" ? "서울특별시" : "Seoul",
       addressCountry: "KR",
     },
     description: t.meta.home.description,
