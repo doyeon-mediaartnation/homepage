@@ -29,7 +29,7 @@ exports.render = ({ t, base, lang }) => {
 <!-- ================= STATEMENT ================= -->
 <section class="statement" data-theme="dark" data-bg="#15161b">
   <div class="container">
-    ${eyebrow(h.statementEyebrow, "eyebrow--light")}
+    ${eyebrow(h.statementEyebrow)}
     <p class="statement__text" data-words>${h.statement}</p>
     <ul class="stats" data-reveal>
       ${h.stats

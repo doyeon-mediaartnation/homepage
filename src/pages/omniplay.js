@@ -11,7 +11,7 @@ exports.render = ({ t, base }) => {
   <div class="container phero__grid phero__grid--stack">
     <div class="phero__copy">
       <span class="badge" data-reveal>${esc(o.badge)}</span>
-      ${eyebrow(o.eyebrow, "eyebrow--light")}
+      ${eyebrow(o.eyebrow)}
       ${lines([o.title[0], `<em>${o.title[1]}</em>`], "h1", "phero__title")}
       <p class="phero__lead" data-reveal>${esc(o.lead)}</p>
       <div class="phero__actions" data-reveal>${btn(`${base}contact/?topic=omniplay`, o.cta, { variant: "primary" })}</div>
@@ -45,7 +45,7 @@ exports.render = ({ t, base }) => {
 <section class="games" data-theme="blue" data-bg="#3d5afe">
   <div class="container games__grid">
     <div>
-      ${eyebrow(o.gamesEyebrow, "eyebrow--light")}
+      ${eyebrow(o.gamesEyebrow)}
       ${lines(o.gamesTitle.split("<br>"), "h2", "sec-title")}
       <p class="sec-lead" data-reveal>${esc(o.gamesNote)}</p>
     </div>

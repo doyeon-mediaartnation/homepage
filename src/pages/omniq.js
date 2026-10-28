@@ -89,7 +89,7 @@ exports.render = ({ t, base }) => {
 <section class="tokens" data-theme="coral" data-bg="#ff5c39">
   <div class="container tokens__grid">
     <div>
-      ${eyebrow(o.tokenEyebrow, "eyebrow--light")}
+      ${eyebrow(o.tokenEyebrow)}
       ${lines(o.tokenTitle.split("<br>"), "h2", "sec-title")}
       <p class="sec-lead" data-reveal>${esc(o.tokenLead)}</p>
     </div>
