@@ -122,16 +122,21 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // Which section sits under the header? Toggle light/dark chrome accordingly.
-  const themed = $$("[data-theme]");
+  // Page background + text colour morph between sections: the last section whose
+  // top has crossed 55% of the viewport owns the page colour. CSS transitions the
+  // tokens (see @property in site.css); the header/cursor chrome follows along.
+  const root = document.documentElement;
+  const themed = $$("[data-bg]");
+  let currentBg = null;
   const setChrome = () => {
-    const probe = 44;
-    let theme = "light";
-    for (const el of themed) {
-      const r = el.getBoundingClientRect();
-      if (r.top <= probe && r.bottom > probe) { theme = el.dataset.theme; break; }
-    }
-    const dark = theme !== "light";
+    const vh = window.innerHeight * 0.55;
+    let sec = themed[0];
+    for (const el of themed) { if (el.getBoundingClientRect().top <= vh) sec = el; else break; }
+    if (!sec || sec === currentBg) return;
+    currentBg = sec;
+    root.style.setProperty("--page-bg", sec.dataset.bg);
+    root.dataset.bgTheme = sec.dataset.theme || "light";
+    const dark = root.dataset.bgTheme !== "light";
     header.classList.toggle("header--on-dark", dark);
     cursor && cursor.classList.toggle("on-dark", dark);
   };
