@@ -403,7 +403,10 @@ section, .footer { position: relative; }
   .track__viewport { overflow: visible; padding-bottom: 0; }
   .track__inner { padding-right: var(--gutter); will-change: transform; }
   .tcard { width: 640px; }
-  .track__spacer { height: 100px; }
+  /* While pinned the section fills the viewport and the content sits centred; the
+     GSAP pin-spacer below it takes the same colour so no off-white gap shows. */
+  .track { min-height: 100vh; padding-top: calc(var(--header-h) + 24px) !important; display: flex; flex-direction: column; justify-content: center; }
+  .pin-spacer { background-color: #0e0f13; }
 }
 
 /* ---------- timeline ---------- */
