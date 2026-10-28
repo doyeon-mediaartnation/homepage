@@ -140,6 +140,13 @@ html[data-accent="neutral"].js .statement__text em { color: inherit; }
 .sec-lead { margin-top: 18px; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.7; color: var(--text-2); max-width: 640px; }
 .sec-head--center .sec-lead { margin-left: auto; margin-right: auto; }
 [data-theme] { color: var(--text); }
+/* Each section paints its own background so text never sits on a neighbour's colour mid-scroll. */
+[data-bg="#f4f3ef"] { background-color: #f4f3ef; }
+[data-bg="#ffffff"] { background-color: #ffffff; }
+[data-bg="#15161b"] { background-color: #15161b; }
+[data-bg="#0e0f13"] { background-color: #0e0f13; }
+[data-bg="#3d5afe"] { background-color: #3d5afe; }
+[data-bg="#ff5c39"] { background-color: #ff5c39; }
 [data-theme="dark"], [data-theme="coral"], [data-theme="blue"] { --text: #fff; --text-2: rgba(255, 255, 255, 0.72); --line: var(--line-dark); --muted: rgba(255, 255, 255, 0.5); }
 [data-theme="coral"] .sec-title em, [data-theme="blue"] .sec-title em { color: #fff; }
 

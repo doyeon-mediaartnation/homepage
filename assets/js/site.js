@@ -139,20 +139,6 @@
   window.addEventListener("resize", setChrome);
   setChrome();
 
-  // Body background morphs between sections (the "section transition" feel).
-  if (hasGsap) {
-    $$("[data-bg]").forEach((sec) => {
-      const color = sec.dataset.bg;
-      ScrollTrigger.create({
-        trigger: sec,
-        start: "top 55%",
-        end: "bottom 55%",
-        onEnter: () => gsap.to(document.body, { backgroundColor: color, duration: 0.7, ease: "power2.out", overwrite: "auto" }),
-        onEnterBack: () => gsap.to(document.body, { backgroundColor: color, duration: 0.7, ease: "power2.out", overwrite: "auto" }),
-      });
-    });
-  }
-
   /* ---------- mobile menu ---------- */
   const menu = $("[data-menu]");
   const burger = $("[data-menu-toggle]");
