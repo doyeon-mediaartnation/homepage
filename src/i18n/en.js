@@ -314,9 +314,9 @@ module.exports = {
       phone: "Phone",
       topic: "Topic",
       topics: [
-        ["project", "Project brief"],
         ["omniq", "OMNIQ theme · IP partnership"],
         ["omniplay", "OMNIPlay launch updates · distribution"],
+        ["project", "Project brief"],
         ["other", "Other"],
       ],
       message: "Message",
