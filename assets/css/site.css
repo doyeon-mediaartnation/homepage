@@ -684,7 +684,25 @@ html:not([data-bg-theme="light"]) :is(.fcard, .leader, .form) { background: rgba
 .field.is-invalid input, .field.is-invalid textarea, .field.is-invalid select { border-color: var(--coral); }
 .select { position: relative; }
 .select select { appearance: none; -webkit-appearance: none; padding-right: 28px; }
-.select::after { content: ""; position: absolute; right: 4px; top: 50%; width: 10px; height: 10px; border-right: 2px solid var(--text); border-bottom: 2px solid var(--ink); transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+.select::after { content: ""; position: absolute; right: 4px; top: 50%; width: 10px; height: 10px; border-right: 2px solid var(--text); border-bottom: 2px solid var(--text); transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+/* Enhanced dropdown: site.js hides the native select (kept for the form value)
+   and renders a button + listbox styled like the other fields. */
+.select.is-enhanced::after { display: none; }
+.select.is-enhanced select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
+.select__btn { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 14px 4px 14px 0; border: 0; border-bottom: 1.5px solid var(--line); background: transparent; font: inherit; font-size: 16px; text-align: left; color: var(--text); cursor: pointer; transition: border-color 0.3s; }
+.select__btn:focus-visible, .select.is-open .select__btn { border-color: var(--text); outline: none; }
+.field.is-invalid .select__btn { border-color: var(--coral); }
+.select__chev { flex: none; width: 10px; height: 10px; margin-top: -4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform 0.35s var(--ease); }
+.select.is-open .select__chev { transform: translateY(4px) rotate(225deg); }
+.select__menu { position: absolute; left: 0; right: 0; top: calc(100% + 10px); z-index: 30; margin: 0; padding: 6px; list-style: none; background: #fff; color: var(--ink); border: 1px solid #e3e0d8; border-radius: 16px; box-shadow: 0 24px 60px rgba(14, 15, 19, 0.18); opacity: 0; visibility: hidden; transform: translateY(-6px) scale(0.98); transform-origin: top; transition: opacity 0.25s var(--ease), transform 0.35s var(--ease), visibility 0s linear 0.25s; }
+.select.is-open .select__menu { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.select__opt { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.select__opt::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #c9c6bd; transition: background 0.2s, border-color 0.2s, box-shadow 0.2s; }
+.select__opt.is-active { background: rgba(21, 22, 27, 0.06); }
+.select__opt.is-selected { font-weight: 800; }
+.select__opt.is-selected::before { background: var(--ink); border-color: var(--ink); box-shadow: 0 0 0 3px rgba(21, 22, 27, 0.1); }
+html[data-accent="coral"] .select__opt.is-selected::before { background: var(--coral); border-color: var(--coral); box-shadow: 0 0 0 3px rgba(255, 92, 57, 0.18); }
+html[data-accent="blue"] .select__opt.is-selected::before { background: var(--blue); border-color: var(--blue); box-shadow: 0 0 0 3px rgba(61, 90, 254, 0.18); }
 .check { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--text-2); }
 .check input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--text); flex: none; }
 .check a { text-decoration: underline; text-underline-offset: 3px; }

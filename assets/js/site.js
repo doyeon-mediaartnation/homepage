@@ -443,6 +443,70 @@
     window.addEventListener("keydown", (e) => e.key === "Escape" && close());
   }
 
+  /* ---------- custom dropdown (progressive enhancement of <select>) ---------- */
+  $$(".select").forEach((wrap) => {
+    const sel = $("select", wrap);
+    if (!sel || !sel.id) return;
+    sel.tabIndex = -1;
+    const btn = document.createElement("button");
+    btn.type = "button"; btn.className = "select__btn"; btn.id = `${sel.id}-btn`;
+    btn.setAttribute("aria-haspopup", "listbox"); btn.setAttribute("aria-expanded", "false");
+    btn.innerHTML = '<span class="select__val"></span><i class="select__chev" aria-hidden="true"></i>';
+    const menu = document.createElement("ul");
+    menu.className = "select__menu"; menu.id = `${sel.id}-menu`; menu.setAttribute("role", "listbox");
+    btn.setAttribute("aria-controls", menu.id);
+    const opts = Array.from(sel.options).map((o, i) => {
+      const li = document.createElement("li");
+      li.className = "select__opt"; li.id = `${sel.id}-opt-${i}`; li.setAttribute("role", "option");
+      li.dataset.value = o.value; li.textContent = o.text; li.setAttribute("data-cursor", "");
+      menu.appendChild(li);
+      return li;
+    });
+    wrap.append(btn, menu);
+    wrap.classList.add("is-enhanced");
+    const label = document.querySelector(`label[for="${sel.id}"]`);
+    if (label) label.htmlFor = btn.id;
+    let active = sel.selectedIndex;
+    const isOpen = () => wrap.classList.contains("is-open");
+    const render = () => {
+      opts.forEach((li, i) => {
+        const selected = i === sel.selectedIndex;
+        li.classList.toggle("is-selected", selected);
+        li.setAttribute("aria-selected", String(selected));
+        li.classList.toggle("is-active", i === active);
+      });
+      $(".select__val", btn).textContent = sel.options[sel.selectedIndex].text;
+      menu.setAttribute("aria-activedescendant", opts[active].id);
+    };
+    const open = (o) => {
+      wrap.classList.toggle("is-open", o);
+      btn.setAttribute("aria-expanded", String(o));
+      if (o) { active = sel.selectedIndex; render(); }
+    };
+    const choose = (i) => {
+      sel.selectedIndex = i;
+      sel.dispatchEvent(new Event("change", { bubbles: true }));
+      active = i; render(); open(false); btn.focus();
+    };
+    btn.addEventListener("click", () => open(!isOpen()));
+    opts.forEach((li, i) => {
+      li.addEventListener("click", () => choose(i));
+      li.addEventListener("pointerenter", () => { active = i; render(); });
+    });
+    btn.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        if (!isOpen()) return open(true);
+        active = (active + (e.key === "ArrowDown" ? 1 : -1) + opts.length) % opts.length; render();
+      } else if ((e.key === "Enter" || e.key === " ") && isOpen()) { e.preventDefault(); choose(active); }
+      else if (e.key === "Escape" && isOpen()) { e.preventDefault(); open(false); }
+      else if (e.key === "Home" && isOpen()) { active = 0; render(); }
+      else if (e.key === "End" && isOpen()) { active = opts.length - 1; render(); }
+    });
+    document.addEventListener("pointerdown", (e) => { if (isOpen() && !wrap.contains(e.target)) open(false); });
+    render();
+  });
+
   /* ---------- contact form ---------- */
   const form = $("[data-form]");
   if (form) {
