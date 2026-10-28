@@ -347,6 +347,8 @@ section, .footer { position: relative; }
 .pcard__ko { font-size: 15px; font-weight: 600; opacity: 0.6; letter-spacing: 0; }
 .pcard__sub { font-size: 17px; font-weight: 700; }
 .pcard__desc { color: var(--text-2); line-height: 1.65; transition: color 0.4s; }
+/* Product cards keep their pastel fill, so their text stays ink whatever the page colour. */
+.pcard { --text: var(--ink); --text-2: var(--ink-2); --muted: #8c8a84; --line: #e3e0d8; color: var(--text); }
 .pcard:hover .pcard__desc { color: rgba(255, 255, 255, 0.85); }
 .pcard__points { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
 .pcard__points li { font-size: 12.5px; font-weight: 600; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(21, 22, 27, 0.15); transition: border-color 0.4s; }
@@ -503,14 +505,16 @@ section, .footer { position: relative; }
 
 /* ---------- feature cards / steps / trust ---------- */
 .fgrid { display: grid; gap: 16px; }
-.fcard { padding: 28px 24px; border-radius: 20px; background: var(--bg-2); border: 1px solid var(--line); transition: transform 0.5s var(--ease), box-shadow 0.5s, border-color 0.3s; }
+.fcard { padding: 28px 24px; border-radius: 20px; background: var(--bg-2); border: 1px solid var(--line); transition: transform 0.5s var(--ease), box-shadow 0.5s, border-color 0.3s, background-color 0.5s; }
 .fcard:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(21, 22, 27, 0.3); }
 .fcard__idx { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; }
 .fcard--coral .fcard__idx { color: var(--coral); }
 .fcard--blue .fcard__idx { color: var(--blue); }
 .fcard__title { margin-top: 16px; font-size: 21px; font-weight: 800; letter-spacing: -0.01em; }
 .fcard__desc { margin-top: 10px; font-size: 15px; line-height: 1.7; color: var(--text-2); }
-html[data-bg-theme="dark"] .fcard { background: rgba(255, 255, 255, 0.04); }
+/* White-filled cards go translucent whenever the page colour is not light, so
+   their (now white) text keeps reading while a neighbouring section owns the page. */
+html:not([data-bg-theme="light"]) :is(.fcard, .leader, .form) { background: rgba(255, 255, 255, 0.06); }
 @media (min-width: 700px) { .fgrid--4, .fgrid--3 { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .fgrid--4 { grid-template-columns: repeat(4, 1fr); } .fgrid--3 { grid-template-columns: repeat(3, 1fr); } }
 .sgrid { display: grid; gap: 28px; counter-reset: step; }
@@ -585,7 +589,7 @@ html[data-bg-theme="dark"] .fcard { background: rgba(255, 255, 255, 0.04); }
   .svc-list { gap: 96px; }
 }
 .lgrid { display: grid; gap: 16px; }
-.leader { padding: 28px 24px; border-radius: 22px; background: var(--bg-2); border: 1px solid var(--line); transform-style: preserve-3d; }
+.leader { padding: 28px 24px; border-radius: 22px; background: var(--bg-2); border: 1px solid var(--line); transform-style: preserve-3d; transition: background-color 0.5s; }
 .leader__avatar { width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; font-size: 22px; font-weight: 800; color: #fff; letter-spacing: 0.02em; }
 .leader__avatar--1 { background: linear-gradient(135deg, var(--coral), #ff8a6e); }
 .leader__avatar--2 { background: linear-gradient(135deg, var(--blue), #7c8cff); }
@@ -657,13 +661,13 @@ html[data-bg-theme="dark"] .fcard { background: rgba(255, 255, 255, 0.04); }
 .info__rows dt { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding-top: 4px; }
 .info__rows dd { margin: 0; }
 .info__rows a:hover { color: var(--accent); }
-.form { padding: 28px 22px; border-radius: var(--radius); background: var(--bg-2); border: 1px solid var(--line); display: grid; gap: 20px; }
+.form { padding: 28px 22px; border-radius: var(--radius); background: var(--bg-2); border: 1px solid var(--line); display: grid; gap: 20px; transition: background-color 0.5s; }
 .form__row { display: grid; gap: 20px; }
 .field { display: grid; gap: 8px; }
 .field label { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); }
 .field label i { color: var(--accent); font-style: normal; }
-.field input, .field textarea, .field select { width: 100%; padding: 14px 0; border: 0; border-bottom: 1.5px solid var(--line); background: transparent; font: inherit; font-size: 16px; color: var(--ink); border-radius: 0; outline: none; transition: border-color 0.3s; }
-.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--ink); }
+.field input, .field textarea, .field select { width: 100%; padding: 14px 0; border: 0; border-bottom: 1.5px solid var(--line); background: transparent; font: inherit; font-size: 16px; color: var(--text); border-radius: 0; outline: none; transition: border-color 0.3s; }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--text); }
 .field textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
 .field input::placeholder, .field textarea::placeholder { color: var(--muted); }
 .field.is-invalid input, .field.is-invalid textarea, .field.is-invalid select { border-color: var(--coral); }
