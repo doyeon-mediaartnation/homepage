@@ -18,6 +18,17 @@ module.exports = {
     menu: "메뉴",
     skip: "본문으로 바로가기",
   },
+  /** Downloadable company documents (home page section + footer links). */
+  docs: {
+  docsEyebrow: "Documents",
+  docsTitle: "회사 자료",
+  docsLead: "투자 검토와 파트너십 논의에 필요한 자료를 바로 내려받을 수 있습니다.",
+  docs: {
+    ir: ["Investor Relations 2026", "IR 자료", "회사 소개, 제품, 시장, 트랙 레코드, 사업 모델과 팀을 담은 투자 소개 자료입니다."],
+    proposal: ["Partnership Proposal 2026", "OMNIPlay 사업제안서", "카메라 기반 모션 홈 콘솔 OMNIPlay의 렌탈·리테일·유통·IP 파트너십 제안서입니다."],
+  },
+  docsDownload: "PDF 내려받기",
+  },
   footer: {
     products: "제품",
     company: "회사",
@@ -277,14 +288,6 @@ module.exports = {
       ["초기창업패키지 딥테크", "창업진흥원 · 2025"],
       ["마중 (MS 글로벌 협업)", "경기혁신센터 + Microsoft · 2026"],
     ],
-    docsEyebrow: "Documents",
-    docsTitle: "회사 자료",
-    docsLead: "투자 검토와 파트너십 논의에 필요한 자료를 바로 내려받을 수 있습니다.",
-    docs: {
-      ir: ["Investor Relations 2026", "IR 자료", "회사 소개, 제품, 시장, 트랙 레코드, 사업 모델과 팀을 담은 투자 소개 자료입니다."],
-      proposal: ["Partnership Proposal 2026", "OMNIPlay 사업제안서", "카메라 기반 모션 홈 콘솔 OMNIPlay의 렌탈·리테일·유통·IP 파트너십 제안서입니다."],
-    },
-    docsDownload: "PDF 내려받기",
     ctaTitle: "프로젝트를<br>이야기해 주세요",
     ctaBtn: "문의하기",
   },

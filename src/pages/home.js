@@ -160,6 +160,26 @@ exports.render = ({ t, base, lang }) => {
   </div>
 </section>
 
+<section class="docs" id="documents" data-theme="light" data-bg="#f4f3ef">
+  <div class="container">
+    ${head({ eyebrow: t.docs.docsEyebrow, title: t.docs.docsTitle, lead: t.docs.docsLead })}
+    <div class="dgrid">
+      ${D.docs
+        .map((d) => {
+          const [kind, title, desc] = t.docs.docs[d.key];
+          return `
+      <a class="doc" href="${d.file}" download data-reveal data-cursor>
+        <span class="doc__kind">${esc(kind)}</span>
+        <span class="doc__title">${esc(title)}</span>
+        <span class="doc__desc">${esc(desc)}</span>
+        <span class="doc__foot"><span class="doc__meta">PDF · ${d.pages}p · ${d.size}</span><span class="doc__dl">${esc(t.docs.docsDownload)}<i class="btn__arrow" aria-hidden="true"></i></span></span>
+      </a>`;
+        })
+        .join("")}
+    </div>
+  </div>
+</section>
+
 ${ctaBand({ title: h.ctaTitle, lead: h.ctaLead, href: `${base}contact/`, label: h.ctaBtn, theme: "dark" })}
 `;
 };

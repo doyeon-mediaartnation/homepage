@@ -18,6 +18,17 @@ module.exports = {
     menu: "Menu",
     skip: "Skip to content",
   },
+  /** Downloadable company documents (home page section + footer links). */
+  docs: {
+  docsEyebrow: "Documents",
+  docsTitle: "Company documents",
+  docsLead: "Everything you need for an investment review or a partnership conversation, ready to download.",
+  docs: {
+    ir: ["Investor Relations 2026", "IR deck", "Company overview, products, market, track record, business model and team. Korean."],
+    proposal: ["Partnership Proposal 2026", "OMNIPlay partnership proposal", "Rental, retail, distribution and IP partnership proposal for OMNIPlay, the camera-based motion home console. Korean."],
+  },
+  docsDownload: "Download PDF",
+  },
   footer: {
     products: "Products",
     company: "Company",
@@ -277,14 +288,6 @@ module.exports = {
       ["Deep-tech Startup Package", "Korea Institute of Startup & Entrepreneurship Development · 2025"],
       ["Majung (Microsoft global collaboration)", "Gyeonggi Center for Creative Economy & Innovation + Microsoft · 2026"],
     ],
-    docsEyebrow: "Documents",
-    docsTitle: "Company documents",
-    docsLead: "Everything you need for an investment review or a partnership conversation, ready to download.",
-    docs: {
-      ir: ["Investor Relations 2026", "IR deck", "Company overview, products, market, track record, business model and team. Korean."],
-      proposal: ["Partnership Proposal 2026", "OMNIPlay partnership proposal", "Rental, retail, distribution and IP partnership proposal for OMNIPlay, the camera-based motion home console. Korean."],
-    },
-    docsDownload: "Download PDF",
     ctaTitle: "Tell us about<br>your project",
     ctaBtn: "Contact us",
   },
