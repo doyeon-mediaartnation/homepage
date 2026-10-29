@@ -28,6 +28,11 @@ const work = [
 ];
 
 module.exports = {
+  /** Downloadable company documents (served from /files/). */
+  docs: [
+    { key: "ir", file: "/files/MediaArtNation_IR_2026.pdf", pages: 26, size: "5.7MB" },
+    { key: "proposal", file: "/files/MediaArtNation_OMNIPlay_Partnership_Proposal_2026.pdf", pages: 32, size: "6.3MB" },
+  ],
   IMG,
   clients,
   work,

@@ -18,7 +18,7 @@ const MIME = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
   ".json": "application/json", ".xml": "application/xml", ".txt": "text/plain; charset=utf-8",
   ".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml",
-  ".ico": "image/x-icon", ".gif": "image/gif", ".woff2": "font/woff2", ".woff": "font/woff",
+  ".ico": "image/x-icon", ".gif": "image/gif", ".woff2": "font/woff2", ".woff": "font/woff", ".pdf": "application/pdf",
 };
 
 const api = { "/api/contact": () => require("../api/contact.js") };

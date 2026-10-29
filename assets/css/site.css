@@ -525,7 +525,7 @@ section, .footer { position: relative; }
 .fcard__desc { margin-top: 10px; font-size: 15px; line-height: 1.7; color: var(--text-2); }
 /* White-filled cards go translucent whenever the page colour is not light, so
    their (now white) text keeps reading while a neighbouring section owns the page. */
-html:not([data-bg-theme="light"]) :is(.fcard, .leader, .form) { background: rgba(255, 255, 255, 0.06); }
+html:not([data-bg-theme="light"]) :is(.fcard, .leader, .form, .doc) { background: rgba(255, 255, 255, 0.06); }
 @media (min-width: 700px) { .fgrid--4, .fgrid--3 { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .fgrid--4 { grid-template-columns: repeat(4, 1fr); } .fgrid--3 { grid-template-columns: repeat(3, 1fr); } }
 .sgrid { display: grid; gap: 28px; counter-reset: step; }
@@ -630,6 +630,20 @@ html:not([data-bg-theme="light"]) :is(.fcard, .leader, .form) { background: rgba
 .programs li { display: grid; gap: 4px; padding: 18px 0; border-top: 1px solid var(--line); }
 .programs strong { font-size: 17px; font-weight: 800; }
 .programs span { font-size: 14px; color: var(--text-2); }
+
+/* ---------- company documents ---------- */
+.dgrid { display: grid; gap: 16px; }
+.doc { display: flex; flex-direction: column; gap: 10px; padding: 28px 24px; border-radius: 20px; background: var(--bg-2); border: 1px solid var(--line); transition: transform 0.5s var(--ease), box-shadow 0.5s, border-color 0.3s, background-color 0.5s; }
+.doc:hover { transform: translateY(-4px); box-shadow: 0 24px 50px rgba(14, 15, 19, 0.1); border-color: transparent; }
+.doc__kind { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.doc__title { font-size: clamp(22px, 2.4vw, 28px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.doc__desc { font-size: 15px; line-height: 1.7; color: var(--text-2); }
+.doc__foot { margin-top: auto; padding-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); }
+.doc__meta { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: var(--muted); }
+.doc__dl { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800; color: var(--accent); }
+.doc__dl .btn__arrow { transform: rotate(90deg); }
+.doc:hover .doc__dl .btn__arrow { transform: rotate(90deg) translateX(4px); }
+@media (min-width: 768px) { .dgrid { grid-template-columns: 1fr 1fr; gap: 20px; } .doc { padding: 34px 32px; } }
 @media (min-width: 900px) { .programs { grid-template-columns: 1fr 1fr; gap: 0 40px; } }
 
 /* ---------- work grid ---------- */
