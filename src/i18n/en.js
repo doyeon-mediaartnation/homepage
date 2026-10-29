@@ -28,6 +28,9 @@ module.exports = {
     proposal: ["Partnership Proposal 2026", "OMNIPlay partnership proposal", "Rental, retail, distribution and IP partnership proposal for OMNIPlay, the camera-based motion home console. Korean."],
   },
   docsDownload: "Download PDF",
+  docsPreview: "Preview",
+  docsOpenTab: "Open in new tab",
+  docsClose: "Close",
   },
   footer: {
     products: "Products",

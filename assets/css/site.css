@@ -643,7 +643,29 @@ html:not([data-bg-theme="light"]) :is(.fcard, .leader, .form, .doc) { background
 .doc__dl { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800; color: var(--accent); }
 .doc__dl .btn__arrow { transform: rotate(90deg); }
 .doc:hover .doc__dl .btn__arrow { transform: rotate(90deg) translateX(4px); }
+.doc { cursor: pointer; }
+.doc:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.doc__kindrow { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.doc__view { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: var(--muted); opacity: 0; transform: translateX(-6px); transition: opacity 0.3s, transform 0.45s var(--ease), color 0.3s; }
+.doc:hover .doc__view, .doc:focus-visible .doc__view { opacity: 1; transform: none; color: var(--accent); }
+.doc__dl:hover { text-decoration: underline; text-underline-offset: 4px; }
 @media (min-width: 768px) { .dgrid { grid-template-columns: 1fr 1fr; gap: 20px; } .doc { padding: 34px 32px; } }
+
+/* in-page PDF viewer */
+.pdfview { position: fixed; inset: 0; z-index: 2000; background: rgba(14, 15, 19, 0.9); display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0s linear 0.3s; }
+.pdfview.is-open { opacity: 1; visibility: visible; transition: opacity 0.35s, visibility 0s; }
+.pdfview__panel { width: min(1120px, 100%); height: min(92vh, 100%); display: flex; flex-direction: column; background: #2a2b31; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5); transform: translateY(16px) scale(0.98); transition: transform 0.5s var(--ease); }
+.pdfview.is-open .pdfview__panel { transform: none; }
+.pdfview__bar { --text: #fff; --text-2: rgba(255, 255, 255, 0.72); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 14px 12px 22px; background: #15161b; color: #fff; }
+.pdfview__title { min-width: 0; font-size: 15px; font-weight: 800; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pdfview__actions { display: flex; align-items: center; gap: 10px; flex: none; }
+.pdfview__bar .btn--ghost:hover { background: #fff; color: var(--ink); border-color: #fff; }
+.pdfview__bar .btn--inverse:hover { background: transparent; color: #fff; border-color: #fff; }
+.pdfview__close { position: relative; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.12); cursor: pointer; flex: none; transition: background 0.3s; }
+.pdfview__close:hover { background: rgba(255, 255, 255, 0.24); }
+.pdfview__close::before, .pdfview__close::after { content: ""; position: absolute; left: 50%; top: 50%; width: 16px; height: 2px; background: #fff; transform: translate(-50%, -50%) rotate(45deg); }
+.pdfview__close::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.pdfview__frame { flex: 1; width: 100%; border: 0; background: #3a3b42; }
 @media (min-width: 900px) { .programs { grid-template-columns: 1fr 1fr; gap: 0 40px; } }
 
 /* ---------- work grid ---------- */

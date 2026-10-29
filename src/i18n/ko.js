@@ -28,6 +28,9 @@ module.exports = {
     proposal: ["Partnership Proposal 2026", "OMNIPlay 사업제안서", "카메라 기반 모션 홈 콘솔 OMNIPlay의 렌탈·리테일·유통·IP 파트너십 제안서입니다."],
   },
   docsDownload: "PDF 내려받기",
+  docsPreview: "미리보기",
+  docsOpenTab: "새 탭에서 열기",
+  docsClose: "닫기",
   },
   footer: {
     products: "제품",

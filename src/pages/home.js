@@ -168,17 +168,31 @@ exports.render = ({ t, base, lang }) => {
         .map((d) => {
           const [kind, title, desc] = t.docs.docs[d.key];
           return `
-      <a class="doc" href="${d.file}" download data-reveal data-cursor>
-        <span class="doc__kind">${esc(kind)}</span>
+      <article class="doc" data-doc="${d.file}" data-doc-title="${esc(title)}" role="button" tabindex="0" aria-label="${esc(title)} — ${esc(t.docs.docsPreview)}" data-reveal data-cursor>
+        <span class="doc__kindrow"><span class="doc__kind">${esc(kind)}</span><span class="doc__view" aria-hidden="true">${esc(t.docs.docsPreview)} ↗</span></span>
         <span class="doc__title">${esc(title)}</span>
         <span class="doc__desc">${esc(desc)}</span>
-        <span class="doc__foot"><span class="doc__meta">PDF · ${d.pages}p · ${d.size}</span><span class="doc__dl">${esc(t.docs.docsDownload)}<i class="btn__arrow" aria-hidden="true"></i></span></span>
-      </a>`;
+        <span class="doc__foot"><span class="doc__meta">PDF · ${d.pages}p · ${d.size}</span><a class="doc__dl" href="${d.file}" download>${esc(t.docs.docsDownload)}<i class="btn__arrow" aria-hidden="true"></i></a></span>
+      </article>`;
         })
         .join("")}
     </div>
   </div>
 </section>
+
+<div class="pdfview" data-pdfview role="dialog" aria-modal="true" aria-hidden="true" aria-label="${esc(t.docs.docsPreview)}">
+  <div class="pdfview__panel">
+    <div class="pdfview__bar">
+      <strong class="pdfview__title"></strong>
+      <div class="pdfview__actions">
+        <a class="btn btn--sm btn--ghost pdfview__open" href="#" target="_blank" rel="noopener">${esc(t.docs.docsOpenTab)}</a>
+        <a class="btn btn--sm btn--inverse pdfview__dl" href="#" download>${esc(t.docs.docsDownload)}</a>
+        <button class="pdfview__close" type="button" aria-label="${esc(t.docs.docsClose)}"></button>
+      </div>
+    </div>
+    <iframe class="pdfview__frame" src="about:blank" title=""></iframe>
+  </div>
+</div>
 
 ${ctaBand({ title: h.ctaTitle, lead: h.ctaLead, href: `${base}contact/`, label: h.ctaBtn, theme: "dark" })}
 `;

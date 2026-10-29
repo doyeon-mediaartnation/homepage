@@ -443,6 +443,41 @@
     window.addEventListener("keydown", (e) => e.key === "Escape" && close());
   }
 
+  /* ---------- PDF preview (company documents) ----------
+     Click on a card opens the file in an in-page viewer (desktop); phones and
+     tablets get a new tab, where the native viewer does a better job. The
+     download link inside the card keeps working on its own. */
+  const pv = $("[data-pdfview]");
+  if (pv) {
+    const frame = $(".pdfview__frame", pv), title = $(".pdfview__title", pv);
+    const openA = $(".pdfview__open", pv), dlA = $(".pdfview__dl", pv), closeBtn = $(".pdfview__close", pv);
+    const inline = () => matchMedia("(min-width: 900px)").matches && fine;
+    let hideTimer = 0;
+    const open = (file, name) => {
+      if (!inline()) { window.open(file, "_blank", "noopener"); return; }
+      clearTimeout(hideTimer);
+      title.textContent = name; openA.href = file; dlA.href = file; frame.title = name;
+      frame.src = `${file}#toolbar=0&navpanes=0&view=FitH`;
+      pv.classList.add("is-open"); pv.setAttribute("aria-hidden", "false");
+      lenis && lenis.stop();
+      closeBtn.focus();
+    };
+    const close = () => {
+      if (!pv.classList.contains("is-open")) return;
+      pv.classList.remove("is-open"); pv.setAttribute("aria-hidden", "true");
+      lenis && lenis.start();
+      hideTimer = setTimeout(() => { frame.src = "about:blank"; }, 400);
+    };
+    $$("[data-doc]").forEach((card) => {
+      card.addEventListener("click", (e) => { if (e.target.closest("a")) return; open(card.dataset.doc, card.dataset.docTitle); });
+      card.addEventListener("keydown", (e) => {
+        if ((e.key === "Enter" || e.key === " ") && e.target === card) { e.preventDefault(); open(card.dataset.doc, card.dataset.docTitle); }
+      });
+    });
+    pv.addEventListener("click", (e) => { if (e.target === pv || e.target.closest(".pdfview__close")) close(); });
+    window.addEventListener("keydown", (e) => e.key === "Escape" && close());
+  }
+
   /* ---------- custom dropdown (progressive enhancement of <select>) ---------- */
   $$(".select").forEach((wrap) => {
     const sel = $("select", wrap);
