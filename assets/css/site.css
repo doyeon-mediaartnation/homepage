@@ -548,7 +548,9 @@ html:not([data-bg-theme="light"]) :is(.fcard, .leader, .form, .doc) { background
 .tokens__list li { padding: 18px 22px; border-radius: 16px; background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.25); font-weight: 700; font-size: 16px; }
 .chips { flex-direction: row; flex-wrap: wrap; gap: 12px; }
 .chip { display: flex; align-items: center; gap: 12px; padding: 18px 24px; border-radius: 999px; background: #fff; color: var(--ink); font-size: 20px; font-weight: 800; }
-.chip span { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: var(--accent); }
+/* The chip is always a white pill, so its index keeps the product colour instead of the live accent (white on blue pages). */
+.chip span { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: var(--blue); }
+html[data-accent="coral"] .chip span { color: var(--coral); }
 @media (min-width: 900px) { .tokens__grid, .games__grid { grid-template-columns: 1.1fr 0.9fr; gap: 72px; } }
 
 /* ---------- faq ---------- */
