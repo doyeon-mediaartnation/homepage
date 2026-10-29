@@ -42,7 +42,8 @@
   const scrollTo = (target) => (lenis ? lenis.scrollTo(target, { offset: -80 }) : target.scrollIntoView({ behavior: "smooth" }));
   $$('a[href^="#"]').forEach((a) =>
     a.addEventListener("click", (e) => {
-      const el = a.getAttribute("href").length > 1 && $(a.getAttribute("href"));
+      const href = a.getAttribute("href") || "";
+      const el = href.length > 1 && href.startsWith("#") && $(href);
       if (el) { e.preventDefault(); scrollTo(el); }
     })
   );

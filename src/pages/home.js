@@ -185,8 +185,8 @@ exports.render = ({ t, base, lang }) => {
     <div class="pdfview__bar">
       <strong class="pdfview__title"></strong>
       <div class="pdfview__actions">
-        <a class="btn btn--sm btn--ghost pdfview__open" href="#" target="_blank" rel="noopener">${esc(t.docs.docsOpenTab)}</a>
-        <a class="btn btn--sm btn--inverse pdfview__dl" href="#" download>${esc(t.docs.docsDownload)}</a>
+        <a class="btn btn--sm btn--ghost pdfview__open" target="_blank" rel="noopener">${esc(t.docs.docsOpenTab)}</a>
+        <a class="btn btn--sm btn--inverse pdfview__dl" download>${esc(t.docs.docsDownload)}</a>
         <button class="pdfview__close" type="button" aria-label="${esc(t.docs.docsClose)}"></button>
       </div>
     </div>
