@@ -330,8 +330,8 @@ module.exports = {
       phone: "연락처",
       topic: "문의 유형",
       topics: [
-        ["omniq", "OMNIQ 테마 · IP 제휴"],
-        ["omniplay", "OMNIPlay 출시 알림 · 유통"],
+        ["omniq", "OMNIQ 관련"],
+        ["omniplay", "OMNIPlay 관련"],
         ["project", "프로젝트 의뢰"],
         ["other", "기타"],
       ],

@@ -330,8 +330,8 @@ module.exports = {
       phone: "Phone",
       topic: "Topic",
       topics: [
-        ["omniq", "OMNIQ theme · IP partnership"],
-        ["omniplay", "OMNIPlay launch updates · distribution"],
+        ["omniq", "About OMNIQ"],
+        ["omniplay", "About OMNIPlay"],
         ["project", "Project brief"],
         ["other", "Other"],
       ],
