@@ -70,15 +70,15 @@ function productJsonLd(site, t) {
       publisher: { "@id": ORG_ID },
     },
     {
-      "@type": ["Product", "Brand"],
+      // Brand only, not Product: OMNIPlay is unreleased (no price or reviews), and a
+      // Product without offers/review/aggregateRating is flagged invalid by Search Console.
+      // The Organization links to this node through its `brand` property.
+      "@type": "Brand",
       "@id": `${site}/#omniplay`,
       name: "OMNIPlay",
       alternateName: ["옴니플레이", "옴니플레이 플랫폼", "OMNIPlay Platform", "Omni Play", "omniplay"],
       description: t.meta.omniplay.description,
-      category: "Motion-sensing home game console",
       url: `${site}/ko/omniplay/`,
-      brand: { "@id": ORG_ID },
-      manufacturer: { "@id": ORG_ID },
     },
   ];
 }
