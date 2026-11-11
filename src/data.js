@@ -74,5 +74,5 @@ module.exports = {
     appstore: "https://apps.apple.com/kr/app/omniq/id6802925353",
     play: "https://play.google.com/store/apps/details?id=com.mediaartnation.omniq&hl=ko&gl=KR",
   },
-  mapUrl: "https://www.google.com/maps/search/?api=1&query=72+Macheon-ro+Songpa-gu+Seoul",
+  mapUrl: "https://maps.app.goo.gl/AMHqWZPGmzshZVVw8",
 };
