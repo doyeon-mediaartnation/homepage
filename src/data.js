@@ -31,7 +31,7 @@ module.exports = {
   /** Downloadable company documents (served from /files/). Bump `?v=` whenever a PDF is replaced
       so browsers holding the old copy fetch the new one. */
   docs: [
-    { key: "ir", file: "/files/MediaArtNation_IR_2026.pdf?v=20261029", pages: 26, size: "5.7MB" },
+    { key: "ir", file: "/files/MediaArtNation_IR_2026.pdf?v=20261126", pages: 27, size: "4.1MB" },
     { key: "proposal", file: "/files/MediaArtNation_OMNIPlay_Partnership_Proposal_2026.pdf?v=20261126", pages: 32, size: "4.3MB" },
   ],
   IMG,
