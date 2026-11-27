@@ -162,6 +162,7 @@ module.exports = {
     compareLabels: ["Original", "OMNIQ"],
     featuresEyebrow: "Features",
     featuresTitle: "촬영 후 편집이 아니라, 그 자리에서",
+    featureScene: { rec: "REC", saved: "기기에 저장됨" },
     features: [
       ["실시간 변환", "녹화 버튼을 누르는 순간부터 선택한 테마가 영상에 입혀집니다. 촬영 후 따로 편집할 필요가 없습니다."],
       ["의상 · 테마", "의상·소품·배경을 테마에 맞게 바꿉니다. 브랜드·IP 세계관 테마로 맞춤 제작할 수 있습니다."],

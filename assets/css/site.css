@@ -527,6 +527,25 @@ section, .footer { position: relative; }
 .fmedia { display: grid; gap: 3px; aspect-ratio: 16 / 10; margin-bottom: 22px; border-radius: 14px; overflow: hidden; background: #15161b; }
 .fmedia--quad { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
 .fmedia--pair { grid-template-columns: 1fr 1fr; }
+.fmedia--screen { display: flex; justify-content: center; align-items: flex-end; background: radial-gradient(120% 90% at 50% 110%, rgba(255, 92, 57, 0.55), transparent 60%), #15161b; }
+.fmedia--screen .fmedia__img { width: 50%; height: 86%; border: 3px solid #2c2d34; border-bottom: 0; border-radius: 16px 16px 0 0; box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.45); }
+.fphone { position: relative; width: 50%; height: 86%; overflow: hidden; border: 3px solid #2c2d34; border-bottom: 0; border-radius: 16px 16px 0 0; box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.45); background: #000; }
+.fphone__img, .fphone__before { position: absolute; inset: 0; width: 100%; height: 100%; }
+.fphone__img { object-fit: cover; display: block; }
+.fphone__before { clip-path: inset(0 50% 0 0); animation: fwipe 4.2s ease-in-out infinite alternate; }
+.fphone__scan { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: #fff; box-shadow: 0 0 14px 3px rgba(255, 92, 57, 0.9); animation: fscan 4.2s ease-in-out infinite alternate; }
+@keyframes fwipe { from { clip-path: inset(0 88% 0 0); } to { clip-path: inset(0 12% 0 0); } }
+@keyframes fscan { from { left: 12%; } to { left: 88%; } }
+.fphone__rec { position: absolute; top: 8px; left: 8px; display: inline-flex; align-items: center; gap: 4px; padding: 3px 7px; border-radius: 99px; background: rgba(0, 0, 0, 0.6); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 0.08em; }
+.fphone__rec i { width: 6px; height: 6px; border-radius: 50%; background: #ff3b30; animation: fblink 1.2s steps(2, start) infinite; }
+@keyframes fblink { to { visibility: hidden; } }
+.fphone__toast { position: absolute; top: 10px; left: 50%; display: inline-flex; align-items: center; gap: 5px; padding: 5px 9px; border-radius: 99px; background: rgba(255, 255, 255, 0.95); color: #15161b; font-size: 10px; font-weight: 700; white-space: nowrap; transform: translateX(-50%); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); animation: ftoast 4.8s var(--ease) infinite; }
+.fphone__toast b { display: grid; place-items: center; width: 14px; height: 14px; border-radius: 50%; background: var(--coral); color: #fff; font-size: 9px; }
+@keyframes ftoast { 0%, 8% { opacity: 0; transform: translate(-50%, -14px); } 16%, 78% { opacity: 1; transform: translate(-50%, 0); } 90%, 100% { opacity: 0; transform: translate(-50%, -14px); } }
+.fphone__bar { position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; gap: 10px; padding: 9px 0 11px; background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); }
+.fphone__bar i { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); color: #fff; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.fphone__bar i:first-child { background: var(--coral); }
+@media (prefers-reduced-motion: reduce) { .fphone__before, .fphone__scan, .fphone__rec i, .fphone__toast { animation: none; } }
 .fmedia__img { width: 100%; height: 100%; min-height: 0; object-fit: cover; display: block; transition: transform 0.8s var(--ease); }
 .fcard--media:hover .fmedia__img { transform: scale(1.04); }
 .fcard__idx { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; }

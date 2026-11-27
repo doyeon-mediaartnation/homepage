@@ -1,15 +1,39 @@
 const D = require("../data");
 const { esc, lines, eyebrow, head, btn, img, ctaBand } = require("../ui");
 
-/** Image box on top of a feature card: one picture, a 2x2 mosaic or a side-by-side pair. */
-const featureMedia = (m, title) =>
-  m
-    ? `<div class="fmedia fmedia--${m.kind}">${m.items
-        .map(([src, w, h, pos], k) =>
-          img(src, k === 0 ? title : "", { w, h, cls: "fmedia__img", attrs: `style="object-position:${pos}"` })
-        )
-        .join("")}</div>`
-    : "";
+/** Image box on top of a feature card: one picture, a 2x2 mosaic, a side-by-side pair, or a small
+    composed phone scene (`live`: the camera view wiping into the styled result; `share`: a finished
+    clip with the saved-to-device toast and share actions). */
+const ICON = {
+  save: '<path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/>',
+  share: '<path d="M12 15V4m0 0L8 8m4-4 4 4M7 11H5.5v8.5h13V11H17"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+};
+const icon = (k) =>
+  `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k]}</svg>`;
+
+const featureMedia = (m, title, o) => {
+  if (!m) return "";
+  const [first, second] = m.items;
+  const pic = ([src, w, h, pos], alt, cls) =>
+    img(src, alt, { w, h, cls, attrs: `style="object-position:${pos}"` });
+  if (m.kind === "live")
+    return `<div class="fmedia fmedia--screen fmedia--live"><div class="fphone">
+      ${pic(second, title, "fphone__img")}
+      <div class="fphone__before">${pic(first, "", "fphone__img")}</div>
+      <span class="fphone__scan" aria-hidden="true"></span>
+      <span class="fphone__rec" aria-hidden="true"><i></i>${esc(o.featureScene.rec)}</span>
+    </div></div>`;
+  if (m.kind === "share")
+    return `<div class="fmedia fmedia--screen fmedia--share"><div class="fphone">
+      ${pic(first, title, "fphone__img")}
+      <span class="fphone__toast" aria-hidden="true"><b>&#10003;</b>${esc(o.featureScene.saved)}</span>
+      <span class="fphone__bar" aria-hidden="true">${["save", "share", "link"].map((k) => `<i>${icon(k)}</i>`).join("")}</span>
+    </div></div>`;
+  return `<div class="fmedia fmedia--${m.kind}">${m.items
+    .map((it, k) => pic(it, k === 0 ? title : "", "fmedia__img"))
+    .join("")}</div>`;
+};
 
 exports.meta = ({ t, site, lang }) => ({
   title: t.meta.omniq.title,
@@ -68,7 +92,7 @@ exports.render = ({ t, base }) => {
         .map(
           ([title, desc], i) => `
       <div class="fcard fcard--coral fcard--media" data-reveal>
-        ${featureMedia(D.omniq.featureMedia[i], title)}
+        ${featureMedia(D.omniq.featureMedia[i], title, o)}
         <span class="fcard__idx">0${i + 1}</span>
         <h3 class="fcard__title">${esc(title)}</h3>
         <p class="fcard__desc">${esc(desc)}</p>

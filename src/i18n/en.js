@@ -162,6 +162,7 @@ module.exports = {
     compareLabels: ["Original", "OMNIQ"],
     featuresEyebrow: "Features",
     featuresTitle: "Not edited afterwards. Transformed on the spot.",
+    featureScene: { rec: "REC", saved: "Saved to device" },
     features: [
       ["Real-time transformation", "From the moment you hit record, the theme you picked is applied to the video. Nothing to edit afterwards."],
       ["Outfits & themes", "Outfits, props and backgrounds change to match the theme. Custom themes can be built for brand and IP universes."],

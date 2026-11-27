@@ -58,13 +58,14 @@ module.exports = {
     result: `${IMG}/ir/omniq-result.webp`,
     fourUp: `${IMG}/ir/omniq-4up.webp`,
     /** Feature-card media, in the order of i18n `omniq.features` (taken from the 2026 IR deck, p.6/8/9).
-        Each entry is a list of [src, w, h, object-position]; several entries tile inside the box. */
+        Each entry is a list of [src, w, h, object-position]; several entries tile inside the box,
+        and `live` / `share` compose a small phone scene (see featureMedia in pages/omniq.js). */
     featureMedia: [
       {
-        kind: "pair",
+        kind: "live",
         items: [
-          [`${IMG}/ir/omniq-feat-live-original.webp`, 154, 334, "50% 55%"],
-          [`${IMG}/ir/omniq-feat-woodblock.webp`, 359, 739, "50% 60%"],
+          [`${IMG}/ir/omniq-feat-live-original.webp`, 154, 300, "50% 50%"],
+          [`${IMG}/ir/omniq-screen-01.webp`, 946, 2048, "50% 62%"],
         ],
       },
       {
@@ -83,7 +84,7 @@ module.exports = {
           [`${IMG}/ir/omniq-look-armor.webp`, 488, 237, "32% 40%"],
         ],
       },
-      { kind: "single", items: [[`${IMG}/ir/omniq-feat-result.webp`, 323, 619, "50% 28%"]] },
+      { kind: "share", items: [[`${IMG}/ir/omniq-feat-result.webp`, 323, 619, "50% 30%"]] },
     ],
   },
   omniplay: {
