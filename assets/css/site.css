@@ -481,7 +481,7 @@ section, .footer { position: relative; }
 /* Badge stands in for the eyebrow dot */
 .eyebrow--badge { margin-bottom: 14px; }
 .eyebrow--badge::before { display: none; }
-.eyebrow--badge .badge { margin-bottom: 0; flex-shrink: 0; white-space: nowrap; }
+.eyebrow--badge .badge { margin-bottom: 0; flex-shrink: 0; white-space: nowrap; background: var(--accent-dot); box-shadow: 0 0 0 4px var(--accent-glow); }
 .numbers { margin: 48px var(--gutter) 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line-dark); }
 .numbers li { padding: 24px 0; display: flex; flex-direction: column; gap: 4px; }
 .numbers__n { font-size: clamp(40px, 8vw, 88px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--accent); }
