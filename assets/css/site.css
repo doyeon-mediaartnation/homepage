@@ -626,7 +626,15 @@ html[data-bg-theme="blue"] .spec__row dt { color: #fff; }
 .gallery__cam i { position: absolute; top: 5px; left: 5px; padding: 2px 5px; border-radius: 4px; background: rgba(0, 0, 0, 0.6); color: #fff; font-size: 8px; font-style: normal; font-weight: 800; letter-spacing: 0.1em; }
 .gallery__cam i::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-right: 4px; border-radius: 50%; background: #ff3b30; vertical-align: 1px; }
 .gallery__tag { position: absolute; left: 12px; bottom: 12px; padding: 6px 11px; border-radius: 999px; background: rgba(0, 0, 0, 0.6); color: #fff; font-size: 12px; font-weight: 700; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-@media (min-width: 900px) { .gallery__row { padding-bottom: 120px; } }
+/* Desktop: a contained bento — the game-select screen as the large tile, four play scenes 2x2. */
+@media (min-width: 900px) {
+  .gallery__row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; overflow: visible; padding-bottom: 120px; scroll-snap-type: none; }
+  .gallery__item { width: auto; }
+  .gallery__item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+  .gallery__item:not(:first-child) .gallery__tag { left: 10px; bottom: 10px; padding: 5px 9px; font-size: 11px; }
+  .gallery__item:not(:first-child) .gallery__cam { right: 10px; bottom: 10px; width: 22%; border-radius: 8px; }
+  .gallery__item:not(:first-child) .gallery__cam i { font-size: 7px; }
+}
 
 /* ---------- tech / moat lists ---------- */
 .tech__list, .moat__list { border-top: 1px solid var(--line); }
