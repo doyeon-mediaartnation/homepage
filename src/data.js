@@ -57,10 +57,16 @@ module.exports = {
     original: `${IMG}/ir/omniq-original.webp`,
     result: `${IMG}/ir/omniq-result.webp`,
     fourUp: `${IMG}/ir/omniq-4up.webp`,
-    /** Feature-card media, in the order of i18n `omniq.features` (taken from the 2026 IR deck, p.8-9).
+    /** Feature-card media, in the order of i18n `omniq.features` (taken from the 2026 IR deck, p.6/8/9).
         Each entry is a list of [src, w, h, object-position]; several entries tile inside the box. */
     featureMedia: [
-      { kind: "single", items: [[`${IMG}/ir/omniq-feat-live.webp`, 490, 340, "50% 50%"]] },
+      {
+        kind: "pair",
+        items: [
+          [`${IMG}/ir/omniq-feat-live-original.webp`, 154, 334, "50% 55%"],
+          [`${IMG}/ir/omniq-feat-woodblock.webp`, 359, 739, "50% 60%"],
+        ],
+      },
       {
         kind: "quad",
         items: [
@@ -77,7 +83,13 @@ module.exports = {
           [`${IMG}/ir/omniq-look-armor.webp`, 488, 237, "32% 40%"],
         ],
       },
-      { kind: "single", items: [[`${IMG}/ir/omniq-feat-share.webp`, 446, 250, "100% 50%"]] },
+      {
+        kind: "pair",
+        items: [
+          [`${IMG}/ir/omniq-feat-rec-countdown.webp`, 155, 334, "50% 45%"],
+          [`${IMG}/ir/omniq-feat-rec-live.webp`, 155, 334, "50% 45%"],
+        ],
+      },
     ],
   },
   omniplay: {
