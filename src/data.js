@@ -54,8 +54,13 @@ module.exports = {
     mark: `${IMG}/ir/omniq-mark.webp`,
     screen: `${IMG}/ir/omniq-screen-01.webp`,
     screenLogin: `${IMG}/ir/omniq-screen-login.webp`,
-    original: `${IMG}/ir/omniq-original.webp`,
-    result: `${IMG}/ir/omniq-result.webp`,
+    /** Before/after sliders: the same selfie cropped to line up with a frame from each OMNIQ theme video.
+        Keys match i18n `omniq.compareThemes`. */
+    compare: ["neon", "toon", "santa"].map((k) => ({
+      key: k,
+      before: `${IMG}/ir/omniq-cmp-${k}-before.webp`,
+      after: `${IMG}/ir/omniq-cmp-${k}-after.webp`,
+    })),
     fourUp: `${IMG}/ir/omniq-4up.webp`,
     /** Feature-card media, in the order of i18n `omniq.features` (taken from the 2026 IR deck, p.6/8/9).
         Each entry is a list of [src, w, h, object-position]; several entries tile inside the box,

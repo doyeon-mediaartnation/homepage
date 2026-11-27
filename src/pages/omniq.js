@@ -76,10 +76,17 @@ exports.render = ({ t, base }) => {
 <section class="compare-sec" data-theme="dark" data-bg="#15161b">
   <div class="container">
     ${head({ eyebrow: o.compareEyebrow, title: o.compareTitle, lead: o.compareLead, align: "center" })}
-    <div class="compare" data-compare data-reveal>
-      <div class="compare__after">${img(D.omniq.result, "OMNIQ result", { w: 722, h: 1278 })}<span class="compare__label compare__label--after">${esc(o.compareLabels[1])}</span></div>
-      <div class="compare__before">${img(D.omniq.original, "Original", { w: 1200, h: 1600 })}<span class="compare__label">${esc(o.compareLabels[0])}</span></div>
-      <div class="compare__handle" role="slider" aria-label="Compare" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"><span></span></div>
+    <div class="compare-grid">
+      ${D.omniq.compare
+        .map(
+          (c) => `
+      <div class="compare" data-compare data-reveal>
+        <div class="compare__after">${img(c.after, `OMNIQ · ${o.compareThemes[c.key]}`, { w: 600, h: 800 })}<span class="compare__label compare__label--after">${esc(o.compareThemes[c.key])}</span></div>
+        <div class="compare__before">${img(c.before, o.compareLabels[0], { w: 600, h: 800 })}<span class="compare__label">${esc(o.compareLabels[0])}</span></div>
+        <div class="compare__handle" role="slider" aria-label="${esc(`${o.compareLabels[0]} / ${o.compareThemes[c.key]}`)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"><span></span></div>
+      </div>`
+        )
+        .join("")}
     </div>
   </div>
 </section>
