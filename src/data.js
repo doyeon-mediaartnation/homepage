@@ -56,7 +56,7 @@ module.exports = {
     screenLogin: `${IMG}/ir/omniq-screen-login.webp`,
     /** Before/after sliders: the same selfie cropped to line up with a frame from each OMNIQ theme video.
         Keys match i18n `omniq.compareThemes`. */
-    compare: ["neon", "toon", "santa"].map((k) => ({
+    compare: ["toon", "santa"].map((k) => ({
       key: k,
       before: `${IMG}/ir/omniq-cmp-${k}-before.webp`,
       after: `${IMG}/ir/omniq-cmp-${k}-after.webp`,
