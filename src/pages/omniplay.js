@@ -10,8 +10,7 @@ exports.render = ({ t, base }) => {
   <div class="phero__bg" data-parallax="0.25">${img(D.omniplay.concept, "OMNIPlay living-room concept", { w: 1672, h: 941, lazy: false })}</div>
   <div class="container phero__grid phero__grid--stack">
     <div class="phero__copy">
-      <span class="badge" data-reveal>${esc(o.badge)}</span>
-      ${eyebrow(o.eyebrow)}
+      <p class="eyebrow eyebrow--badge" data-reveal><span class="badge">${esc(o.badge)}</span>${esc(o.eyebrow)}</p>
       ${lines([o.title[0], `<em>${o.title[1]}</em>`], "h1", "phero__title")}
       <p class="phero__lead" data-reveal>${esc(o.lead)}</p>
       <div class="phero__actions" data-reveal>${btn(`${base}contact/?topic=omniplay`, o.cta, { variant: "primary" })}</div>
