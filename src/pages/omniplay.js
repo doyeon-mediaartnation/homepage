@@ -42,6 +42,26 @@ exports.render = ({ t, base }) => {
   </div>
 </section>
 
+<section class="forwhom" data-theme="light" data-bg="#ffffff">
+  <div class="container">
+    ${head({ eyebrow: o.forEyebrow, title: o.forTitle, lead: o.forLead })}
+    <div class="fgrid fgrid--3">
+      ${o.forWhom
+        .map(
+          ([tag, title, desc], i) => `
+      <div class="fcard fcard--blue fcard--media" data-reveal>
+        <div class="fmedia fmedia--single">${img(D.omniplay.forWhom[i], title, { w: 559, h: 319, cls: "fmedia__img" })}</div>
+        <span class="fcard__idx">${esc(tag)}</span>
+        <h3 class="fcard__title">${esc(title)}</h3>
+        <p class="fcard__desc">${esc(desc)}</p>
+      </div>`
+        )
+        .join("")}
+    </div>
+    <p class="tech__note" data-reveal>${esc(o.forNote)}</p>
+  </div>
+</section>
+
 <section class="games" data-theme="blue" data-bg="#3d5afe">
   <div class="container games__grid">
     <div>
@@ -53,6 +73,13 @@ exports.render = ({ t, base }) => {
       ${o.games.map((g, i) => `<li class="chip"><span>0${i + 1}</span>${esc(g)}</li>`).join("")}
     </ul>
   </div>
+  <div class="container">
+    <ol class="cpath">
+      ${o.contentPath
+        .map(([k, title, desc]) => `<li class="cpath__item" data-reveal><span class="cpath__k">${esc(k)}</span><strong>${esc(title)}</strong><span>${esc(desc)}</span></li>`)
+        .join("")}
+    </ol>
+  </div>
 </section>
 
 <section class="gallery" data-theme="dark" data-bg="#15161b">
@@ -60,13 +87,31 @@ exports.render = ({ t, base }) => {
     ${head({ eyebrow: o.galleryEyebrow, title: o.galleryTitle, lead: o.galleryNote })}
   </div>
   <div class="gallery__row" data-drag-scroll>
-    ${D.omniplay.photos
-      .map((p, i) => `<figure class="gallery__item" data-reveal>${img(p, `OMNIPlay prototype ${i + 1}`, { w: 1600, h: 900 })}</figure>`)
+    ${D.omniplay.play
+      .map((p) => {
+        const name = p.game == null ? o.gallerySelect : o.games[p.game];
+        return `<figure class="gallery__item" data-reveal>${img(p.src, `OMNIPlay · ${name}`, { w: p.w, h: p.h })}${
+          p.cam ? `<span class="gallery__cam">${img(p.cam, "", { w: 194, h: 345 })}<i>CAM</i></span>` : ""
+        }<figcaption class="gallery__tag">${esc(name)}</figcaption></figure>`;
+      })
       .join("")}
   </div>
 </section>
 
-<section class="tech" data-theme="light" data-bg="#ffffff">
+<section class="spec" data-theme="light" data-bg="#ffffff">
+  <div class="container spec__grid">
+    <figure class="spec__media" data-reveal>${img(D.omniplay.device, "OMNIPlay device", { w: 829, h: 679 })}</figure>
+    <div>
+      ${head({ eyebrow: o.specEyebrow, title: o.specTitle, lead: o.specLead })}
+      <dl class="spec__list" data-reveal>
+        ${o.spec.map(([k, v]) => `<div class="spec__row"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
+      </dl>
+      <p class="tech__note" data-reveal>${esc(o.techNote)}</p>
+    </div>
+  </div>
+</section>
+
+<section class="tech" data-theme="light" data-bg="#f4f3ef">
   <div class="container">
     ${head({ eyebrow: o.techEyebrow, title: o.techTitle })}
     <ul class="tech__list">
@@ -80,10 +125,10 @@ exports.render = ({ t, base }) => {
   </div>
 </section>
 
-<section class="timeline timeline--compact" data-theme="light" data-bg="#f4f3ef">
+<section class="timeline timeline--compact" data-theme="light" data-bg="#ffffff">
   <div class="container">
-    ${head({ eyebrow: o.roadmapEyebrow, title: "" })}
-    <ol class="tl tl--3" data-timeline>
+    ${head({ eyebrow: o.roadmapEyebrow, title: o.roadmapTitle })}
+    <ol class="tl" data-timeline>
       <svg class="tl__line" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="1" x2="1000" y2="1"/></svg>
       ${o.roadmap
         .map(

@@ -95,12 +95,18 @@ module.exports = {
   omniplay: {
     concept: `${IMG}/ir/omniplay-concept.webp`,
     hero: `${IMG}/ir/hero-illustration.webp`,
-    photos: [
-      `${IMG}/ir/omniplay-proto-01.webp`,
-      `${IMG}/ir/omniplay-proto-02.webp`,
-      `${IMG}/ir/omniplay-office-01.webp`,
-      `${IMG}/ir/omniplay-office-02.webp`,
-      `${IMG}/ir/omniplay-office-03.webp`,
+    /** Product shot and "for whom" concept images from the partnership proposal (p.8, p.13). */
+    device: `${IMG}/ir/omniplay-device.webp`,
+    forWhom: [`${IMG}/ir/omniplay-for-kids.webp`, `${IMG}/ir/omniplay-for-family.webp`, `${IMG}/ir/omniplay-for-active.webp`],
+    /** "In development" gallery: real prototype play from the 2026 IR deck (p.14-15) and the
+        game-select screen from the partnership proposal (p.12). `game` indexes i18n `omniplay.games`;
+        `cam` is the player camera shown picture-in-picture. */
+    play: [
+      { src: `${IMG}/ir/omniplay-play-select.webp`, w: 930, h: 525 },
+      { src: `${IMG}/ir/omniplay-play-baseball.webp`, w: 663, h: 345, game: 1, cam: `${IMG}/ir/omniplay-play-baseball-cam.webp` },
+      { src: `${IMG}/ir/omniplay-play-basketball.webp`, w: 660, h: 345, game: 0, cam: `${IMG}/ir/omniplay-play-basketball-cam.webp` },
+      { src: `${IMG}/ir/omniplay-play-rhythm.webp`, w: 660, h: 345, game: 2, cam: `${IMG}/ir/omniplay-play-rhythm-cam.webp` },
+      { src: `${IMG}/ir/omniplay-play-flying.webp`, w: 667, h: 348, game: 3, cam: `${IMG}/ir/omniplay-play-flying-cam.webp` },
     ],
   },
   contactBg: `${IMG}/legacy/bg-contact.webp`,
