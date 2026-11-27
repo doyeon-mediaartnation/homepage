@@ -83,13 +83,7 @@ module.exports = {
           [`${IMG}/ir/omniq-look-armor.webp`, 488, 237, "32% 40%"],
         ],
       },
-      {
-        kind: "pair",
-        items: [
-          [`${IMG}/ir/omniq-feat-rec-countdown.webp`, 155, 334, "50% 45%"],
-          [`${IMG}/ir/omniq-feat-rec-live.webp`, 155, 334, "50% 45%"],
-        ],
-      },
+      { kind: "single", items: [[`${IMG}/ir/omniq-feat-result.webp`, 323, 619, "50% 28%"]] },
     ],
   },
   omniplay: {
