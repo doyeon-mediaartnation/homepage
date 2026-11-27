@@ -522,6 +522,13 @@ section, .footer { position: relative; }
 .fgrid { display: grid; gap: 16px; }
 .fcard { padding: 28px 24px; border-radius: 20px; background: var(--bg-2); border: 1px solid var(--line); transition: transform 0.5s var(--ease), box-shadow 0.5s, border-color 0.3s, background-color 0.5s; }
 .fcard:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(21, 22, 27, 0.3); }
+.fcard--media { padding-top: 12px; padding-left: 12px; padding-right: 12px; }
+.fcard--media > :not(.fmedia) { margin-left: 12px; margin-right: 12px; }
+.fmedia { display: grid; gap: 3px; aspect-ratio: 16 / 10; margin-bottom: 22px; border-radius: 14px; overflow: hidden; background: #15161b; }
+.fmedia--quad { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.fmedia--pair { grid-template-columns: 1fr 1fr; }
+.fmedia__img { width: 100%; height: 100%; min-height: 0; object-fit: cover; display: block; transition: transform 0.8s var(--ease); }
+.fcard--media:hover .fmedia__img { transform: scale(1.04); }
 .fcard__idx { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; }
 .fcard--coral .fcard__idx { color: var(--coral); }
 .fcard--blue .fcard__idx { color: var(--blue); }

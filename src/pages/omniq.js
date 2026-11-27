@@ -1,6 +1,16 @@
 const D = require("../data");
 const { esc, lines, eyebrow, head, btn, img, ctaBand } = require("../ui");
 
+/** Image box on top of a feature card: one picture, a 2x2 mosaic or a side-by-side pair. */
+const featureMedia = (m, title) =>
+  m
+    ? `<div class="fmedia fmedia--${m.kind}">${m.items
+        .map(([src, w, h, pos], k) =>
+          img(src, k === 0 ? title : "", { w, h, cls: "fmedia__img", attrs: `style="object-position:${pos}"` })
+        )
+        .join("")}</div>`
+    : "";
+
 exports.meta = ({ t, site, lang }) => ({
   title: t.meta.omniq.title,
   description: t.meta.omniq.description,
@@ -57,7 +67,8 @@ exports.render = ({ t, base }) => {
       ${o.features
         .map(
           ([title, desc], i) => `
-      <div class="fcard fcard--coral" data-reveal>
+      <div class="fcard fcard--coral fcard--media" data-reveal>
+        ${featureMedia(D.omniq.featureMedia[i], title)}
         <span class="fcard__idx">0${i + 1}</span>
         <h3 class="fcard__title">${esc(title)}</h3>
         <p class="fcard__desc">${esc(desc)}</p>
